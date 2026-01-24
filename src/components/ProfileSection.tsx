@@ -8,7 +8,7 @@ const ProfileSection = () => {
   const timeline = [
     {
       year: '2021',
-      title: 'Lead Capture Systems',
+      title: 'Evolve Smarter Agency',
       description: 'Built AI receptionist and missed call recovery systems that capture leads 24/7 for home services.',
       icon: 'solar:chat-round-line-linear',
     },
