@@ -33,13 +33,13 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section className="bg-[#0a0a0a] py-20 md:py-32">
+    <section id="process" className="bg-[#0a0a0a] py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="grid grid-cols-4 border-x border-white/10 mb-16">
           <div className="border-r border-white/10 py-8">
             <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] px-4">
-              07 /// PROCESS
+              06 /// PROCESS
             </p>
           </div>
           <div className="col-span-3 py-8 px-4">

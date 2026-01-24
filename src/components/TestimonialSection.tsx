@@ -176,7 +176,7 @@ const TestimonialSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-0">
           {/* Left Column - Title (Column 1) */}
           <div className="lg:col-span-1 lg:pr-8 lg:border-r lg:border-white/10">
-            <span className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-4 block">05 /// TESTIMONIALS</span>
+            <span className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-4 block">08 /// TESTIMONIALS</span>
             <h2 className="font-syne text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
               Results that speak volumes
             </h2>
