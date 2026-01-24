@@ -14,8 +14,8 @@ const HeroSection = () => {
   return (
     <>
       <section className="relative min-h-screen bg-black overflow-hidden">
-        {/* Spline 3D Robot - Behind everything */}
-        <div className="spline-container absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+        {/* Spline 3D Robot - Interactive on desktop, disabled on mobile */}
+        <div className="spline-container absolute top-0 left-0 w-full h-full z-[5] pointer-events-none md:pointer-events-auto">
           <iframe 
             src="https://my.spline.design/nexbotrobotcharacterconcept-kLwr8f6hgKgaa5gmU6oB00Si" 
             frameBorder="0" 
@@ -34,10 +34,10 @@ const HeroSection = () => {
         </div>
 
         {/* Bottom gradient for legibility */}
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-[2] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-[10] pointer-events-none" />
 
-        {/* 4-Column Grid Structure - z-[1] */}
-        <div className="absolute inset-0 z-[1] grid grid-cols-4">
+        {/* 4-Column Grid Structure - z-[1], pointer-events-none to allow mouse through to Spline */}
+        <div className="absolute inset-0 z-[1] grid grid-cols-4 pointer-events-none">
           {[0, 1, 2, 3].map((col) => (
             <div
               key={col}
@@ -62,13 +62,13 @@ const HeroSection = () => {
           ))}
         </div>
 
-        {/* Content - z-10, above grid and watermark */}
-        <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Content - z-50, above Spline for clickable elements */}
+        <div className="relative z-50 min-h-screen flex flex-col pointer-events-none">
           {/* Top Bar */}
           <div className="grid grid-cols-4 border-b border-white/10">
             {/* Logo - Top Left */}
             <div className="p-6 border-r border-white/10">
-              <a href="#" className="font-syne font-bold text-lg tracking-tight text-white">
+              <a href="#" className="font-syne font-bold text-lg tracking-tight text-white pointer-events-auto">
                 SUMAIT<span className="text-[#EF4444]">.AI</span>
               </a>
             </div>
@@ -91,7 +91,7 @@ const HeroSection = () => {
               <a
                 href="#contact"
                 onClick={(e) => handleSmoothScroll(e, 'contact')}
-                className="font-mono text-xs tracking-[0.2em] text-white/60 hover:text-white transition-colors"
+                className="font-mono text-xs tracking-[0.2em] text-white/60 hover:text-white transition-colors pointer-events-auto"
               >
                 LET'S TALK →
               </a>
@@ -132,7 +132,7 @@ const HeroSection = () => {
                 <a
                   href="#systems"
                   onClick={(e) => handleSmoothScroll(e, 'systems')}
-                  className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105"
+                  className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 pointer-events-auto"
                 >
                   {/* Spinning border effect */}
                   <span className="absolute inset-0 rounded-full">
