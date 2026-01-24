@@ -10,16 +10,18 @@ interface SystemCardProps {
   reversed?: boolean;
 }
 
+const glassStyle = {
+  border: '1px solid transparent',
+  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.4), rgba(23, 23, 23, 0.4)), linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
+  backgroundOrigin: 'border-box',
+  backgroundClip: 'padding-box, border-box',
+};
+
 const AbstractMockup = ({ icon }: { icon: string }) => {
   return (
     <div 
-      className="relative w-full max-w-md aspect-square bg-neutral-900/50 backdrop-blur-md p-8"
-      style={{
-        border: '1px solid transparent',
-        backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
-        backgroundOrigin: 'border-box',
-        backgroundClip: 'padding-box, border-box',
-      }}
+      className="relative w-full max-w-md aspect-square bg-neutral-900/40 backdrop-blur-xl p-8"
+      style={glassStyle}
     >
       {/* Header bar */}
       <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
@@ -41,7 +43,10 @@ const AbstractMockup = ({ icon }: { icon: string }) => {
       </div>
 
       {/* Floating Element */}
-      <div className="absolute top-8 right-8 w-12 h-12 rounded-lg bg-[#EF4444]/20 flex items-center justify-center animate-float">
+      <div 
+        className="absolute top-8 right-8 w-12 h-12 rounded-lg bg-neutral-900/40 backdrop-blur-xl flex items-center justify-center animate-float"
+        style={glassStyle}
+      >
         <Icon icon="solar:bolt-linear" className="w-6 h-6 text-[#EF4444]" />
       </div>
     </div>
@@ -83,14 +88,14 @@ const SystemCard = ({
               <p className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-6">
                 {number} /// SYSTEM
               </p>
-              <h3 className="font-syne font-bold text-3xl md:text-4xl text-white mb-6">
+              <h3 className="font-syne font-bold text-3xl md:text-4xl text-slate-50 mb-6">
                 {title}
               </h3>
-              <p className="text-base md:text-lg text-white/60 mb-8">{description}</p>
+              <p className="text-base md:text-lg text-neutral-300 mb-8">{description}</p>
 
               <ul className="space-y-4">
                 {features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3 text-white/60">
+                  <li key={index} className="flex items-start gap-3 text-neutral-300">
                     <Icon
                       icon="solar:check-circle-bold"
                       className="w-5 h-5 text-[#EF4444] flex-shrink-0 mt-0.5"

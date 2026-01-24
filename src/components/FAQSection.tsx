@@ -8,6 +8,13 @@ interface FAQItem {
   answer: string;
 }
 
+const glassStyle = {
+  border: '1px solid transparent',
+  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.4), rgba(23, 23, 23, 0.4)), linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
+  backgroundOrigin: 'border-box',
+  backgroundClip: 'padding-box, border-box',
+};
+
 const FAQSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -49,7 +56,7 @@ const FAQSection = () => {
             <p className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-4">
               09 /// FAQ
             </p>
-            <h2 className="font-syne font-bold text-xl md:text-2xl text-white">
+            <h2 className="font-syne font-bold text-xl md:text-2xl text-slate-50">
               Common questions, straight answers.
             </h2>
           </div>
@@ -71,7 +78,7 @@ const FAQSection = () => {
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                     className="w-full flex items-center justify-between text-left group"
                   >
-                    <span className="font-syne font-semibold text-lg text-white group-hover:text-[#EF4444] transition-colors pr-4">
+                    <span className="font-syne font-semibold text-lg text-slate-50 group-hover:text-[#EF4444] transition-colors pr-4">
                       {faq.question}
                     </span>
                     <Icon
@@ -92,15 +99,10 @@ const FAQSection = () => {
                         className="overflow-hidden"
                       >
                         <div 
-                          className="mt-4 p-4 rounded-lg bg-neutral-900/50 backdrop-blur-md"
-                          style={{
-                            border: '1px solid transparent',
-                            backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
-                            backgroundOrigin: 'border-box',
-                            backgroundClip: 'padding-box, border-box',
-                          }}
+                          className="mt-4 p-4 rounded-lg bg-neutral-900/40 backdrop-blur-xl"
+                          style={glassStyle}
                         >
-                          <p className="text-base text-white/60 leading-relaxed">
+                          <p className="text-base text-neutral-300 leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>

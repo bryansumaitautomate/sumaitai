@@ -41,6 +41,13 @@ const testimonials: Testimonial[] = [
   }
 ];
 
+const glassStyle = {
+  border: '1px solid transparent',
+  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.4), rgba(23, 23, 23, 0.4)), linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
+  backgroundOrigin: 'border-box',
+  backgroundClip: 'padding-box, border-box',
+};
+
 const TestimonialSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -70,13 +77,12 @@ const TestimonialSection = () => {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-black overflow-hidden">
       {/* Border gradient overlay */}
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `linear-gradient(135deg, hsl(var(--primary) / 0.2) 0%, transparent 50%, hsl(var(--primary) / 0.2) 100%)`,
-          opacity: 0.3
+          background: `linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, transparent 50%, rgba(239, 68, 68, 0.05) 100%)`,
         }}
       />
       {/* 4-Column Grid Lines */}
@@ -87,15 +93,15 @@ const TestimonialSection = () => {
         <div />
       </div>
 
-      <div className="container-grid relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-0">
           {/* Left Column - Title (Column 1) */}
           <div className="lg:col-span-1 lg:pr-8 lg:border-r lg:border-white/10">
-            <span className="section-label mb-4 block">05 /// TESTIMONIALS</span>
-            <h2 className="font-syne text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
+            <span className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-4 block">05 /// TESTIMONIALS</span>
+            <h2 className="font-syne text-3xl md:text-4xl font-bold text-slate-50 leading-tight mb-6">
               Results that speak volumes
             </h2>
-            <p className="font-inter text-muted-foreground text-sm leading-relaxed mb-8">
+            <p className="font-inter text-neutral-300 text-sm leading-relaxed mb-8">
               Real feedback from founders and executives who've experienced the Revenue Systems approach.
             </p>
 
@@ -104,7 +110,8 @@ const TestimonialSection = () => {
               <button
                 onClick={sumaitPrev}
                 disabled={isAnimating}
-                className="w-12 h-12 rounded-full border border-white/10 bg-neutral-900 flex items-center justify-center text-white hover:border-primary hover:text-primary transition-all duration-300 disabled:opacity-50"
+                className="w-12 h-12 rounded-full flex items-center justify-center text-slate-50 hover:text-[#EF4444] transition-all duration-300 disabled:opacity-50 bg-neutral-900/40 backdrop-blur-xl"
+                style={glassStyle}
                 aria-label="Previous testimonial"
               >
                 <Icon icon="solar:arrow-left-linear" className="w-5 h-5" />
@@ -112,12 +119,13 @@ const TestimonialSection = () => {
               <button
                 onClick={sumaitNext}
                 disabled={isAnimating}
-                className="w-12 h-12 rounded-full border border-white/10 bg-neutral-900 flex items-center justify-center text-white hover:border-primary hover:text-primary transition-all duration-300 disabled:opacity-50"
+                className="w-12 h-12 rounded-full flex items-center justify-center text-slate-50 hover:text-[#EF4444] transition-all duration-300 disabled:opacity-50 bg-neutral-900/40 backdrop-blur-xl"
+                style={glassStyle}
                 aria-label="Next testimonial"
               >
                 <Icon icon="solar:arrow-right-linear" className="w-5 h-5" />
               </button>
-              <span className="font-mono text-xs text-muted-foreground ml-2">
+              <span className="font-mono text-xs text-neutral-400 ml-2">
                 {String(currentIndex + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
               </span>
             </div>
@@ -130,33 +138,33 @@ const TestimonialSection = () => {
             >
               {/* Large Quote Mark */}
               <div className="absolute -top-4 -left-2 pointer-events-none select-none">
-                <span className="font-syne text-[120px] md:text-[180px] text-primary/20 leading-none">
+                <span className="font-syne text-[120px] md:text-[180px] text-[#EF4444]/20 leading-none">
                   "
                 </span>
               </div>
               {/* Quote Content */}
               <div className="relative pt-16 md:pt-20">
-                <blockquote className="font-inter text-xl md:text-2xl lg:text-3xl text-white leading-relaxed mb-8">
+                <blockquote className="font-inter text-xl md:text-2xl lg:text-3xl text-slate-50 leading-relaxed mb-8">
                   {current.quote}
                 </blockquote>
 
                 {/* Author Info & Metric */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pt-8 border-t border-white/10">
                   <div>
-                    <p className="font-syne font-bold text-white text-lg">
+                    <p className="font-syne font-bold text-slate-50 text-lg">
                       {current.author}
                     </p>
-                    <p className="font-inter text-muted-foreground text-sm">
+                    <p className="font-inter text-neutral-400 text-sm">
                       {current.role}, {current.company}
                     </p>
                   </div>
 
                   {/* Metric Highlight */}
                   <div className="flex items-baseline gap-2">
-                    <span className="font-syne font-bold text-4xl md:text-5xl text-primary">
+                    <span className="font-syne font-bold text-4xl md:text-5xl text-[#EF4444]">
                       {current.metric}
                     </span>
-                    <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+                    <span className="font-mono text-xs text-neutral-400 uppercase tracking-wider">
                       {current.metricLabel}
                     </span>
                   </div>
@@ -165,7 +173,7 @@ const TestimonialSection = () => {
 
               {/* Closing Quote Mark */}
               <div className="absolute -bottom-8 right-0 pointer-events-none select-none">
-                <span className="font-syne text-[120px] md:text-[180px] text-primary/20 leading-none rotate-180 inline-block">
+                <span className="font-syne text-[120px] md:text-[180px] text-[#EF4444]/20 leading-none rotate-180 inline-block">
                   "
                 </span>
               </div>
@@ -185,7 +193,7 @@ const TestimonialSection = () => {
                   }}
                   className={`h-1 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'w-8 bg-primary' 
+                      ? 'w-8 bg-[#EF4444]' 
                       : 'w-4 bg-white/20 hover:bg-white/40'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -197,24 +205,24 @@ const TestimonialSection = () => {
             <div className="mt-12">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-3 px-6 py-3 bg-neutral-900 border border-white/10 rounded-full font-inter text-sm text-white hover:border-primary transition-all duration-300 relative overflow-hidden"
+                className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-slate-50 px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105"
               >
-                <span className="relative z-10">View all reviews</span>
-                <Icon icon="solar:arrow-right-linear" className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-                
-                {/* Animated border spin effect on hover */}
-                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div 
-                    className="absolute inset-[-2px] rounded-full animate-border-spin"
+                {/* Spinning border effect */}
+                <span className="absolute inset-0 rounded-full">
+                  <span className="absolute inset-0 rounded-full border border-white/20"></span>
+                  <span 
+                    className="absolute inset-[-2px] rounded-full animate-spin"
                     style={{
-                      background: 'conic-gradient(from 0deg, transparent, hsl(var(--primary)), transparent)',
-                      mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                      maskComposite: 'exclude',
-                      WebkitMaskComposite: 'xor',
-                      padding: '2px'
+                      background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #EF4444 360deg)',
+                      animationDuration: '3s',
                     }}
-                  />
-                </div>
+                  ></span>
+                  <span className="absolute inset-[1px] rounded-full bg-neutral-900"></span>
+                </span>
+                <span className="relative z-10 flex items-center gap-3">
+                  VIEW ALL REVIEWS
+                  <Icon icon="solar:arrow-right-linear" className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
               </a>
             </div>
           </div>
