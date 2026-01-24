@@ -30,8 +30,8 @@ const Footer = () => {
               <a href="#" className="text-white/30 hover:text-white transition-colors">
                 Process
               </a>
-              <a href="https://bit.ly/sumaitcal" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-[#ef4444] transition-colors">
-                Book a Call
+              <a href="#contact" className="text-white/30 hover:text-[#ef4444] transition-colors">
+                Contact
               </a>
             </div>
           </div>

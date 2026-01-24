@@ -195,9 +195,7 @@ const TestimonialSection = () => {
             {/* View All Button - Shimmer style */}
             <div className="mt-12">
               <a
-                href="https://bit.ly/sumaitcal"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]"
               >
                 {/* Spinning border effect */}

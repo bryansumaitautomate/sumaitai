@@ -48,9 +48,7 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             {/* Shimmer Button with Glow */}
             <a
-              href="https://bit.ly/sumaitcal"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]"
             >
               {/* Spinning border effect */}

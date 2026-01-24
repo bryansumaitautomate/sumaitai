@@ -120,15 +120,10 @@ const ProfileSection = () => {
               </div>
             </div>
 
-            <a 
-              href="https://bit.ly/sumaitcal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-12 w-full py-4 px-6 bg-[#ef4444] text-white font-syne font-bold text-sm tracking-wide rounded-sm flex items-center justify-between hover:shadow-[0_0_30px_rgba(239,68,68,0.35)] transition-all"
-            >
-              Book a Call
+            <button className="group mt-12 w-full py-4 px-6 bg-[#ef4444] text-white font-syne font-bold text-sm tracking-wide rounded-sm flex items-center justify-between hover:shadow-[0_0_30px_rgba(239,68,68,0.35)] transition-all">
+              Connect
               <Icon icon="solar:arrow-right-up-linear" width={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </a>
+            </button>
           </div>
 
           {/* Right Column: Details */}
