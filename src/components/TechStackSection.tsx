@@ -1,6 +1,13 @@
 import { Icon } from '@iconify/react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
+const glassStyle = {
+  border: '1px solid transparent',
+  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.4), rgba(23, 23, 23, 0.4)), linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
+  backgroundOrigin: 'border-box',
+  backgroundClip: 'padding-box, border-box',
+};
+
 const TechStackSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
 
@@ -26,10 +33,10 @@ const TechStackSection = () => {
             <p className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-4">
               08 /// TOOLS
             </p>
-            <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4">
+            <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-slate-50 mb-4">
               Best-in-class stack
             </h2>
-            <p className="text-base md:text-lg text-white/60 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-neutral-300 max-w-2xl mx-auto">
               I work with the tools you already use—or help you choose the right ones. No
               vendor lock-in, just systems that work.
             </p>
@@ -50,20 +57,15 @@ const TechStackSection = () => {
               style={{ transitionDelay: `${index * 50}ms` }}
             >
               <div 
-                className="w-16 h-16 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 bg-neutral-900/50 backdrop-blur-md"
-                style={{
-                  border: '1px solid transparent',
-                  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
-                  backgroundOrigin: 'border-box',
-                  backgroundClip: 'padding-box, border-box',
-                }}
+                className="w-16 h-16 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 bg-neutral-900/40 backdrop-blur-xl"
+                style={glassStyle}
               >
                 <Icon
                   icon={tool.icon}
-                  className="w-8 h-8 text-white/40 grayscale group-hover:grayscale-0 group-hover:text-[#EF4444] transition-all duration-300"
+                  className="w-8 h-8 text-neutral-400 grayscale group-hover:grayscale-0 group-hover:text-[#EF4444] transition-all duration-300"
                 />
               </div>
-              <span className="font-mono text-xs text-white/50 group-hover:text-white transition-colors">
+              <span className="font-mono text-xs text-neutral-400 group-hover:text-slate-50 transition-colors">
                 {tool.name}
               </span>
             </div>

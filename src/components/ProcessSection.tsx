@@ -1,6 +1,13 @@
 import { Icon } from '@iconify/react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
+const glassStyle = {
+  border: '1px solid transparent',
+  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.4), rgba(23, 23, 23, 0.4)), linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
+  backgroundOrigin: 'border-box',
+  backgroundClip: 'padding-box, border-box',
+};
+
 const ProcessSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
 
@@ -43,7 +50,7 @@ const ProcessSection = () => {
             </p>
           </div>
           <div className="col-span-3 py-8 px-4">
-            <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-white">
+            <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-slate-50">
               From chaos to cash flow in 4 weeks.
             </h2>
           </div>
@@ -59,35 +66,27 @@ const ProcessSection = () => {
           {phases.map((phase, index) => (
             <div
               key={index}
-              className={`group p-8 border-b border-white/10 bg-neutral-900/50 backdrop-blur-md transition-all duration-300 hover:bg-neutral-900/80 ${
+              className={`group p-8 border-b border-white/10 bg-neutral-900/40 backdrop-blur-xl transition-all duration-300 hover:bg-neutral-900/60 ${
                 index < 3 ? 'lg:border-r' : ''
               } ${index < 2 ? 'md:border-r' : ''}`}
-              style={{ 
-                transitionDelay: `${index * 100}ms`,
-                borderImage: 'linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent) 1',
-              }}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Phase Label */}
               <p className="font-mono text-xs text-[#EF4444] mb-6">{phase.phase}</p>
 
               {/* Icon */}
               <div 
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-neutral-900/50 backdrop-blur-md group-hover:bg-[#EF4444]/20 transition-colors"
-                style={{
-                  border: '1px solid transparent',
-                  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
-                  backgroundOrigin: 'border-box',
-                  backgroundClip: 'padding-box, border-box',
-                }}
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-neutral-900/40 backdrop-blur-xl group-hover:bg-[#EF4444]/20 transition-colors"
+                style={glassStyle}
               >
                 <Icon icon={phase.icon} className="w-6 h-6 text-[#EF4444]" />
               </div>
 
               {/* Content */}
-              <h3 className="font-syne font-semibold text-xl text-white mb-3">
+              <h3 className="font-syne font-semibold text-xl text-slate-50 mb-3">
                 {phase.title}
               </h3>
-              <p className="text-sm text-white/60 leading-relaxed">{phase.description}</p>
+              <p className="text-sm text-neutral-300 leading-relaxed">{phase.description}</p>
             </div>
           ))}
         </div>

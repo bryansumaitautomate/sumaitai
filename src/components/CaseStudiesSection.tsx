@@ -8,6 +8,13 @@ interface CaseStudy {
   description: string;
 }
 
+const glassStyle = {
+  border: '1px solid transparent',
+  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.4), rgba(23, 23, 23, 0.4)), linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
+  backgroundOrigin: 'border-box',
+  backgroundClip: 'padding-box, border-box',
+};
+
 const CaseStudiesSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
 
@@ -49,7 +56,7 @@ const CaseStudiesSection = () => {
             </p>
           </div>
           <div className="col-span-3 py-8 px-4">
-            <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-white">
+            <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-slate-50">
               Real systems. Real numbers.
             </h2>
           </div>
@@ -65,31 +72,28 @@ const CaseStudiesSection = () => {
           {caseStudies.map((study, index) => (
             <div
               key={index}
-              className="group p-8 bg-neutral-900/50 backdrop-blur-md transition-all duration-300 hover:scale-[1.02]"
+              className="group p-8 bg-neutral-900/40 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02]"
               style={{
-                border: '1px solid transparent',
-                backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
-                backgroundOrigin: 'border-box',
-                backgroundClip: 'padding-box, border-box',
+                ...glassStyle,
                 transitionDelay: `${index * 100}ms`,
               }}
             >
               {/* Category */}
-              <p className="font-mono text-xs text-white/40 mb-6">{study.category}</p>
+              <p className="font-mono text-xs text-neutral-400 mb-6">{study.category}</p>
 
               {/* Metric - Red accent */}
               <div className="mb-6">
                 <p className="font-syne font-bold text-5xl text-[#EF4444]">
                   {study.metric}
                 </p>
-                <p className="text-sm text-white/50 mt-1">{study.metricLabel}</p>
+                <p className="text-sm text-neutral-400 mt-1">{study.metricLabel}</p>
               </div>
 
               {/* Title & Description */}
-              <h3 className="font-syne font-semibold text-xl text-white mb-3">
+              <h3 className="font-syne font-semibold text-xl text-slate-50 mb-3">
                 {study.title}
               </h3>
-              <p className="text-sm text-white/60 leading-relaxed">
+              <p className="text-sm text-neutral-300 leading-relaxed">
                 {study.description}
               </p>
             </div>
