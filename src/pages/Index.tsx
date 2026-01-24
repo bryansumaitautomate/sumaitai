@@ -1,5 +1,6 @@
 import FloatingNav from '@/components/FloatingNav';
 import HeroSection from '@/components/HeroSection';
+import ProfileSection from '@/components/ProfileSection';
 import AboutSection from '@/components/AboutSection';
 import SystemsSection from '@/components/SystemsSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
@@ -16,7 +17,9 @@ const Index = () => {
       <FloatingNav />
       {/* Hero - Black */}
       <HeroSection />
-      {/* About - White */}
+      {/* Profile - Deep Black with Glass */}
+      <ProfileSection />
+      {/* About - Black */}
       <AboutSection />
       {/* Systems - Alternating Black/White/Black */}
       <SystemsSection />
