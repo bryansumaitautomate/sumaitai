@@ -9,6 +9,7 @@ const FloatingNav = () => {
     { label: 'Systems', href: '#systems' },
     { label: 'Experience', href: '#experience' },
     { label: 'Process', href: '#process' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   return (
