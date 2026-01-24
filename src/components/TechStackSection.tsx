@@ -1,13 +1,6 @@
 import { Icon } from '@iconify/react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-const glassStyle = {
-  border: '1px solid transparent',
-  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.4), rgba(23, 23, 23, 0.4)), linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
-  backgroundOrigin: 'border-box',
-  backgroundClip: 'padding-box, border-box',
-};
-
 const TechStackSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
 
@@ -25,18 +18,18 @@ const TechStackSection = () => {
   ];
 
   return (
-    <section className="bg-black py-20 md:py-32">
+    <section className="bg-[#0a0a0a] py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header with 4-column grid */}
         <div className="grid grid-cols-4 border-x border-white/10 mb-16">
           <div className="col-span-4 text-center py-8 px-4">
-            <p className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-4">
+            <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-4">
               08 /// TOOLS
             </p>
-            <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-slate-50 mb-4">
+            <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4">
               Best-in-class stack
             </h2>
-            <p className="text-base md:text-lg text-neutral-300 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/50 max-w-2xl mx-auto">
               I stay current through paid communities and courses—not outdated YouTube tutorials.
             </p>
           </div>
@@ -56,22 +49,21 @@ const TechStackSection = () => {
               style={{ transitionDelay: `${index * 50}ms` }}
             >
               <div 
-                className="w-16 h-16 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 bg-neutral-900/40 backdrop-blur-xl"
-                style={glassStyle}
+                className="w-16 h-16 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 bg-white/5 backdrop-blur-xl border border-white/10 group-hover:border-[#ef4444]/25"
               >
                 <Icon
                   icon={tool.icon}
-                  className="w-8 h-8 text-neutral-400 grayscale group-hover:grayscale-0 transition-all duration-300"
+                  className="w-8 h-8 text-white/30 grayscale group-hover:grayscale-0 transition-all duration-300"
                   style={{ color: undefined }}
                   onMouseEnter={(e: React.MouseEvent<SVGSVGElement>) => {
-                    (e.currentTarget as SVGSVGElement).style.color = tool.color || '#EF4444';
+                    (e.currentTarget as SVGSVGElement).style.color = tool.color || '#ef4444';
                   }}
                   onMouseLeave={(e: React.MouseEvent<SVGSVGElement>) => {
                     (e.currentTarget as SVGSVGElement).style.color = '';
                   }}
                 />
               </div>
-              <span className="font-mono text-xs text-neutral-400 group-hover:text-slate-50 transition-colors">
+              <span className="font-mono text-xs text-white/30 group-hover:text-white transition-colors">
                 {tool.name}
               </span>
             </div>

@@ -8,13 +8,6 @@ interface FAQItem {
   answer: string;
 }
 
-const glassStyle = {
-  border: '1px solid transparent',
-  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.4), rgba(23, 23, 23, 0.4)), linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
-  backgroundOrigin: 'border-box',
-  backgroundClip: 'padding-box, border-box',
-};
-
 const FAQSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -48,15 +41,15 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="bg-black py-20 md:py-32">
+    <section className="bg-[#0a0a0a] py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 border-x border-white/10">
           {/* Sidebar */}
           <div className="lg:border-r border-white/10 p-8">
-            <p className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-4">
+            <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-4">
               09 /// FAQ
             </p>
-            <h2 className="font-syne font-bold text-xl md:text-2xl text-slate-50">
+            <h2 className="font-syne font-bold text-xl md:text-2xl text-white">
               Common questions, straight answers.
             </h2>
           </div>
@@ -78,13 +71,13 @@ const FAQSection = () => {
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                     className="w-full flex items-center justify-between text-left group"
                   >
-                    <span className="font-syne font-semibold text-lg text-slate-50 group-hover:text-[#EF4444] transition-colors pr-4">
+                    <span className="font-syne font-semibold text-lg text-white group-hover:text-[#ef4444] transition-colors pr-4">
                       {faq.question}
                     </span>
                     <Icon
                       icon={openIndex === index ? 'solar:minus-linear' : 'solar:add-linear'}
                       className={`w-5 h-5 flex-shrink-0 transition-colors ${
-                        openIndex === index ? 'text-[#EF4444]' : 'text-[#EF4444]/60'
+                        openIndex === index ? 'text-[#ef4444]' : 'text-white/30'
                       }`}
                     />
                   </button>
@@ -99,10 +92,9 @@ const FAQSection = () => {
                         className="overflow-hidden"
                       >
                         <div 
-                          className="mt-4 p-4 rounded-lg bg-neutral-900/40 backdrop-blur-xl"
-                          style={glassStyle}
+                          className="mt-4 p-4 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10"
                         >
-                          <p className="text-base text-neutral-300 leading-relaxed">
+                          <p className="text-base text-white/50 leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>
