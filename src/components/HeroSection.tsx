@@ -93,9 +93,21 @@ const HeroSection = () => {
                 href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs tracking-[0.2em] text-white/50 hover:text-[#ef4444] transition-colors pointer-events-auto"
+                className="group relative inline-flex items-center gap-2 font-mono text-xs tracking-[0.15em] text-white px-6 py-3 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 pointer-events-auto shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]"
               >
-                LET'S TALK →
+                {/* Spinning border effect */}
+                <span className="absolute inset-0 rounded-full">
+                  <span className="absolute inset-0 rounded-full border border-white/10"></span>
+                  <span 
+                    className="absolute inset-[-2px] rounded-full animate-spin"
+                    style={{
+                      background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #ef4444 360deg)',
+                      animationDuration: '3s',
+                    }}
+                  ></span>
+                  <span className="absolute inset-[1px] rounded-full bg-[#0a0a0a]/80 backdrop-blur-md"></span>
+                </span>
+                <span className="relative z-10">LET'S TALK →</span>
               </a>
             </div>
           </div>
