@@ -1,26 +1,6 @@
-import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
-import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Smooth spring physics for parallax
-  const springConfig = { damping: 25, stiffness: 150 };
-  const x = useSpring(useTransform(mouseX, [0, 1], [-20, 20]), springConfig);
-  const y = useSpring(useTransform(mouseY, [0, 1], [-15, 15]), springConfig);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      mouseX.set(clientX / innerWidth);
-      mouseY.set(clientY / innerHeight);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [mouseX, mouseY]);
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -32,15 +12,12 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen bg-black overflow-hidden">
-      {/* Background Watermark with Parallax - z-0, behind everything */}
-      <motion.div 
-        className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none"
-        style={{ x, y }}
-      >
+      {/* Background Watermark - z-0, behind everything */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none">
         <span className="font-syne font-bold text-[15vw] text-white opacity-[0.05] whitespace-nowrap">
           SUMAIT AI
         </span>
-      </motion.div>
+      </div>
 
       {/* 4-Column Grid Structure - z-[1] */}
       <div className="absolute inset-0 z-[1] grid grid-cols-4">
