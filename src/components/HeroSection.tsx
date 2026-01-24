@@ -3,15 +3,15 @@ import { motion } from 'framer-motion';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-black overflow-hidden">
-      {/* Background Watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-        <span className="font-syne font-bold text-[15vw] text-white opacity-[0.03] mix-blend-overlay whitespace-nowrap">
+      {/* Background Watermark - z-0, behind everything */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none">
+        <span className="font-syne font-bold text-[15vw] text-white opacity-[0.05] whitespace-nowrap">
           SUMAIT AI
         </span>
       </div>
 
-      {/* 4-Column Grid Structure */}
-      <div className="absolute inset-0 grid grid-cols-4">
+      {/* 4-Column Grid Structure - z-[1] */}
+      <div className="absolute inset-0 z-[1] grid grid-cols-4">
         {[0, 1, 2, 3].map((col) => (
           <div
             key={col}
@@ -36,25 +36,31 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Content */}
+      {/* Content - z-10, above grid and watermark */}
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Top Bar */}
         <div className="grid grid-cols-4 border-b border-white/10">
+          {/* Logo - Top Left */}
           <div className="p-6 border-r border-white/10">
             <a href="#" className="font-syne font-bold text-lg tracking-tight text-white">
               SUMAIT<span className="text-[#EF4444]">.AI</span>
             </a>
           </div>
-          <div className="p-6 border-r border-white/10 hidden md:flex items-center">
-            <div className="flex items-center gap-2">
+
+          {/* Status Badge - Centered */}
+          <div className="col-span-2 p-6 border-r border-white/10 hidden md:flex items-center justify-center">
+            <div className="flex items-center gap-3">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#EF4444] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#EF4444]"></span>
               </span>
-              <span className="font-mono text-xs text-white/40">AVAILABLE</span>
+              <span className="font-mono text-xs tracking-wider text-white/40">
+                AVAILABLE FOR PROJECTS
+              </span>
             </div>
           </div>
-          <div className="p-6 border-r border-white/10 hidden md:block"></div>
+
+          {/* CTA - Top Right */}
           <div className="p-6 flex items-center justify-end col-span-3 md:col-span-1">
             <a
               href="#contact"
@@ -67,8 +73,8 @@ const HeroSection = () => {
 
         {/* Main Content */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-4">
-          {/* First column - Tagline anchored to bottom-left */}
-          <div className="md:col-span-3 md:border-r border-white/10 p-8 md:p-16 flex flex-col justify-end">
+          {/* Headline - Bottom Left (spans 2 columns) */}
+          <div className="md:col-span-2 md:border-r border-white/10 p-8 md:p-16 flex flex-col justify-end pb-16 md:pb-24">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -89,8 +95,11 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Fourth column - VIEW WORK anchored to bottom-right */}
-          <div className="p-8 md:p-12 flex flex-col justify-end items-end">
+          {/* Empty third column for grid consistency */}
+          <div className="hidden md:block md:border-r border-white/10"></div>
+
+          {/* VIEW WORK - Bottom Right (fourth column only) */}
+          <div className="p-8 md:p-12 flex flex-col justify-end items-end pb-16 md:pb-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
