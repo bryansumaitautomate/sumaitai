@@ -8,29 +8,29 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-background border-t border-white/10">
-      <div className="container-grid">
+    <footer className="bg-[#0a0a0a] border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
           {/* Brand */}
-          <div className="col-divider pr-8">
-            <p className="font-syne font-bold text-xl mb-2">
-              BRYAN<span className="text-primary">.</span>
+          <div className="border-r border-white/10 pr-8">
+            <p className="font-syne font-bold text-xl mb-2 text-white">
+              SUMAIT<span className="text-[#ef4444]">.AI</span>
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-white/30">
               Revenue Systems Builder
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="col-divider px-8">
+          <div className="border-r border-white/10 px-8">
             <div className="flex flex-wrap gap-6 text-sm">
-              <a href="#systems" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#systems" className="text-white/30 hover:text-white transition-colors">
                 Systems
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-white/30 hover:text-white transition-colors">
                 Process
               </a>
-              <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#contact" className="text-white/30 hover:text-[#ef4444] transition-colors">
                 Contact
               </a>
             </div>
@@ -42,7 +42,7 @@ const Footer = () => {
               <a
                 key={index}
                 href={link.href}
-                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:border-[#ef4444] hover:text-[#ef4444] transition-all duration-300"
                 aria-label={link.name}
               >
                 <Icon icon={link.icon} className="w-4 h-4" />
@@ -53,10 +53,10 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-white/10 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-mono text-xs text-muted-foreground">
+          <p className="font-mono text-xs text-white/30">
             © {new Date().getFullYear()} Bryan Sumait. All rights reserved.
           </p>
-          <p className="font-mono text-xs text-muted-foreground">
+          <p className="font-mono text-xs text-white/30">
             Built with precision.
           </p>
         </div>

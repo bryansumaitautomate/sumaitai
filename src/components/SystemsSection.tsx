@@ -10,29 +10,21 @@ interface SystemCardProps {
   reversed?: boolean;
 }
 
-const glassStyle = {
-  border: '1px solid transparent',
-  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.4), rgba(23, 23, 23, 0.4)), linear-gradient(135deg, rgba(239, 68, 68, 0.15), transparent)',
-  backgroundOrigin: 'border-box',
-  backgroundClip: 'padding-box, border-box',
-};
-
 const AbstractMockup = ({ icon }: { icon: string }) => {
   return (
     <div 
-      className="relative w-full max-w-md aspect-square bg-neutral-900/40 backdrop-blur-xl p-8"
-      style={glassStyle}
+      className="relative w-full max-w-md aspect-square bg-white/5 backdrop-blur-xl border border-white/10 p-8 hover:border-[#ef4444]/25 transition-colors"
     >
       {/* Header bar */}
       <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
-        <div className="w-3 h-3 rounded-full bg-[#EF4444]/30" />
+        <div className="w-3 h-3 rounded-full bg-[#ef4444]/35" />
         <div className="w-3 h-3 rounded-full bg-white/10" />
         <div className="w-3 h-3 rounded-full bg-white/10" />
       </div>
 
       {/* Main Icon */}
       <div className="flex items-center justify-center h-32">
-        <Icon icon={icon} className="w-20 h-20 text-[#EF4444]/50" />
+        <Icon icon={icon} className="w-20 h-20 text-[#ef4444]/50" />
       </div>
 
       {/* Abstract Lines */}
@@ -44,10 +36,9 @@ const AbstractMockup = ({ icon }: { icon: string }) => {
 
       {/* Floating Element */}
       <div 
-        className="absolute top-8 right-8 w-12 h-12 rounded-lg bg-neutral-900/40 backdrop-blur-xl flex items-center justify-center animate-float"
-        style={glassStyle}
+        className="absolute top-8 right-8 w-12 h-12 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center animate-float"
       >
-        <Icon icon="solar:bolt-linear" className="w-6 h-6 text-[#EF4444]" />
+        <Icon icon="solar:bolt-linear" className="w-6 h-6 text-[#ef4444]" />
       </div>
     </div>
   );
@@ -64,7 +55,7 @@ const SystemCard = ({
   const { ref, isVisible } = useScrollReveal(0.2);
 
   return (
-    <div className="bg-black py-20 md:py-32">
+    <div className="bg-[#0a0a0a] py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* 4-column grid with visible borders */}
         <div className="grid grid-cols-4 border-x border-white/10">
@@ -85,20 +76,20 @@ const SystemCard = ({
             <div
               className={`${reversed ? 'lg:order-2' : ''} flex flex-col justify-center`}
             >
-              <p className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-6">
+              <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-6">
                 {number} /// SYSTEM
               </p>
-              <h3 className="font-syne font-bold text-3xl md:text-4xl text-slate-50 mb-6">
+              <h3 className="font-syne font-bold text-3xl md:text-4xl text-white mb-6">
                 {title}
               </h3>
-              <p className="text-base md:text-lg text-neutral-300 mb-8">{description}</p>
+              <p className="text-base md:text-lg text-white/50 mb-8">{description}</p>
 
               <ul className="space-y-4">
                 {features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3 text-neutral-300">
+                  <li key={index} className="flex items-start gap-3 text-white/50">
                     <Icon
                       icon="solar:check-circle-bold"
-                      className="w-5 h-5 text-[#EF4444] flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 text-[#ef4444] flex-shrink-0 mt-0.5"
                     />
                     <span className="text-sm">{feature}</span>
                   </li>

@@ -11,7 +11,7 @@ const logos = [
 
 const LogoMarquee = () => {
   return (
-    <section className="relative bg-black border-y border-white/5 overflow-hidden py-6">
+    <section className="relative bg-[#0a0a0a] border-y border-white/10 overflow-hidden py-6">
       <div className="flex">
         <motion.div
           className="flex gap-16 items-center"
@@ -28,7 +28,7 @@ const LogoMarquee = () => {
               key={`${logo.name}-${index}`}
               className="flex items-center gap-3 px-8 group cursor-default"
             >
-              <span className="font-mono text-sm tracking-[0.2em] text-white/20 group-hover:text-white/60 transition-colors duration-300 whitespace-nowrap">
+              <span className="font-mono text-sm tracking-[0.2em] text-white/10 group-hover:text-white/50 transition-colors duration-300 whitespace-nowrap">
                 {logo.name}
               </span>
             </div>

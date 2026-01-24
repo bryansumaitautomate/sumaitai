@@ -13,7 +13,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="relative min-h-screen bg-black overflow-hidden">
+      <section className="relative min-h-screen bg-[#0a0a0a] overflow-hidden">
         {/* Spline 3D Robot - Interactive on desktop, disabled on mobile */}
         <div className="spline-container absolute top-0 left-0 w-full h-full z-[5] pointer-events-none md:pointer-events-auto">
           <iframe 
@@ -34,7 +34,7 @@ const HeroSection = () => {
         </div>
 
         {/* Bottom gradient for legibility */}
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-[10] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent z-[10] pointer-events-none" />
 
         {/* 4-Column Grid Structure - z-[1], pointer-events-none to allow mouse through to Spline */}
         <div className="absolute inset-0 z-[1] grid grid-cols-4 pointer-events-none">
@@ -47,7 +47,7 @@ const HeroSection = () => {
               {col < 3 && (
                 <div className="absolute top-0 right-0 w-px h-full overflow-hidden">
                   <motion.div
-                    className="w-full h-40 bg-gradient-to-b from-transparent via-[#EF4444] to-transparent"
+                    className="w-full h-40 bg-gradient-to-b from-transparent via-[#ef4444] to-transparent"
                     animate={{ y: ['-100%', '500%'] }}
                     transition={{
                       duration: 5,
@@ -69,18 +69,18 @@ const HeroSection = () => {
             {/* Logo - Top Left */}
             <div className="p-6 border-r border-white/10">
               <a href="#" className="font-syne font-bold text-lg tracking-tight text-white pointer-events-auto">
-                SUMAIT<span className="text-[#EF4444]">.AI</span>
+                SUMAIT<span className="text-[#ef4444]">.AI</span>
               </a>
             </div>
 
             {/* Status Badge - Centered */}
             <div className="col-span-2 p-6 border-r border-white/10 hidden md:flex items-center justify-center">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#EF4444] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#EF4444]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ef4444] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ef4444]"></span>
                 </span>
-                <span className="font-mono text-xs tracking-wider text-white/40">
+                <span className="font-mono text-xs tracking-wider text-white/50">
                   AVAILABLE FOR PROJECTS
                 </span>
               </div>
@@ -91,7 +91,7 @@ const HeroSection = () => {
               <a
                 href="#contact"
                 onClick={(e) => handleSmoothScroll(e, 'contact')}
-                className="font-mono text-xs tracking-[0.2em] text-white/60 hover:text-white transition-colors pointer-events-auto"
+                className="font-mono text-xs tracking-[0.2em] text-white/50 hover:text-[#ef4444] transition-colors pointer-events-auto"
               >
                 LET'S TALK →
               </a>
@@ -107,10 +107,10 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <p className="font-mono text-[10px] tracking-[0.3em] text-white/30 mb-4">
+                <p className="font-mono text-[10px] tracking-[0.3em] text-[#ef4444] mb-4">
                   01 /// REVENUE SYSTEMS
                 </p>
-                <p className="font-syne text-base text-white/60 leading-relaxed">
+                <p className="font-syne text-base text-white/50 leading-relaxed">
                   I build systems that capture leads, book calls, and close deals—while you sleep.
                 </p>
               </motion.div>
@@ -132,35 +132,37 @@ const HeroSection = () => {
                 <a
                   href="#systems"
                   onClick={(e) => handleSmoothScroll(e, 'systems')}
-                  className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 pointer-events-auto"
+                  className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 pointer-events-auto shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]"
                 >
                   {/* Spinning border effect */}
                   <span className="absolute inset-0 rounded-full">
-                    <span className="absolute inset-0 rounded-full border border-white/20"></span>
+                    <span className="absolute inset-0 rounded-full border border-white/10"></span>
                     <span 
                       className="absolute inset-[-2px] rounded-full animate-spin"
                       style={{
-                        background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #EF4444 360deg)',
+                        background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #ef4444 360deg)',
                         animationDuration: '3s',
                       }}
                     ></span>
-                    <span className="absolute inset-[1px] rounded-full bg-black"></span>
+                    <span className="absolute inset-[1px] rounded-full bg-[#0a0a0a]/80 backdrop-blur-md"></span>
                   </span>
                   <span className="relative z-10 flex items-center gap-3">
                     VIEW WORK
-                    <svg
-                      className="w-4 h-4 group-hover:translate-y-1 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                      />
-                    </svg>
+                    <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
+                      <svg
+                        className="w-3 h-3 group-hover:translate-y-0.5 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                        />
+                      </svg>
+                    </span>
                   </span>
                 </a>
               </motion.div>
