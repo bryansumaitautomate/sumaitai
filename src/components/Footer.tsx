@@ -30,7 +30,7 @@ const Footer = () => {
               <a href="#" className="text-white/30 hover:text-white transition-colors">
                 Process
               </a>
-              <a href="#contact" className="text-white/30 hover:text-[#ef4444] transition-colors">
+              <a href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-[#ef4444] transition-colors">
                 Contact
               </a>
             </div>

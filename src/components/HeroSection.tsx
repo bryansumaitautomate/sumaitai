@@ -90,8 +90,9 @@ const HeroSection = () => {
             {/* CTA - Top Right */}
             <div className="p-6 flex items-center justify-end col-span-3 md:col-span-1">
               <a
-                href="#contact"
-                onClick={(e) => handleSmoothScroll(e, 'contact')}
+                href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-mono text-xs tracking-[0.2em] text-white/50 hover:text-[#ef4444] transition-colors pointer-events-auto"
               >
                 LET'S TALK →
