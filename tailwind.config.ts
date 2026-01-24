@@ -116,6 +116,10 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        "shimmer-rotate": {
+          "0%": { transform: "translate(-50%, -50%) rotate(0deg)" },
+          "100%": { transform: "translate(-50%, -50%) rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -128,6 +132,7 @@ export default {
         "beam-drop": "beam-drop 5s linear infinite",
         "border-spin": "border-spin 3s linear infinite",
         marquee: "marquee 20s linear infinite",
+        "shimmer-rotate": "shimmer-rotate 8s linear infinite",
       },
     },
   },

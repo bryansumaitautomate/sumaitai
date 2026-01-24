@@ -12,33 +12,40 @@ interface SystemCardProps {
 
 const AbstractMockup = ({ icon }: { icon: string }) => {
   return (
-    <div 
-      className="relative w-full max-w-md aspect-square bg-white/5 backdrop-blur-xl border border-white/10 p-8 hover:border-[#ef4444]/25 transition-colors"
-    >
-      {/* Header bar */}
-      <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
-        <div className="w-3 h-3 rounded-full bg-[#ef4444]/35" />
-        <div className="w-3 h-3 rounded-full bg-white/10" />
-        <div className="w-3 h-3 rounded-full bg-white/10" />
+    <div className="group/shimmer relative rounded-2xl overflow-hidden cursor-pointer">
+      {/* Shimmer border container */}
+      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+        <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover/shimmer:border-transparent transition-colors duration-300" />
+        <div className="absolute left-1/2 top-1/2 h-40 w-[200%] -translate-x-1/2 -translate-y-1/2 bg-[linear-gradient(90deg,transparent_0%,#ef4444_40%,#ef4444_60%,transparent_100%)] opacity-0 group-hover/shimmer:opacity-25 group-hover/shimmer:animate-shimmer-rotate transition-opacity duration-500" />
+        <div className="absolute inset-[1px] rounded-2xl bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.02)_100%)] opacity-0 group-hover/shimmer:opacity-100 transition-opacity duration-300" />
       </div>
+      
+      <div className="relative w-full max-w-md aspect-square bg-[#0a0a0a] p-8 rounded-2xl transition-all duration-300 group-hover/shimmer:bg-white/[0.04] group-hover/shimmer:shadow-[0px_-16px_24px_0px_rgba(239,68,68,0.15)_inset]">
+        {/* Header bar */}
+        <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
+          <div className="w-3 h-3 rounded-full bg-[#ef4444]/35" />
+          <div className="w-3 h-3 rounded-full bg-white/10" />
+          <div className="w-3 h-3 rounded-full bg-white/10" />
+        </div>
 
-      {/* Main Icon */}
-      <div className="flex items-center justify-center h-32">
-        <Icon icon={icon} className="w-20 h-20 text-[#ef4444]/50" />
-      </div>
+        {/* Main Icon */}
+        <div className="flex items-center justify-center h-32">
+          <Icon icon={icon} className="w-20 h-20 text-[#ef4444]/50" />
+        </div>
 
-      {/* Abstract Lines */}
-      <div className="space-y-3 mt-6">
-        <div className="h-2 bg-white/10 rounded w-3/4" />
-        <div className="h-2 bg-white/10 rounded w-1/2" />
-        <div className="h-2 bg-white/10 rounded w-2/3" />
-      </div>
+        {/* Abstract Lines */}
+        <div className="space-y-3 mt-6">
+          <div className="h-2 bg-white/10 rounded w-3/4" />
+          <div className="h-2 bg-white/10 rounded w-1/2" />
+          <div className="h-2 bg-white/10 rounded w-2/3" />
+        </div>
 
-      {/* Floating Element */}
-      <div 
-        className="absolute top-8 right-8 w-12 h-12 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center animate-float"
-      >
-        <Icon icon="solar:bolt-linear" className="w-6 h-6 text-[#ef4444]" />
+        {/* Floating Element */}
+        <div 
+          className="absolute top-8 right-8 w-12 h-12 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center animate-float"
+        >
+          <Icon icon="solar:bolt-linear" className="w-6 h-6 text-[#ef4444]" />
+        </div>
       </div>
     </div>
   );
