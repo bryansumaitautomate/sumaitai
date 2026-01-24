@@ -16,7 +16,7 @@ const HeroSection = () => {
       <section className="relative min-h-screen bg-black overflow-hidden">
         {/* Background Watermark - z-0, behind everything */}
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none">
-          <span className="font-syne font-bold text-[18vw] text-white opacity-[0.03] whitespace-nowrap">
+          <span className="font-syne font-bold text-[10vw] text-white opacity-[0.03] whitespace-nowrap">
             SUMAIT AI
           </span>
         </div>
@@ -92,10 +92,10 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <p className="font-mono text-[10px] tracking-[0.3em] text-[#EF4444] mb-4">
+                <p className="font-mono text-[10px] tracking-[0.3em] text-white/30 mb-4">
                   01 /// REVENUE SYSTEMS
                 </p>
-                <p className="font-syne text-lg text-white/80 leading-relaxed">
+                <p className="font-syne text-base text-white/60 leading-relaxed">
                   I build systems that capture leads, book calls, and close deals—while you sleep.
                 </p>
               </motion.div>
