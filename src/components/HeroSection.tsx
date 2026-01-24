@@ -14,12 +14,27 @@ const HeroSection = () => {
   return (
     <>
       <section className="relative min-h-screen bg-black overflow-hidden">
-        {/* Background Watermark - z-0, behind everything */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none">
-          <span className="font-syne font-bold text-[10vw] text-white opacity-[0.03] whitespace-nowrap">
+        {/* Spline 3D Robot - Behind everything */}
+        <div className="spline-container absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+          <iframe 
+            src="https://my.spline.design/nexbotrobotcharacterconcept-kLwr8f6hgKgaa5gmU6oB00Si" 
+            frameBorder="0" 
+            width="100%" 
+            height="100%" 
+            id="aura-spline"
+            title="3D Robot"
+          />
+        </div>
+
+        {/* Background Watermark - z-0, subtle label at bottom */}
+        <div className="absolute bottom-8 left-0 right-0 z-0 flex justify-center pointer-events-none select-none">
+          <span className="font-syne font-bold text-[5vw] text-white opacity-[0.03] whitespace-nowrap">
             SUMAIT AI
           </span>
         </div>
+
+        {/* Bottom gradient for legibility */}
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-[2] pointer-events-none" />
 
         {/* 4-Column Grid Structure - z-[1] */}
         <div className="absolute inset-0 z-[1] grid grid-cols-4">
