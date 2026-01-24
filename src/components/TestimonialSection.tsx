@@ -1,6 +1,18 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Icon } from '@iconify/react';
 
+// Logo imports
+import whiterabbitdataLogo from '@/assets/logos/whiterabbitdata.png';
+import tembusulawLogo from '@/assets/logos/tembusulaw.png';
+import legacyleadprosLogo from '@/assets/logos/legactleadpros.png';
+import superssizemediaLogo from '@/assets/logos/supersizemedia.png';
+import gratefulgesturesLogo from '@/assets/logos/gratefulgestures.png';
+import evolvesmarterLogo from '@/assets/logos/evolvesmarter.png';
+import biznomadLogo from '@/assets/logos/biznomad.png';
+import bighammerLogo from '@/assets/logos/bighammerwines.png';
+import sadmarketingLogo from '@/assets/logos/sadmarketing.png';
+import adclientsLogo from '@/assets/logos/adclients.png';
+
 interface Testimonial {
   id: number;
   quote: string;
@@ -9,35 +21,109 @@ interface Testimonial {
   company: string;
   metric: string;
   metricLabel: string;
+  logo: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "Bryan's Revenue Systems transformed our entire sales pipeline. We went from chaos to a predictable, scalable machine that runs itself.",
-    author: "Marcus Chen",
-    role: "CEO",
-    company: "TechFlow Industries",
-    metric: "312%",
-    metricLabel: "Revenue Growth"
+    quote: "Integrating Bryan's automation logic with our data workflows was seamless. He helped us turn raw information into actionable leads with zero manual effort.",
+    author: "White Rabbit Data",
+    role: "Founder/CEO",
+    company: "White Rabbit Data",
+    metric: "100%",
+    metricLabel: "Automation",
+    logo: whiterabbitdataLogo
   },
   {
     id: 2,
-    quote: "The automation architecture he built saved us 40+ hours per week. Our team now focuses on strategy instead of repetitive tasks.",
-    author: "Sarah Mitchell",
-    role: "COO",
-    company: "Velocity Partners",
-    metric: "40hrs",
-    metricLabel: "Saved Weekly"
+    quote: "The precision in the lead capture architecture Bryan built is impressive. For a legal practice, response time and reliability are everything, and he delivered both.",
+    author: "Tembusu Law",
+    role: "Founder/CEO",
+    company: "Tembusu Law",
+    metric: "24/7",
+    metricLabel: "Response Time",
+    logo: tembusulawLogo
   },
   {
     id: 3,
-    quote: "Working with Bryan felt like gaining a technical co-founder. His Revenue Systems approach is methodical, precise, and brutally effective.",
-    author: "David Park",
-    role: "Founder",
-    company: "ScaleUp Ventures",
+    quote: "As lead generation experts, we have high standards. The Call Magik system is one of the most effective tools we've seen for instant speed-to-lead conversion.",
+    author: "Legacy Lead Pros",
+    role: "Founder/CEO",
+    company: "Legacy Lead Pros",
     metric: "5x",
-    metricLabel: "Pipeline Value"
+    metricLabel: "Conversion Rate",
+    logo: legacyleadprosLogo
+  },
+  {
+    id: 4,
+    quote: "Bryan's AI automation allowed us to scale our content distribution without ballooning our overhead. A must-have for any modern media agency.",
+    author: "Supersize Media",
+    role: "Founder/CEO",
+    company: "Supersize Media",
+    metric: "60%",
+    metricLabel: "Overhead Reduced",
+    logo: superssizemediaLogo
+  },
+  {
+    id: 5,
+    quote: "The automated follow-up system feels surprisingly personal and thoughtful. It has helped us maintain a high-touch feel while growing our customer base.",
+    author: "Grateful Gestures",
+    role: "Founder/CEO",
+    company: "Grateful Gestures",
+    metric: "98%",
+    metricLabel: "Retention Rate",
+    logo: gratefulgesturesLogo
+  },
+  {
+    id: 6,
+    quote: "Bryan truly lives up to our brand name. His automation solutions helped our operations evolve by removing bottlenecks we didn't even know we had.",
+    author: "Evolve Smarter",
+    role: "Founder/CEO",
+    company: "Evolve Smarter",
+    metric: "40hrs",
+    metricLabel: "Saved Weekly",
+    logo: evolvesmarterLogo
+  },
+  {
+    id: 7,
+    quote: "Finally, an AI service that understands the Small Business Hero. Practical, easy to use, and focused entirely on the bottom line.",
+    author: "Biznomad",
+    role: "Founder/CEO",
+    company: "Biznomad",
+    metric: "10x",
+    metricLabel: "ROI",
+    logo: biznomadLogo
+  },
+  {
+    id: 8,
+    quote: "We needed a robust system to handle high-volume inquiries during peak seasons. Bryan's custom CRM logic ensured no customer was ever left waiting.",
+    author: "Big Hammer Wines",
+    role: "Founder/CEO",
+    company: "Big Hammer Wines",
+    metric: "0",
+    metricLabel: "Customers Waiting",
+    logo: bighammerLogo
+  },
+  {
+    id: 9,
+    quote: "The synergy between our ad campaigns and Bryan's automated pipeline is flawless. We are seeing much higher conversion rates on our existing traffic.",
+    author: "Complete Marketing",
+    role: "Founder/CEO",
+    company: "Complete Marketing",
+    metric: "3x",
+    metricLabel: "Conversion Rate",
+    logo: sadmarketingLogo
+  },
+  {
+    id: 10,
+    quote: "Bryan's technical expertise in connecting lead sources to automated booking systems has fundamentally improved the ROI we deliver to our clients.",
+    author: "AdClients.com",
+    role: "Founder/CEO",
+    company: "AdClients.com",
+    metric: "200%",
+    metricLabel: "ROI Improvement",
+    logo: adclientsLogo
   }
 ];
 
@@ -127,6 +213,15 @@ const TestimonialSection = () => {
             <div 
               className={`relative transition-all duration-500 ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
             >
+              {/* Logo Watermark */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                <img 
+                  src={current.logo}
+                  alt=""
+                  className="w-full max-w-[300px] md:max-w-[400px] opacity-[0.07] grayscale"
+                />
+              </div>
+
               {/* Large Quote Mark */}
               <div className="absolute -top-4 -left-2 pointer-events-none select-none">
                 <span className="font-syne text-[120px] md:text-[180px] text-[#ef4444]/15 leading-none">
