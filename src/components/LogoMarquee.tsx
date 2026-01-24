@@ -1,12 +1,22 @@
 import { motion } from 'framer-motion';
 
+// Import client logos
+import propertybots from '@/assets/logos/propertybots.png';
+import drleadflow from '@/assets/logos/drleadflow.png';
+import neovate from '@/assets/logos/neovate.png';
+import drblade from '@/assets/logos/drblade.png';
+import holisticvitalis from '@/assets/logos/holisticvitalis.png';
+import evalics from '@/assets/logos/evalics.png';
+import madeea from '@/assets/logos/madeea.png';
+
 const logos = [
-  { name: 'N8N', icon: 'n8n' },
-  { name: 'CLAUDE', icon: 'claude' },
-  { name: 'LOVABLE', icon: 'lovable' },
-  { name: 'MAKE', icon: 'make' },
-  { name: 'ANTIGRAVITY', icon: 'antigravity' },
-  { name: 'GHL', icon: 'ghl' },
+  { name: 'PropertyBots.AI', src: propertybots },
+  { name: 'Dr. Lead Flow', src: drleadflow },
+  { name: 'Neovate', src: neovate },
+  { name: 'Dr. Blade', src: drblade },
+  { name: 'Holistic Vitalis', src: holisticvitalis },
+  { name: 'Evalics', src: evalics },
+  { name: 'MADEEA', src: madeea },
 ];
 
 const LogoMarquee = () => {
@@ -17,7 +27,7 @@ const LogoMarquee = () => {
           className="flex gap-16 items-center"
           animate={{ x: ['0%', '-50%'] }}
           transition={{
-            duration: 20,
+            duration: 25,
             repeat: Infinity,
             ease: 'linear',
           }}
@@ -26,11 +36,13 @@ const LogoMarquee = () => {
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={`${logo.name}-${index}`}
-              className="flex items-center gap-3 px-8 group cursor-default"
+              className="flex items-center justify-center px-8 group cursor-default"
             >
-              <span className="font-mono text-sm tracking-[0.2em] text-white/10 group-hover:text-white/50 transition-colors duration-300 whitespace-nowrap">
-                {logo.name}
-              </span>
+              <img 
+                src={logo.src} 
+                alt={logo.name}
+                className="h-10 w-auto object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              />
             </div>
           ))}
         </motion.div>
