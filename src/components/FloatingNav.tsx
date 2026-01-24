@@ -1,87 +1,131 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from '@iconify/react';
+
 const FloatingNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navLinks = [{
-    label: 'Systems',
-    href: '#systems'
-  }, {
-    label: 'Experience',
-    href: '#experience'
-  }, {
-    label: 'Process',
-    href: '#process'
-  }, {
-    label: 'Contact',
-    href: '#contact'
-  }];
-  return <motion.nav initial={{
-    y: -100
-  }} animate={{
-    y: 0
-  }} transition={{
-    duration: 0.6,
-    ease: [0.4, 0, 0.2, 1]
-  }} className="fixed top-0 left-0 right-0 z-50 p-6">
-      <div className="max-w-4xl mx-auto rounded-full py-3 px-6 flex items-center justify-between" style={{
-      background: `linear-gradient(180deg, rgba(10,10,10,0.55), rgba(10,10,10,0.35)) padding-box, linear-gradient(120deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08)) border-box`,
-      border: '1px solid transparent',
-      backdropFilter: 'blur(16px) saturate(120%)',
-      WebkitBackdropFilter: 'blur(16px) saturate(120%)',
-      boxShadow: '0 10px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04)'
-    }}>
-        {/* Logo */}
-        
 
-        {/* Center Links - Desktop */}
-        <div className="hidden md:flex items-center gap-1">
-          {navLinks.map(link => <a key={link.label} href={link.href} className="text-sm text-white/60 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full transition-colors text-right">
+  const navLinks = [
+    { label: 'Systems', href: '#systems' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Process', href: '#process' },
+  ];
+
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+      className="fixed top-0 left-0 right-0 z-50 p-6"
+    >
+      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
+        {/* Logo - Outside pill on left */}
+        <a href="#" className="font-syne font-bold text-lg tracking-tight text-white/90 shrink-0">
+          SUMAIT<span className="text-[#ef4444]">.AI</span>
+        </a>
+
+        {/* Center Pill - Nav Links */}
+        <div
+          className="hidden md:flex items-center gap-1 rounded-full py-3 px-6"
+          style={{
+            background: `linear-gradient(180deg, rgba(10,10,10,0.55), rgba(10,10,10,0.35)) padding-box, linear-gradient(120deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08)) border-box`,
+            border: '1px solid transparent',
+            backdropFilter: 'blur(16px) saturate(120%)',
+            WebkitBackdropFilter: 'blur(16px) saturate(120%)',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04)',
+          }}
+        >
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-sm text-white/60 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full transition-colors"
+            >
               {link.label}
-            </a>)}
+            </a>
+          ))}
         </div>
 
         {/* Right Side */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 shrink-0">
           {/* Mobile Menu Button */}
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="inline-flex md:hidden items-center justify-center w-10 h-10 rounded-full text-white/60 hover:text-white hover:bg-white/5 transition-colors" aria-label="Toggle menu">
-            <Icon icon={mobileMenuOpen ? 'solar:close-circle-linear' : 'solar:hamburger-menu-linear'} className="w-5 h-5" />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="inline-flex md:hidden items-center justify-center w-10 h-10 rounded-full text-white/60 hover:text-white hover:bg-white/5 transition-colors"
+            aria-label="Toggle menu"
+          >
+            <Icon
+              icon={mobileMenuOpen ? 'solar:close-circle-linear' : 'solar:hamburger-menu-linear'}
+              className="w-5 h-5"
+            />
           </button>
 
-          {/* CTA Button - Desktop */}
-          
+          {/* CTA Button - Shimmer style */}
+          <a
+            href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex group relative items-center gap-2 font-mono text-xs tracking-[0.15em] text-white px-6 py-3 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]"
+          >
+            {/* Spinning border effect */}
+            <span className="absolute inset-0 rounded-full">
+              <span className="absolute inset-0 rounded-full border border-white/10"></span>
+              <span
+                className="absolute inset-[-2px] rounded-full animate-spin"
+                style={{
+                  background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #ef4444 360deg)',
+                  animationDuration: '3s',
+                }}
+              ></span>
+              <span className="absolute inset-[1px] rounded-full bg-[#0a0a0a]/80 backdrop-blur-md"></span>
+            </span>
+            <span className="relative z-10">LET'S TALK →</span>
+          </a>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {mobileMenuOpen && <motion.div initial={{
-        opacity: 0,
-        y: -10
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} exit={{
-        opacity: 0,
-        y: -10
-      }} transition={{
-        duration: 0.2
-      }} className="md:hidden mt-2 max-w-4xl mx-auto rounded-2xl p-4" style={{
-        background: `linear-gradient(180deg, rgba(10,10,10,0.9), rgba(10,10,10,0.85)) padding-box, linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05)) border-box`,
-        border: '1px solid transparent',
-        backdropFilter: 'blur(16px) saturate(120%)',
-        WebkitBackdropFilter: 'blur(16px) saturate(120%)'
-      }}>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden mt-2 max-w-6xl mx-auto rounded-2xl p-4"
+            style={{
+              background: `linear-gradient(180deg, rgba(10,10,10,0.9), rgba(10,10,10,0.85)) padding-box, linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05)) border-box`,
+              border: '1px solid transparent',
+              backdropFilter: 'blur(16px) saturate(120%)',
+              WebkitBackdropFilter: 'blur(16px) saturate(120%)',
+            }}
+          >
             <div className="flex flex-col gap-1">
-              {navLinks.map(link => <a key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)} className="text-sm text-white/60 hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-colors">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm text-white/60 hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-colors"
+                >
                   {link.label}
-                </a>)}
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="mt-2 bg-[#ef4444] text-white px-5 py-3 rounded-lg hover:bg-[#ef4444]/90 transition-colors text-sm font-medium text-center">
-                Let's Talk →
+                </a>
+              ))}
+              <a
+                href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-2 bg-[#ef4444] text-white px-5 py-3 rounded-lg hover:bg-[#ef4444]/90 transition-colors text-sm font-medium text-center"
+              >
+                LET'S TALK →
               </a>
             </div>
-          </motion.div>}
+          </motion.div>
+        )}
       </AnimatePresence>
-    </motion.nav>;
+    </motion.nav>
+  );
 };
+
 export default FloatingNav;
