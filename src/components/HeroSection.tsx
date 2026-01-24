@@ -26,9 +26,9 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* Background Watermark - z-0, subtle label at bottom */}
-        <div className="absolute bottom-8 left-0 right-0 z-0 flex justify-center pointer-events-none select-none">
-          <span className="font-syne font-bold text-[5vw] text-white opacity-[0.03] whitespace-nowrap">
+        {/* Background Watermark - Centered, behind grid and Spline */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] pointer-events-none select-none px-8">
+          <span className="font-syne font-bold text-[12vw] text-white opacity-[0.04] whitespace-nowrap">
             SUMAIT AI
           </span>
         </div>
