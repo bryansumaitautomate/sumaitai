@@ -213,15 +213,6 @@ const TestimonialSection = () => {
             <div 
               className={`relative transition-all duration-500 ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
             >
-              {/* Logo Watermark */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-                <img 
-                  src={current.logo}
-                  alt=""
-                  className="w-full max-w-[300px] md:max-w-[400px] opacity-[0.07] grayscale"
-                />
-              </div>
-
               {/* Large Quote Mark */}
               <div className="absolute -top-4 -left-2 pointer-events-none select-none">
                 <span className="font-syne text-[120px] md:text-[180px] text-[#ef4444]/15 leading-none">
@@ -236,13 +227,23 @@ const TestimonialSection = () => {
 
                 {/* Author Info & Metric */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pt-8 border-t border-white/10">
-                  <div>
-                    <p className="font-syne font-bold text-white text-lg">
-                      {current.author}
-                    </p>
-                    <p className="font-inter text-white/30 text-sm">
-                      {current.role}, {current.company}
-                    </p>
+                  <div className="flex items-center gap-4">
+                    {/* Logo Watermark - next to author */}
+                    <div className="w-12 h-12 flex-shrink-0 rounded-lg bg-white/5 p-2 flex items-center justify-center">
+                      <img 
+                        src={current.logo}
+                        alt={`${current.company} logo`}
+                        className="w-full h-full object-contain opacity-70 grayscale"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-syne font-bold text-white text-lg">
+                        {current.author}
+                      </p>
+                      <p className="font-inter text-white/30 text-sm">
+                        {current.role}, {current.company}
+                      </p>
+                    </div>
                   </div>
 
                   {/* Metric Highlight */}
