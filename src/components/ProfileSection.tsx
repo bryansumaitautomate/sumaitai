@@ -167,13 +167,6 @@ const ProfileSection = () => {
                       </div>
                       <h4 className="text-lg font-syne font-semibold tracking-tight text-white group-hover:text-[#ef4444] transition-colors">{item.title}</h4>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Icon 
-                        icon="solar:alt-arrow-right-linear" 
-                        width={20} 
-                        className="text-white/30 group-hover:text-[#ef4444] group-hover:translate-x-2 transition-all" 
-                      />
-                    </div>
                   </div>
                   <p className="text-white/50 text-sm leading-relaxed pl-0 lg:pl-32">{item.description}</p>
                 </div>
