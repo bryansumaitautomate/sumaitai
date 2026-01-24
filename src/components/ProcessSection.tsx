@@ -59,26 +59,33 @@ const ProcessSection = () => {
           {phases.map((phase, index) => (
             <div
               key={index}
-              className={`group p-8 border-b border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:bg-[#ef4444]/8 ${
-                index < 3 ? 'lg:border-r' : ''
+              className={`group/shimmer relative overflow-hidden transition-all duration-300 ${
+                index < 3 ? 'lg:border-r border-white/10' : ''
               } ${index < 2 ? 'md:border-r' : ''}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {/* Phase Label */}
-              <p className="font-mono text-xs text-[#ef4444] mb-6">{phase.phase}</p>
-
-              {/* Icon */}
-              <div 
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-white/5 backdrop-blur-xl border border-white/10 group-hover:border-[#ef4444]/25 transition-colors"
-              >
-                <Icon icon={phase.icon} className="w-6 h-6 text-[#ef4444]" />
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute left-1/2 top-1/2 h-40 w-[200%] -translate-x-1/2 -translate-y-1/2 bg-[linear-gradient(90deg,transparent_0%,#ef4444_40%,#ef4444_60%,transparent_100%)] opacity-0 group-hover/shimmer:opacity-20 group-hover/shimmer:animate-shimmer-rotate transition-opacity duration-500" />
               </div>
+              
+              <div className="relative p-8 border-b border-white/10 bg-[#0a0a0a] transition-all duration-300 group-hover/shimmer:bg-white/[0.04] group-hover/shimmer:shadow-[0px_-16px_24px_0px_rgba(239,68,68,0.1)_inset]">
+                {/* Phase Label */}
+                <p className="font-mono text-xs text-[#ef4444] mb-6">{phase.phase}</p>
 
-              {/* Content */}
-              <h3 className="font-syne font-semibold text-xl text-white mb-3">
-                {phase.title}
-              </h3>
-              <p className="text-sm text-white/50 leading-relaxed">{phase.description}</p>
+                {/* Icon */}
+                <div 
+                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-white/5 backdrop-blur-xl border border-white/10 group-hover/shimmer:border-[#ef4444]/25 transition-colors"
+                >
+                  <Icon icon={phase.icon} className="w-6 h-6 text-[#ef4444]" />
+                </div>
+
+                {/* Content */}
+                <h3 className="font-syne font-semibold text-xl text-white mb-3">
+                  {phase.title}
+                </h3>
+                <p className="text-sm text-white/50 leading-relaxed">{phase.description}</p>
+              </div>
             </div>
           ))}
         </div>

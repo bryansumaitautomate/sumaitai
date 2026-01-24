@@ -8,6 +8,34 @@ interface CaseStudy {
   description: string;
 }
 
+const ShimmerCard = ({ children, delay }: { children: React.ReactNode; delay: number }) => (
+  <div
+    className="group/shimmer relative rounded-2xl overflow-hidden cursor-pointer"
+    style={{ transitionDelay: `${delay}ms` }}
+  >
+    {/* Shimmer border container */}
+    <div className="absolute inset-0 rounded-2xl overflow-hidden">
+      {/* Static border */}
+      <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover/shimmer:border-transparent transition-colors duration-300" />
+      
+      {/* Rotating shimmer beam - only visible on hover */}
+      <div 
+        className="absolute left-1/2 top-1/2 h-40 w-[200%] -translate-x-1/2 -translate-y-1/2 bg-[linear-gradient(90deg,transparent_0%,#ef4444_40%,#ef4444_60%,transparent_100%)] opacity-0 group-hover/shimmer:opacity-25 group-hover/shimmer:animate-shimmer-rotate transition-opacity duration-500"
+      />
+      
+      {/* Border gradient overlay */}
+      <div 
+        className="absolute inset-[1px] rounded-2xl bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.02)_100%)] opacity-0 group-hover/shimmer:opacity-100 transition-opacity duration-300"
+      />
+    </div>
+    
+    {/* Card content */}
+    <div className="relative rounded-2xl bg-[#0a0a0a] p-8 transition-all duration-300 group-hover/shimmer:bg-white/[0.04] group-hover/shimmer:shadow-[0px_-16px_24px_0px_rgba(239,68,68,0.15)_inset]">
+      {children}
+    </div>
+  </div>
+);
+
 const CaseStudiesSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
 
@@ -63,13 +91,7 @@ const CaseStudiesSection = () => {
           }`}
         >
           {caseStudies.map((study, index) => (
-            <div
-              key={index}
-              className="group p-8 bg-white/5 backdrop-blur-xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-[#ef4444]/25"
-              style={{
-                transitionDelay: `${index * 100}ms`,
-              }}
-            >
+            <ShimmerCard key={index} delay={index * 100}>
               {/* Category */}
               <p className="font-mono text-xs text-white/30 mb-6">{study.category}</p>
 
@@ -88,7 +110,7 @@ const CaseStudiesSection = () => {
               <p className="text-sm text-white/50 leading-relaxed">
                 {study.description}
               </p>
-            </div>
+            </ShimmerCard>
           ))}
         </div>
       </div>
