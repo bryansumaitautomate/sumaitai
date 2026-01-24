@@ -12,6 +12,16 @@ const FloatingNav = () => {
     { label: 'Contact', href: '#contact' },
   ];
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -59,6 +69,7 @@ const FloatingNav = () => {
               <a
                 key={link.label}
                 href={link.href}
+                onClick={(e) => handleSmoothScroll(e, link.href)}
                 className="text-sm text-white/60 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full transition-colors"
               >
                 {link.label}
@@ -111,7 +122,7 @@ const FloatingNav = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
                   className="text-sm text-white/60 hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-colors"
                 >
                   {link.label}
