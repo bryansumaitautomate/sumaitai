@@ -12,16 +12,16 @@ const TechStackSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
 
   const tools = [
-    { name: 'Make', icon: 'simple-icons:integromat' },
-    { name: 'Zapier', icon: 'simple-icons:zapier' },
-    { name: 'HubSpot', icon: 'simple-icons:hubspot' },
-    { name: 'Salesforce', icon: 'simple-icons:salesforce' },
-    { name: 'Stripe', icon: 'simple-icons:stripe' },
-    { name: 'Calendly', icon: 'simple-icons:calendly' },
-    { name: 'Notion', icon: 'simple-icons:notion' },
-    { name: 'Slack', icon: 'simple-icons:slack' },
-    { name: 'Airtable', icon: 'simple-icons:airtable' },
-    { name: 'Typeform', icon: 'simple-icons:typeform' },
+    { name: 'n8n', icon: 'simple-icons:n8n', color: '#EA4B71' },
+    { name: 'Make', icon: 'simple-icons:make', color: '#6d30ca' },
+    { name: 'Claude', icon: 'simple-icons:anthropic', color: undefined },
+    { name: 'OpenAI', icon: 'simple-icons:openai', color: undefined },
+    { name: 'GoHighLevel', icon: 'solar:server-square-bold', color: undefined },
+    { name: 'Claude Code', icon: 'solar:code-circle-bold', color: undefined },
+    { name: 'Lovable.dev', icon: 'solar:programming-bold', color: undefined },
+    { name: 'Aura.build', icon: 'solar:layers-minimalistic-bold', color: undefined },
+    { name: 'Premiere Pro', icon: 'simple-icons:adobepremierepro', color: '#9999FF' },
+    { name: 'CapCut', icon: 'solar:videocamera-record-bold', color: undefined },
   ];
 
   return (
@@ -37,8 +37,7 @@ const TechStackSection = () => {
               Best-in-class stack
             </h2>
             <p className="text-base md:text-lg text-neutral-300 max-w-2xl mx-auto">
-              I work with the tools you already use—or help you choose the right ones. No
-              vendor lock-in, just systems that work.
+              I stay current through paid communities and courses—not outdated YouTube tutorials.
             </p>
           </div>
         </div>
@@ -62,7 +61,14 @@ const TechStackSection = () => {
               >
                 <Icon
                   icon={tool.icon}
-                  className="w-8 h-8 text-neutral-400 grayscale group-hover:grayscale-0 group-hover:text-[#EF4444] transition-all duration-300"
+                  className="w-8 h-8 text-neutral-400 grayscale group-hover:grayscale-0 transition-all duration-300"
+                  style={{ color: undefined }}
+                  onMouseEnter={(e: React.MouseEvent<SVGSVGElement>) => {
+                    (e.currentTarget as SVGSVGElement).style.color = tool.color || '#EF4444';
+                  }}
+                  onMouseLeave={(e: React.MouseEvent<SVGSVGElement>) => {
+                    (e.currentTarget as SVGSVGElement).style.color = '';
+                  }}
                 />
               </div>
               <span className="font-mono text-xs text-neutral-400 group-hover:text-slate-50 transition-colors">
