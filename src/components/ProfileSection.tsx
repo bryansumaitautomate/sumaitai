@@ -14,7 +14,7 @@ const ProfileSection = () => {
     },
     {
       year: '2022',
-      title: 'Sales Automation',
+      title: 'AD Clients',
       description: 'Designed GoHighLevel pipelines and auto-follow-up sequences that reduce response time from hours to minutes.',
       icon: 'solar:server-square-linear',
     },
