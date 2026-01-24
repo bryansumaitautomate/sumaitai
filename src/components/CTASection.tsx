@@ -86,25 +86,34 @@ const CTASection = () => {
             </a>
           </div>
 
-          {/* Stats Row with Glass Effect */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+          {/* Stats Row with Gradient Cards */}
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div 
-              className="p-4 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 text-center hover:border-[#ef4444]/25 transition-colors"
+              className="group p-6 rounded-2xl border border-white/10 backdrop-blur-sm text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+              style={{
+                background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+              }}
             >
               <p className="font-syne font-bold text-2xl text-[#ef4444]">30 min</p>
-              <p className="text-xs text-white/30">Discovery Call</p>
+              <p className="text-xs text-white/50">Discovery Call</p>
             </div>
             <div 
-              className="p-4 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 text-center hover:border-[#ef4444]/25 transition-colors"
+              className="group p-6 rounded-2xl border border-white/10 backdrop-blur-sm text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+              style={{
+                background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+              }}
             >
               <p className="font-syne font-bold text-2xl text-[#ef4444]">Free</p>
-              <p className="text-xs text-white/30">System Audit</p>
+              <p className="text-xs text-white/50">System Audit</p>
             </div>
             <div 
-              className="p-4 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 text-center hover:border-[#ef4444]/25 transition-colors"
+              className="group p-6 rounded-2xl border border-white/10 backdrop-blur-sm text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+              style={{
+                background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+              }}
             >
               <p className="font-syne font-bold text-2xl text-[#ef4444]">4 weeks</p>
-              <p className="text-xs text-white/30">Avg. Delivery</p>
+              <p className="text-xs text-white/50">Avg. Delivery</p>
             </div>
           </div>
         </div>

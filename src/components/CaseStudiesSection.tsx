@@ -8,29 +8,15 @@ interface CaseStudy {
   description: string;
 }
 
-const ShimmerCard = ({ children, delay }: { children: React.ReactNode; delay: number }) => (
+const GradientCard = ({ children, delay }: { children: React.ReactNode; delay: number }) => (
   <div
-    className="group/shimmer relative rounded-2xl overflow-hidden cursor-pointer"
-    style={{ transitionDelay: `${delay}ms` }}
+    className="group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+    style={{ 
+      transitionDelay: `${delay}ms`,
+      background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+    }}
   >
-    {/* Shimmer border container */}
-    <div className="absolute inset-0 rounded-2xl overflow-hidden">
-      {/* Static border */}
-      <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover/shimmer:border-transparent transition-colors duration-300" />
-      
-      {/* Rotating shimmer beam - only visible on hover */}
-      <div 
-        className="absolute left-1/2 top-1/2 h-40 w-[200%] -translate-x-1/2 -translate-y-1/2 bg-[linear-gradient(90deg,transparent_0%,#ef4444_40%,#ef4444_60%,transparent_100%)] opacity-0 group-hover/shimmer:opacity-25 group-hover/shimmer:animate-shimmer-rotate transition-opacity duration-500"
-      />
-      
-      {/* Border gradient overlay */}
-      <div 
-        className="absolute inset-[1px] rounded-2xl bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.02)_100%)] opacity-0 group-hover/shimmer:opacity-100 transition-opacity duration-300"
-      />
-    </div>
-    
-    {/* Card content */}
-    <div className="relative rounded-2xl bg-[#0a0a0a] p-8 transition-all duration-300 group-hover/shimmer:bg-white/[0.04] group-hover/shimmer:shadow-[0px_-16px_24px_0px_rgba(239,68,68,0.15)_inset]">
+    <div className="relative p-8">
       {children}
     </div>
   </div>
@@ -91,7 +77,7 @@ const CaseStudiesSection = () => {
           }`}
         >
           {caseStudies.map((study, index) => (
-            <ShimmerCard key={index} delay={index * 100}>
+            <GradientCard key={index} delay={index * 100}>
               {/* Category */}
               <p className="font-mono text-xs text-white/30 mb-6">{study.category}</p>
 
@@ -104,13 +90,13 @@ const CaseStudiesSection = () => {
               </div>
 
               {/* Title & Description */}
-              <h3 className="font-syne font-semibold text-xl text-white mb-3">
+              <h3 className="font-syne font-semibold text-xl text-white mb-3 group-hover:text-[#ef4444] transition-colors">
                 {study.title}
               </h3>
-              <p className="text-sm text-white/50 leading-relaxed">
+              <p className="text-sm text-white/70 leading-relaxed">
                 {study.description}
               </p>
-            </ShimmerCard>
+            </GradientCard>
           ))}
         </div>
       </div>
