@@ -192,32 +192,6 @@ const TestimonialSection = () => {
               ))}
             </div>
 
-            {/* View All Button - Shimmer style */}
-            <div className="mt-12">
-              <a
-                href="#contact"
-                className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]"
-              >
-                {/* Spinning border effect */}
-                <span className="absolute inset-0 rounded-full">
-                  <span className="absolute inset-0 rounded-full border border-white/10"></span>
-                  <span 
-                    className="absolute inset-[-2px] rounded-full animate-spin"
-                    style={{
-                      background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #ef4444 360deg)',
-                      animationDuration: '3s',
-                    }}
-                  ></span>
-                  <span className="absolute inset-[1px] rounded-full bg-[#0a0a0a]/80 backdrop-blur-md"></span>
-                </span>
-                <span className="relative z-10 flex items-center gap-3">
-                  VIEW ALL REVIEWS
-                  <span className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center">
-                    <Icon icon="solar:arrow-right-linear" className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                  </span>
-                </span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
