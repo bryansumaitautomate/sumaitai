@@ -1,5 +1,7 @@
 import FloatingNav from '@/components/FloatingNav';
 import HeroSection from '@/components/HeroSection';
+import LogoMarquee from '@/components/LogoMarquee';
+import ServiceCards from '@/components/ServiceCards';
 import AboutSection from '@/components/AboutSection';
 import SystemsSection from '@/components/SystemsSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
@@ -14,6 +16,8 @@ const Index = () => {
     <div className="bg-background text-foreground">
       <FloatingNav />
       <HeroSection />
+      <LogoMarquee />
+      <ServiceCards />
       <AboutSection />
       <SystemsSection />
       <CaseStudiesSection />
