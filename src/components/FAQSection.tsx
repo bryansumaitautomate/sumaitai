@@ -41,15 +41,15 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="bg-white py-20 md:py-32">
+    <section className="bg-black py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 border-x border-neutral-200">
+        <div className="grid grid-cols-1 lg:grid-cols-4 border-x border-white/10">
           {/* Sidebar */}
-          <div className="lg:border-r border-neutral-200 p-8">
+          <div className="lg:border-r border-white/10 p-8">
             <p className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-4">
               09 /// FAQ
             </p>
-            <h2 className="font-syne font-bold text-xl md:text-2xl text-neutral-900">
+            <h2 className="font-syne font-bold text-xl md:text-2xl text-white">
               Common questions, straight answers.
             </h2>
           </div>
@@ -61,20 +61,23 @@ const FAQSection = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="divide-y divide-neutral-200">
+            <div className="divide-y divide-white/10">
               {faqs.map((faq, index) => (
-                <div key={index} className="py-6">
+                <div 
+                  key={index} 
+                  className="py-6"
+                >
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                     className="w-full flex items-center justify-between text-left group"
                   >
-                    <span className="font-syne font-semibold text-lg text-neutral-900 group-hover:text-[#EF4444] transition-colors pr-4">
+                    <span className="font-syne font-semibold text-lg text-white group-hover:text-[#EF4444] transition-colors pr-4">
                       {faq.question}
                     </span>
                     <Icon
                       icon={openIndex === index ? 'solar:minus-linear' : 'solar:add-linear'}
                       className={`w-5 h-5 flex-shrink-0 transition-colors ${
-                        openIndex === index ? 'text-[#EF4444]' : 'text-neutral-400'
+                        openIndex === index ? 'text-[#EF4444]' : 'text-[#EF4444]/60'
                       }`}
                     />
                   </button>
@@ -88,9 +91,19 @@ const FAQSection = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <p className="text-base text-neutral-600 leading-relaxed pt-4">
-                          {faq.answer}
-                        </p>
+                        <div 
+                          className="mt-4 p-4 rounded-lg bg-neutral-900/50 backdrop-blur-md"
+                          style={{
+                            border: '1px solid transparent',
+                            backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
+                            backgroundOrigin: 'border-box',
+                            backgroundClip: 'padding-box, border-box',
+                          }}
+                        >
+                          <p className="text-base text-white/60 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>

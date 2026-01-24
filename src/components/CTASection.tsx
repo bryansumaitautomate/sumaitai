@@ -46,18 +46,30 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            {/* Aura Button with Dark Glass Effect */}
             <a
               href="#"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-[#EF4444] text-white font-syne font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105"
-              style={{
-                boxShadow: '0 0 30px rgba(239, 68, 68, 0.4)',
-              }}
+              className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105"
             >
-              <span>BOOK A CALL</span>
-              <Icon
-                icon="solar:arrow-right-linear"
-                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-              />
+              {/* Spinning border effect */}
+              <span className="absolute inset-0 rounded-full">
+                <span className="absolute inset-0 rounded-full border border-white/20"></span>
+                <span 
+                  className="absolute inset-[-2px] rounded-full animate-spin"
+                  style={{
+                    background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #EF4444 360deg)',
+                    animationDuration: '3s',
+                  }}
+                ></span>
+                <span className="absolute inset-[1px] rounded-full bg-neutral-900"></span>
+              </span>
+              <span className="relative z-10 flex items-center gap-3">
+                BOOK A CALL
+                <Icon
+                  icon="solar:arrow-right-linear"
+                  className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                />
+              </span>
             </a>
 
             <span className="text-white/40 text-sm">or</span>
@@ -68,6 +80,46 @@ const CTASection = () => {
             >
               bryan@sumait.ai
             </a>
+          </div>
+
+          {/* Stats Row with Dark Glass */}
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+            <div 
+              className="p-4 rounded-lg bg-neutral-900/50 backdrop-blur-md text-center"
+              style={{
+                border: '1px solid transparent',
+                backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
+                backgroundOrigin: 'border-box',
+                backgroundClip: 'padding-box, border-box',
+              }}
+            >
+              <p className="font-syne font-bold text-2xl text-[#EF4444]">30 min</p>
+              <p className="text-xs text-white/50">Discovery Call</p>
+            </div>
+            <div 
+              className="p-4 rounded-lg bg-neutral-900/50 backdrop-blur-md text-center"
+              style={{
+                border: '1px solid transparent',
+                backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
+                backgroundOrigin: 'border-box',
+                backgroundClip: 'padding-box, border-box',
+              }}
+            >
+              <p className="font-syne font-bold text-2xl text-[#EF4444]">Free</p>
+              <p className="text-xs text-white/50">System Audit</p>
+            </div>
+            <div 
+              className="p-4 rounded-lg bg-neutral-900/50 backdrop-blur-md text-center"
+              style={{
+                border: '1px solid transparent',
+                backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
+                backgroundOrigin: 'border-box',
+                backgroundClip: 'padding-box, border-box',
+              }}
+            >
+              <p className="font-syne font-bold text-2xl text-[#EF4444]">4 weeks</p>
+              <p className="text-xs text-white/50">Avg. Delivery</p>
+            </div>
           </div>
         </div>
       </div>
