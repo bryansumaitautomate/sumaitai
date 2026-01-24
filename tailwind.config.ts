@@ -104,6 +104,18 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        "beam-drop": {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(500%)" },
+        },
+        "border-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -113,6 +125,9 @@ export default {
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         "beam-move": "beam-move 4s linear infinite",
         float: "float 3s ease-in-out infinite",
+        "beam-drop": "beam-drop 5s linear infinite",
+        "border-spin": "border-spin 3s linear infinite",
+        marquee: "marquee 20s linear infinite",
       },
     },
   },
