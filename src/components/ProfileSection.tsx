@@ -20,7 +20,7 @@ const ProfileSection = () => {
     },
     {
       year: '2023',
-      title: 'Content Engines',
+      title: 'Big Hammer Wines',
       description: 'Created video repurposing and high-retention editing systems that turn one piece of content into 10.',
       icon: 'solar:clapperboard-edit-linear',
     },
