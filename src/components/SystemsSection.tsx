@@ -7,22 +7,25 @@ interface SystemCardProps {
   description: string;
   features: string[];
   icon: string;
-  isLight?: boolean;
   reversed?: boolean;
 }
 
-const AbstractMockup = ({ icon, isLight }: { icon: string; isLight: boolean }) => {
-  const bgClass = isLight ? 'bg-neutral-100' : 'bg-white/5';
-  const borderClass = isLight ? 'border-neutral-200' : 'border-white/10';
-  const lineClass = isLight ? 'bg-neutral-200' : 'bg-white/10';
-
+const AbstractMockup = ({ icon }: { icon: string }) => {
   return (
-    <div className={`relative w-full max-w-md aspect-square ${bgClass} border ${borderClass} p-8`}>
+    <div 
+      className="relative w-full max-w-md aspect-square bg-neutral-900/50 backdrop-blur-md p-8"
+      style={{
+        border: '1px solid transparent',
+        backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'padding-box, border-box',
+      }}
+    >
       {/* Header bar */}
-      <div className={`flex items-center gap-2 mb-6 pb-4 border-b ${borderClass}`}>
+      <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
         <div className="w-3 h-3 rounded-full bg-[#EF4444]/30" />
-        <div className={`w-3 h-3 rounded-full ${lineClass}`} />
-        <div className={`w-3 h-3 rounded-full ${lineClass}`} />
+        <div className="w-3 h-3 rounded-full bg-white/10" />
+        <div className="w-3 h-3 rounded-full bg-white/10" />
       </div>
 
       {/* Main Icon */}
@@ -32,9 +35,9 @@ const AbstractMockup = ({ icon, isLight }: { icon: string; isLight: boolean }) =
 
       {/* Abstract Lines */}
       <div className="space-y-3 mt-6">
-        <div className={`h-2 ${lineClass} rounded w-3/4`} />
-        <div className={`h-2 ${lineClass} rounded w-1/2`} />
-        <div className={`h-2 ${lineClass} rounded w-2/3`} />
+        <div className="h-2 bg-white/10 rounded w-3/4" />
+        <div className="h-2 bg-white/10 rounded w-1/2" />
+        <div className="h-2 bg-white/10 rounded w-2/3" />
       </div>
 
       {/* Floating Element */}
@@ -51,24 +54,18 @@ const SystemCard = ({
   description,
   features,
   icon,
-  isLight = false,
   reversed = false,
 }: SystemCardProps) => {
   const { ref, isVisible } = useScrollReveal(0.2);
 
-  const bgClass = isLight ? 'bg-white' : 'bg-black';
-  const textClass = isLight ? 'text-neutral-900' : 'text-white';
-  const mutedClass = isLight ? 'text-neutral-600' : 'text-white/60';
-  const borderClass = isLight ? 'border-neutral-200' : 'border-white/10';
-
   return (
-    <div className={`${bgClass} py-20 md:py-32`}>
+    <div className="bg-black py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* 4-column grid with visible borders */}
-        <div className={`grid grid-cols-4 border-x ${borderClass}`}>
-          <div className={`border-r ${borderClass}`}></div>
-          <div className={`border-r ${borderClass}`}></div>
-          <div className={`border-r ${borderClass}`}></div>
+        <div className="grid grid-cols-4 border-x border-white/10">
+          <div className="border-r border-white/10"></div>
+          <div className="border-r border-white/10"></div>
+          <div className="border-r border-white/10"></div>
           <div></div>
         </div>
 
@@ -78,11 +75,7 @@ const SystemCard = ({
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 ${
-              reversed ? '' : ''
-            }`}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Content */}
             <div
               className={`${reversed ? 'lg:order-2' : ''} flex flex-col justify-center`}
@@ -90,14 +83,14 @@ const SystemCard = ({
               <p className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-6">
                 {number} /// SYSTEM
               </p>
-              <h3 className={`font-syne font-bold text-3xl md:text-4xl ${textClass} mb-6`}>
+              <h3 className="font-syne font-bold text-3xl md:text-4xl text-white mb-6">
                 {title}
               </h3>
-              <p className={`text-base md:text-lg ${mutedClass} mb-8`}>{description}</p>
+              <p className="text-base md:text-lg text-white/60 mb-8">{description}</p>
 
               <ul className="space-y-4">
                 {features.map((feature, index) => (
-                  <li key={index} className={`flex items-start gap-3 ${mutedClass}`}>
+                  <li key={index} className="flex items-start gap-3 text-white/60">
                     <Icon
                       icon="solar:check-circle-bold"
                       className="w-5 h-5 text-[#EF4444] flex-shrink-0 mt-0.5"
@@ -112,7 +105,7 @@ const SystemCard = ({
             <div
               className={`${reversed ? 'lg:order-1' : ''} flex items-center justify-center`}
             >
-              <AbstractMockup icon={icon} isLight={isLight} />
+              <AbstractMockup icon={icon} />
             </div>
           </div>
         </div>
@@ -135,7 +128,6 @@ const SystemsSection = () => {
         'CRM integration and sync',
       ],
       icon: 'solar:magnet-linear',
-      isLight: false,
       reversed: false,
     },
     {
@@ -150,7 +142,6 @@ const SystemsSection = () => {
         'No-show recovery sequences',
       ],
       icon: 'solar:calendar-linear',
-      isLight: true,
       reversed: true,
     },
     {
@@ -165,7 +156,6 @@ const SystemsSection = () => {
         'Win/loss analysis tracking',
       ],
       icon: 'solar:chart-linear',
-      isLight: false,
       reversed: false,
     },
   ];

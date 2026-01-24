@@ -59,16 +59,27 @@ const ProcessSection = () => {
           {phases.map((phase, index) => (
             <div
               key={index}
-              className={`group p-8 border-b border-white/10 hover:bg-white/5 transition-all duration-300 ${
+              className={`group p-8 border-b border-white/10 bg-neutral-900/50 backdrop-blur-md transition-all duration-300 hover:bg-neutral-900/80 ${
                 index < 3 ? 'lg:border-r' : ''
               } ${index < 2 ? 'md:border-r' : ''}`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ 
+                transitionDelay: `${index * 100}ms`,
+                borderImage: 'linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent) 1',
+              }}
             >
               {/* Phase Label */}
               <p className="font-mono text-xs text-[#EF4444] mb-6">{phase.phase}</p>
 
               {/* Icon */}
-              <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-[#EF4444]/20 transition-colors">
+              <div 
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-neutral-900/50 backdrop-blur-md group-hover:bg-[#EF4444]/20 transition-colors"
+                style={{
+                  border: '1px solid transparent',
+                  backgroundImage: 'linear-gradient(rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), linear-gradient(135deg, rgba(239, 68, 68, 0.2), transparent)',
+                  backgroundOrigin: 'border-box',
+                  backgroundClip: 'padding-box, border-box',
+                }}
+              >
                 <Icon icon={phase.icon} className="w-6 h-6 text-[#EF4444]" />
               </div>
 
