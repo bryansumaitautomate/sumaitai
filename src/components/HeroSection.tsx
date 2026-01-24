@@ -2,103 +2,125 @@ import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
-      {/* Massive Background Text */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <h1 className="font-syne font-bold text-[16vw] text-white/10 mix-blend-overlay select-none tracking-tighter">
-          LUMINAL
-        </h1>
+    <section className="relative min-h-screen bg-black overflow-hidden">
+      {/* 4-Column Grid Structure */}
+      <div className="absolute inset-0 grid grid-cols-4">
+        {[0, 1, 2, 3].map((col) => (
+          <div
+            key={col}
+            className={`relative ${col < 3 ? 'border-r border-white/10' : ''}`}
+          >
+            {/* Beam Animation on first 3 columns */}
+            {col < 3 && (
+              <div className="absolute top-0 right-0 w-px h-full overflow-hidden">
+                <motion.div
+                  className="w-full h-40 bg-gradient-to-b from-transparent via-[#EF4444] to-transparent"
+                  animate={{ y: ['-100%', '500%'] }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: 'linear',
+                    delay: col * 1.2,
+                  }}
+                />
+              </div>
+            )}
+          </div>
+        ))}
       </div>
 
-      {/* 4-Column Grid */}
-      <div className="relative z-10 w-full min-h-screen grid grid-cols-1 md:grid-cols-4">
-        {/* Column 1 */}
-        <div className="relative border-r border-white/10 p-6 md:p-8 flex flex-col justify-between min-h-[50vh] md:min-h-screen">
-          {/* Beam Animation */}
-          <div className="absolute top-0 right-0 w-px h-full overflow-hidden">
-            <motion.div
-              className="w-full h-32 bg-gradient-to-b from-transparent via-primary to-transparent"
-              animate={{ y: ['-100%', '500%'] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
-            />
-          </div>
-          
-          {/* Top Left - Logo */}
-          <div>
-            <span className="font-mono text-xs tracking-[0.3em] text-white/60">
-              LUMINAL STUDIO
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Top Bar */}
+        <div className="grid grid-cols-4 border-b border-white/10">
+          <div className="p-6 border-r border-white/10">
+            <span className="font-mono text-xs tracking-[0.2em] text-white/60">
+              BRYAN SUMAIT
             </span>
           </div>
-          
-          {/* Bottom Left - Description */}
-          <div className="max-w-xs">
-            <p className="text-sm text-white/60 leading-relaxed">
-              I build the systems that capture leads, book calls, and close deals—while you sleep.
-            </p>
-          </div>
-        </div>
-
-        {/* Column 2 */}
-        <div className="relative border-r border-white/10 p-6 md:p-8 hidden md:block">
-          {/* Beam Animation */}
-          <div className="absolute top-0 right-0 w-px h-full overflow-hidden">
-            <motion.div
-              className="w-full h-32 bg-gradient-to-b from-transparent via-primary to-transparent"
-              animate={{ y: ['-100%', '500%'] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'linear', delay: 1.5 }}
-            />
-          </div>
-        </div>
-
-        {/* Column 3 */}
-        <div className="relative border-r border-white/10 p-6 md:p-8 hidden md:block">
-          {/* Beam Animation */}
-          <div className="absolute top-0 right-0 w-px h-full overflow-hidden">
-            <motion.div
-              className="w-full h-32 bg-gradient-to-b from-transparent via-primary to-transparent"
-              animate={{ y: ['-100%', '500%'] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'linear', delay: 3 }}
-            />
-          </div>
-        </div>
-
-        {/* Column 4 */}
-        <div className="relative p-6 md:p-8 flex flex-col justify-between min-h-[50vh] md:min-h-screen">
-          {/* Top Right - Menu Button */}
-          <div className="flex justify-end">
-            <button className="font-mono text-xs tracking-[0.2em] text-white/60 hover:text-white transition-colors uppercase">
-              Menu
-            </button>
-          </div>
-          
-          {/* Bottom Right - View Work Button */}
-          <div className="flex justify-end">
-            <a
-              href="#systems"
-              className="group relative inline-flex items-center justify-center px-8 py-4 font-mono text-xs tracking-[0.2em] uppercase text-white overflow-hidden"
-            >
-              {/* Spinning Border Container */}
-              <span className="absolute inset-0 rounded-sm">
-                {/* Static border */}
-                <span className="absolute inset-0 border border-white/20 rounded-sm" />
-                {/* Spinning gradient border on hover */}
-                <span className="absolute inset-[-2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="absolute inset-0 animate-border-spin" style={{
-                    background: 'conic-gradient(from 0deg, transparent, hsl(var(--primary)), transparent 30%)',
-                    borderRadius: '4px',
-                  }} />
-                </span>
-                {/* Inner background to mask the spinning gradient */}
-                <span className="absolute inset-[1px] bg-background rounded-sm" />
+          <div className="p-6 border-r border-white/10 hidden md:flex items-center">
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#EF4444] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#EF4444]"></span>
               </span>
-              <span className="relative z-10">View Work</span>
+              <span className="font-mono text-xs text-white/40">AVAILABLE</span>
+            </div>
+          </div>
+          <div className="p-6 border-r border-white/10 hidden md:block"></div>
+          <div className="p-6 flex items-center justify-end col-span-3 md:col-span-1">
+            <a
+              href="#contact"
+              className="font-mono text-xs tracking-[0.2em] text-white/60 hover:text-white transition-colors"
+            >
+              LET'S TALK →
             </a>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-white/10" />
+        {/* Main Content */}
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-4">
+          <div className="md:col-span-3 md:border-r border-white/10 p-8 md:p-16 flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p className="font-mono text-xs tracking-[0.3em] text-[#EF4444] mb-8">
+                01 /// REVENUE SYSTEMS
+              </p>
+              <h1 className="font-syne font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[0.95] tracking-tight">
+                I build systems that
+                <br />
+                <span className="text-[#EF4444]">capture leads</span>, book
+                <br />
+                calls, and close deals—
+                <br />
+                <span className="italic font-normal">while you sleep.</span>
+              </h1>
+            </motion.div>
+          </div>
+
+          <div className="p-8 md:p-12 flex flex-col justify-between">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="space-y-6 hidden md:block"
+            >
+              <p className="text-sm text-white/50 leading-relaxed">
+                Automation systems that convert browsers into buyers on autopilot.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <a
+                href="#systems"
+                className="group inline-flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-white border border-white/20 px-6 py-4 hover:border-[#EF4444] hover:text-[#EF4444] transition-all duration-300"
+              >
+                VIEW WORK
+                <svg
+                  className="w-4 h-4 group-hover:translate-y-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
