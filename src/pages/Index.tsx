@@ -1,7 +1,5 @@
 import FloatingNav from '@/components/FloatingNav';
 import HeroSection from '@/components/HeroSection';
-import LogoMarquee from '@/components/LogoMarquee';
-import ServiceCards from '@/components/ServiceCards';
 import AboutSection from '@/components/AboutSection';
 import SystemsSection from '@/components/SystemsSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
@@ -13,17 +11,23 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="bg-background text-foreground">
+    <div className="bg-black text-white">
       <FloatingNav />
+      {/* Hero - Black */}
       <HeroSection />
-      <LogoMarquee />
-      <ServiceCards />
+      {/* About - White */}
       <AboutSection />
+      {/* Systems - Alternating Black/White/Black */}
       <SystemsSection />
+      {/* Case Studies - White */}
       <CaseStudiesSection />
+      {/* Process - Black */}
       <ProcessSection />
+      {/* Tech Stack - White */}
       <TechStackSection />
+      {/* FAQ - White */}
       <FAQSection />
+      {/* CTA - Black */}
       <CTASection />
       <Footer />
     </div>
