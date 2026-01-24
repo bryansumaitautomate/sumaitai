@@ -151,24 +151,33 @@ const ProfileSection = () => {
             </div>
 
             {/* Experience Timeline */}
-            <div className="flex-1 flex flex-col">
-              {timeline.map((item, index) => (
+            <div className="flex-1 flex flex-col gap-3 p-4 lg:p-6">
+              {timeline.map((item) => (
                 <div 
                   key={item.year}
-                  className={`group flex flex-col p-6 lg:px-12 border-t-2 border-[#ef4444]/15 hover:bg-white/5 transition-colors cursor-default gap-3 ${
-                    index < timeline.length - 1 ? 'border-b border-white/10' : ''
-                  }`}
+                  className="group relative rounded-2xl overflow-hidden"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-8">
-                      <div className="flex items-center gap-3 w-24">
-                        <Icon icon={item.icon} width={16} className="text-[#ef4444]" />
-                        <span className="text-sm font-mono text-white/50 group-hover:text-white transition-colors">{item.year}</span>
-                      </div>
-                      <h4 className="text-lg font-syne font-semibold tracking-tight text-white group-hover:text-[#ef4444] transition-colors">{item.title}</h4>
-                    </div>
+                  {/* Shimmer border effect */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                    <div className="absolute inset-[-2px] rounded-2xl bg-[linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05))]" />
+                    <div 
+                      className="absolute top-1/2 left-1/2 w-[200%] h-40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer-rotate bg-[linear-gradient(90deg,transparent_0%,#ef4444_40%,#ef4444_60%,transparent_100%)]"
+                    />
                   </div>
-                  <p className="text-white/50 text-sm leading-relaxed pl-0 lg:pl-32">{item.description}</p>
+                  
+                  {/* Card content */}
+                  <div className="relative bg-[#0a0a0a] m-[2px] rounded-2xl p-5 lg:px-8 transition-all duration-300 hover:bg-white/[0.04] group-hover:shadow-[inset_0px_-16px_24px_0px_rgba(239,68,68,0.15)]">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-3">
+                          <Icon icon={item.icon} width={16} className="text-[#ef4444]" />
+                          <span className="text-sm font-mono text-white/50 group-hover:text-white transition-colors">{item.year}</span>
+                        </div>
+                        <h4 className="text-lg font-syne font-semibold tracking-tight text-white group-hover:text-[#ef4444] transition-colors">{item.title}</h4>
+                      </div>
+                    </div>
+                    <p className="text-white/50 text-sm leading-relaxed pl-0 lg:pl-[88px]">{item.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
