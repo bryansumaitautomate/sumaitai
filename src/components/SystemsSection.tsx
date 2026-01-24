@@ -82,7 +82,7 @@ const SystemCard = ({
               className={`${reversed ? 'lg:order-2' : ''} flex flex-col justify-center`}
             >
               <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-6">
-                {number} /// SYSTEM
+                {number} /// SYSTEMS
               </p>
               <h3 className="font-syne font-bold text-3xl md:text-4xl text-white mb-6">
                 {title}
@@ -132,7 +132,7 @@ const SystemsSection = () => {
       reversed: false,
     },
     {
-      number: '04',
+      number: '03',
       title: 'Appointment Booking Flow',
       description:
         'Turn interested leads into booked calls without the back-and-forth. Qualification, scheduling, and reminders—all automated.',
@@ -146,7 +146,7 @@ const SystemsSection = () => {
       reversed: true,
     },
     {
-      number: '05',
+      number: '03',
       title: 'Deal Closing Pipeline',
       description:
         'Keep deals moving with automated follow-ups, proposal delivery, and contract workflows that close faster.',

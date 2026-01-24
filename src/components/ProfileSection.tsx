@@ -51,7 +51,7 @@ const ProfileSection = () => {
   ];
 
   return (
-    <section className="relative z-20 bg-[#0a0a0a] text-white w-full border-b border-white/10">
+    <section id="experience" className="relative z-20 bg-[#0a0a0a] text-white w-full border-b border-white/10">
       <div
         ref={ref}
         className={`transition-all duration-700 ${
@@ -158,7 +158,7 @@ const ProfileSection = () => {
             {/* Section Header */}
             <div className="px-8 lg:px-12 pt-8 lg:pt-12 pb-6">
               <span className="text-xs font-mono tracking-widest text-[#ef4444] uppercase mb-3 block">
-                05 /// Experience
+                05 /// EXPERIENCE
               </span>
               <h3 className="text-3xl lg:text-4xl font-syne font-bold text-white tracking-tight">
                 Timeline

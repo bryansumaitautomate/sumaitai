@@ -24,7 +24,7 @@ const TechStackSection = () => {
         <div className="grid grid-cols-4 border-x border-white/10 mb-16">
           <div className="col-span-4 text-center py-8 px-4">
             <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-4">
-              08 /// TOOLS
+              07 /// TOOLS
             </p>
             <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4">
               Best-in-class stack
