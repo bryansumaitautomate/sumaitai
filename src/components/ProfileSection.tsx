@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import bryanProfile from '@/assets/bryan-sumait-profile.png';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const ProfileSection = () => {
@@ -81,9 +82,11 @@ const ProfileSection = () => {
             <div className="flex flex-col gap-8">
               {/* Avatar */}
               <div className="aspect-[4/5] overflow-hidden group w-full border border-white/10 rounded-sm relative shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center">
-                  <Icon icon="solar:user-circle-bold" width={120} className="text-neutral-700" />
-                </div>
+                <img 
+                  src={bryanProfile} 
+                  alt="Bryan Sumait" 
+                  className="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:opacity-100 transition-all duration-700"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
                 
                 {/* Availability Badge */}
