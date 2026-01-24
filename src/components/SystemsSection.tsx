@@ -13,26 +13,26 @@ interface SystemCardProps {
 const AbstractMockup = ({ icon }: { icon: string }) => {
   return (
     <div 
-      className="group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+      className="group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)] w-full max-w-[320px] aspect-square"
       style={{
         background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
       }}
     >
-      <div className="relative w-full max-w-md aspect-square p-8 rounded-2xl">
+      <div className="relative w-full h-full p-6">
         {/* Header bar */}
-        <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
-          <div className="w-3 h-3 rounded-full bg-[#ef4444]/50" />
-          <div className="w-3 h-3 rounded-full bg-white/10" />
-          <div className="w-3 h-3 rounded-full bg-white/10" />
+        <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#ef4444]/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
         </div>
 
         {/* Main Icon */}
-        <div className="flex items-center justify-center h-32">
-          <Icon icon={icon} className="w-20 h-20 text-[#ef4444]/60 group-hover:text-[#ef4444] transition-colors" />
+        <div className="flex items-center justify-center h-24">
+          <Icon icon={icon} className="w-16 h-16 text-[#ef4444]/60 group-hover:text-[#ef4444] transition-colors" />
         </div>
 
         {/* Abstract Lines */}
-        <div className="space-y-3 mt-6">
+        <div className="space-y-2 mt-4">
           <div className="h-2 bg-white/10 rounded w-3/4" />
           <div className="h-2 bg-white/10 rounded w-1/2" />
           <div className="h-2 bg-white/10 rounded w-2/3" />
@@ -40,9 +40,9 @@ const AbstractMockup = ({ icon }: { icon: string }) => {
 
         {/* Floating Element */}
         <div 
-          className="absolute top-8 right-8 w-12 h-12 rounded-xl bg-[#ef4444]/10 border border-[#ef4444]/20 flex items-center justify-center animate-float group-hover:border-[#ef4444]/40 transition-colors"
+          className="absolute top-6 right-6 w-10 h-10 rounded-xl bg-[#ef4444]/10 border border-[#ef4444]/20 flex items-center justify-center animate-float group-hover:border-[#ef4444]/40 transition-colors"
         >
-          <Icon icon="solar:bolt-linear" className="w-6 h-6 text-white" />
+          <Icon icon="solar:bolt-linear" className="w-5 h-5 text-white" />
         </div>
       </div>
     </div>
