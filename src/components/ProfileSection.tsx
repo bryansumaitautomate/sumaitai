@@ -5,36 +5,41 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 const ProfileSection = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
 
-  const timeline = [
+  const experienceCards = [
     {
       year: '2021',
-      title: 'Evolve Smarter Agency',
+      title: 'Lead Capture Systems',
       description: 'Built AI receptionist and missed call recovery systems that capture leads 24/7 for home services.',
       icon: 'solar:chat-round-line-linear',
+      badge: null,
     },
     {
       year: '2022',
-      title: 'AD Clients',
+      title: 'Sales Automation',
       description: 'Designed GoHighLevel pipelines and auto-follow-up sequences that reduce response time from hours to minutes.',
       icon: 'solar:server-square-linear',
+      badge: null,
     },
     {
       year: '2023',
-      title: 'Big Hammer Wines',
+      title: 'Content Engines',
       description: 'Created video repurposing and high-retention editing systems that turn one piece of content into 10.',
       icon: 'solar:clapperboard-edit-linear',
+      badge: null,
     },
     {
       year: '2024',
       title: 'MADEEA',
       description: 'Built complete business operations: social media automation, lead generation systems, automation hub, and 100+ custom GPTs for workflow optimization.',
       icon: 'solar:widget-5-linear',
+      badge: 'M',
     },
     {
       year: '2025',
       title: 'Disruptor Media Agency',
       description: 'Engineered meeting-to-task automation (AI notes → Slack), scripting automation, and complete CRM pipeline systems.',
       icon: 'solar:atom-linear',
+      badge: 'D',
     },
   ];
 
@@ -133,7 +138,7 @@ const ProfileSection = () => {
             </a>
           </div>
 
-          {/* Right Column: Details */}
+          {/* Right Column: Experience Cards Grid */}
           <div className="col-span-1 lg:col-span-3 flex flex-col h-full bg-[#0a0a0a]">
             
             {/* Tags Section */}
@@ -150,36 +155,69 @@ const ProfileSection = () => {
               </div>
             </div>
 
-            {/* Experience Timeline */}
-            <div className="flex-1 flex flex-col gap-3 p-4 lg:p-6">
-              {timeline.map((item) => (
-                <div 
-                  key={item.year}
-                  className="group relative rounded-2xl overflow-hidden"
-                >
-                  {/* Shimmer border effect */}
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                    <div className="absolute inset-[-2px] rounded-2xl bg-[linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05))]" />
-                    <div 
-                      className="absolute top-1/2 left-1/2 w-[200%] h-40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer-rotate bg-[linear-gradient(90deg,transparent_0%,#ef4444_40%,#ef4444_60%,transparent_100%)]"
-                    />
-                  </div>
-                  
-                  {/* Card content */}
-                  <div className="relative bg-[#0a0a0a] m-[2px] rounded-2xl p-5 lg:px-8 transition-all duration-300 hover:bg-white/[0.04] group-hover:shadow-[inset_0px_-16px_24px_0px_rgba(239,68,68,0.15)]">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-6">
-                        <div className="flex items-center gap-3">
-                          <Icon icon={item.icon} width={16} className="text-[#ef4444]" />
-                          <span className="text-sm font-mono text-white/50 group-hover:text-white transition-colors">{item.year}</span>
+            {/* Section Header */}
+            <div className="px-8 lg:px-12 pt-8 lg:pt-12 pb-6">
+              <span className="text-xs font-mono tracking-widest text-[#ef4444] uppercase mb-3 block">
+                05 /// Experience
+              </span>
+              <h3 className="text-3xl lg:text-4xl font-syne font-bold text-white tracking-tight">
+                Timeline
+              </h3>
+            </div>
+
+            {/* Experience Cards Grid */}
+            <div className="flex-1 px-8 lg:px-12 pb-8 lg:pb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {experienceCards.map((card) => (
+                  <div
+                    key={card.year}
+                    className="group relative w-full rounded-2xl border border-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)] cursor-default"
+                    style={{
+                      background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+                    }}
+                  >
+                    {/* Card Header */}
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        {/* Icon Container */}
+                        <div className="w-10 h-10 rounded-xl bg-[#ef4444]/10 border border-[#ef4444]/20 flex items-center justify-center">
+                          <Icon icon={card.icon} width={20} className="text-white" />
                         </div>
-                        <h4 className="text-lg font-syne font-semibold tracking-tight text-white group-hover:text-[#ef4444] transition-colors">{item.title}</h4>
+                        <div>
+                          <h4 className="text-xl font-medium text-white group-hover:text-[#ef4444] transition-colors">
+                            {card.title}
+                          </h4>
+                          <span className="text-xs text-white/50">Experience</span>
+                        </div>
+                      </div>
+                      
+                      {/* Selection Radio */}
+                      <div className="h-5 w-5 rounded-full border-2 border-white/30 group-hover:border-[#ef4444] transition-colors flex items-center justify-center">
+                        <div className="w-2 h-2 rounded-full bg-[#ef4444] opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
                     </div>
-                    <p className="text-white/50 text-sm leading-relaxed pl-0 lg:pl-[88px]">{item.description}</p>
+
+                    {/* Year Badge */}
+                    <div className="mb-4">
+                      <span className="text-sm font-mono text-[#ef4444]">{card.year}</span>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-white/70 leading-relaxed mb-4">
+                      {card.description}
+                    </p>
+
+                    {/* Badge (if applicable) */}
+                    {card.badge && (
+                      <div className="absolute bottom-4 right-4">
+                        <div className="w-8 h-8 rounded-lg bg-[#ef4444]/20 border border-[#ef4444]/30 flex items-center justify-center">
+                          <span className="text-sm font-syne font-bold text-[#ef4444]">{card.badge}</span>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
