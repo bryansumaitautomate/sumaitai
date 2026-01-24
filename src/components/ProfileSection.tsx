@@ -8,31 +8,36 @@ const ProfileSection = () => {
   const timeline = [
     {
       year: '2021',
-      title: 'CRM Architecture',
-      icon: 'solar:server-minimalistic-linear',
-      brandIcon: 'simple-icons:hubspot',
-      brandColor: '#FF7A59',
+      title: 'Lead Capture Systems',
+      description: 'Built AI receptionist and missed call recovery systems that capture leads 24/7 for home services.',
+      icon: 'solar:chat-round-line-linear',
     },
     {
       year: '2022',
-      title: 'Process Automation',
-      icon: 'solar:routing-2-linear',
-      brandIcon: 'simple-icons:zapier',
-      brandColor: '#FF4A00',
+      title: 'Sales Automation',
+      description: 'Designed GoHighLevel pipelines and auto-follow-up sequences that reduce response time from hours to minutes.',
+      icon: 'solar:server-square-linear',
     },
     {
       year: '2023',
-      title: 'AI Integration',
-      icon: 'solar:cpu-bolt-linear',
-      brandIcon: 'simple-icons:openai',
-      brandColor: '#FFFFFF',
+      title: 'Content Engines',
+      description: 'Created video repurposing and high-retention editing systems that turn one piece of content into 10.',
+      icon: 'solar:clapperboard-edit-linear',
     },
     {
       year: '2024',
-      title: 'Founder, Sumait AI',
-      icon: 'solar:flag-linear',
-      brandIcon: 'simple-icons:stripe',
-      brandColor: '#635BFF',
+      title: 'MADEEA',
+      description: 'Built complete business operations: social media automation, lead generation systems, automation hub, and 100+ custom GPTs for workflow optimization.',
+      icon: 'solar:widget-5-linear',
+      badge: 'M',
+    },
+    {
+      year: '2025',
+      title: 'Disruptor Media Agency',
+      description: 'Engineered meeting-to-task automation (AI notes → Slack), scripting automation, and complete CRM pipeline systems.',
+      icon: 'solar:atom-linear',
+      badge: 'D',
+      highlight: true,
     },
   ];
 
@@ -153,31 +158,40 @@ const ProfileSection = () => {
               {timeline.map((item, index) => (
                 <div 
                   key={item.year}
-                  className={`group flex-1 flex flex-col lg:flex-row items-start lg:items-center justify-between p-6 lg:px-12 border-t-2 border-[#ef4444]/15 hover:bg-white/5 transition-colors cursor-default gap-4 ${
+                  className={`group flex flex-col p-6 lg:px-12 border-t-2 border-[#ef4444]/15 hover:bg-white/5 transition-colors cursor-default gap-3 ${
                     index < timeline.length - 1 ? 'border-b border-white/10' : ''
                   }`}
                 >
-                  <div className="flex items-center gap-8 w-full lg:w-auto">
-                    <div className="flex items-center gap-3 w-32">
-                      <Icon icon={item.icon} width={16} className="text-[#ef4444]" />
-                      <span className="text-sm font-mono text-white/50 group-hover:text-white transition-colors">{item.year}</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-8">
+                      <div className="flex items-center gap-3 w-24">
+                        <Icon icon={item.icon} width={16} className="text-[#ef4444]" />
+                        <span className="text-sm font-mono text-white/50 group-hover:text-white transition-colors">{item.year}</span>
+                      </div>
+                      <h4 className="text-lg font-syne font-semibold tracking-tight text-white group-hover:text-[#ef4444] transition-colors">{item.title}</h4>
                     </div>
-                    <h4 className="text-lg font-syne font-semibold tracking-tight text-white">{item.title}</h4>
+                    <div className="flex items-center gap-3">
+                      {item.badge && (
+                        <div 
+                          className={`w-8 h-8 rounded-full bg-white/5 flex items-center justify-center backdrop-blur transition-all ${
+                            item.highlight 
+                              ? 'border border-[#ef4444]/35 group-hover:shadow-[0_0_20px_rgba(239,68,68,0.25)]' 
+                              : 'border border-white/10'
+                          }`}
+                        >
+                          <span className={`text-[10px] font-bold ${item.highlight ? 'text-[#ef4444]' : 'text-white/70'}`}>
+                            {item.badge}
+                          </span>
+                        </div>
+                      )}
+                      <Icon 
+                        icon="solar:alt-arrow-right-linear" 
+                        width={20} 
+                        className="text-white/30 group-hover:text-[#ef4444] group-hover:translate-x-2 transition-all" 
+                      />
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between w-full lg:w-auto lg:flex-1 lg:justify-end gap-8">
-                    <Icon 
-                      icon={item.brandIcon} 
-                      width={96} 
-                      height={24} 
-                      className="opacity-30 group-hover:opacity-100 transition-colors"
-                      style={{ color: item.brandColor }}
-                    />
-                    <Icon 
-                      icon="solar:arrow-right-linear" 
-                      width={20} 
-                      className="text-white/30 group-hover:text-[#ef4444] group-hover:translate-x-2 transition-all" 
-                    />
-                  </div>
+                  <p className="text-white/50 text-sm leading-relaxed pl-0 lg:pl-32">{item.description}</p>
                 </div>
               ))}
             </div>
