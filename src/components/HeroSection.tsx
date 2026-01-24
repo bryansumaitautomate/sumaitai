@@ -74,18 +74,8 @@ const HeroSection = () => {
               </a>
             </div>
 
-            {/* Status Badge - Centered */}
-            <div className="col-span-2 p-6 border-r border-white/10 hidden md:flex items-center justify-center">
-              <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ef4444] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ef4444]"></span>
-                </span>
-                <span className="font-mono text-xs tracking-wider text-white/50">
-                  AVAILABLE FOR PROJECTS
-                </span>
-              </div>
-            </div>
+            {/* Empty center columns */}
+            <div className="col-span-2 p-6 border-r border-white/10 hidden md:block"></div>
 
             {/* CTA - Top Right */}
             <div className="p-6 flex items-center justify-end col-span-3 md:col-span-1">
