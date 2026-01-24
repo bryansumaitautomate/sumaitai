@@ -29,15 +29,12 @@ const ProfileSection = () => {
       title: 'MADEEA',
       description: 'Built complete business operations: social media automation, lead generation systems, automation hub, and 100+ custom GPTs for workflow optimization.',
       icon: 'solar:widget-5-linear',
-      badge: 'M',
     },
     {
       year: '2025',
       title: 'Disruptor Media Agency',
       description: 'Engineered meeting-to-task automation (AI notes → Slack), scripting automation, and complete CRM pipeline systems.',
       icon: 'solar:atom-linear',
-      badge: 'D',
-      highlight: true,
     },
   ];
 
@@ -171,19 +168,6 @@ const ProfileSection = () => {
                       <h4 className="text-lg font-syne font-semibold tracking-tight text-white group-hover:text-[#ef4444] transition-colors">{item.title}</h4>
                     </div>
                     <div className="flex items-center gap-3">
-                      {item.badge && (
-                        <div 
-                          className={`w-8 h-8 rounded-full bg-white/5 flex items-center justify-center backdrop-blur transition-all ${
-                            item.highlight 
-                              ? 'border border-[#ef4444]/35 group-hover:shadow-[0_0_20px_rgba(239,68,68,0.25)]' 
-                              : 'border border-white/10'
-                          }`}
-                        >
-                          <span className={`text-[10px] font-bold ${item.highlight ? 'text-[#ef4444]' : 'text-white/70'}`}>
-                            {item.badge}
-                          </span>
-                        </div>
-                      )}
                       <Icon 
                         icon="solar:alt-arrow-right-linear" 
                         width={20} 
