@@ -20,7 +20,22 @@
   </head>
 
   <body>
+    <!-- Unicorn Studio Background -->
+    <div 
+      id="unicorn-bg" 
+      data-us-project="7WRlj4TRuUxuldc6GVDM" 
+      style="position: fixed; inset: 0; z-index: -10; pointer-events: none;"
+    ></div>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.UnicornStudio) {
+          window.UnicornStudio.init();
+        }
+      });
+    </script>
   </body>
 </html>
