@@ -70,7 +70,7 @@ const ProfileSection = () => {
               Bryan Sumait<span className="text-primary">.</span>
             </h2>
             <p className="text-neutral-400 text-xl lg:text-2xl max-w-3xl font-light leading-relaxed">
-              I build autonomous revenue engines that capture leads, automate follow-ups, and close deals without human intervention.
+              I turn scattered funnels into revenue machines.
             </p>
           </div>
 
