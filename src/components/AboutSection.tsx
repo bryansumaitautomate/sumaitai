@@ -36,49 +36,57 @@ const AboutSection = () => {
 
           {/* Stats */}
           <div className="lg:pl-8 flex flex-col justify-between p-8">
-            {/* Circular Stat with Glass Effect */}
+            {/* Circular Stat with Gradient Card */}
             <div 
-              className="relative w-32 h-32 mx-auto lg:mx-0 mb-8 rounded-full bg-white/5 backdrop-blur-xl border border-white/10"
+              className="group relative w-full p-6 rounded-2xl border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)] mb-4"
+              style={{
+                background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+              }}
             >
-              <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="rgba(255,255,255,0.1)"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="#ef4444"
-                  strokeWidth="2"
-                  strokeDasharray="283"
-                  strokeDashoffset="28"
-                  strokeLinecap="round"
-                  className={`transition-all duration-1000 ${
-                    isVisible ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="font-syne font-bold text-2xl text-white">90%</span>
-                <span className="text-xs text-white/30">Automation</span>
+              <div className="relative w-24 h-24 mx-auto">
+                <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.1)"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="none"
+                    stroke="#ef4444"
+                    strokeWidth="2"
+                    strokeDasharray="283"
+                    strokeDashoffset="28"
+                    strokeLinecap="round"
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <span className="font-syne font-bold text-2xl text-white">90%</span>
+                  <span className="text-xs text-white/30">Automation</span>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-4 text-center lg:text-left">
+            <div className="space-y-4">
               <div 
-                className="p-4 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 hover:border-[#ef4444]/25 transition-colors"
+                className="group p-6 rounded-2xl border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+                style={{
+                  background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+                }}
               >
                 <p className="font-syne font-bold text-3xl text-[#ef4444]">7+</p>
                 <p className="text-sm text-white/30">Years Building Systems</p>
               </div>
               <div 
-                className="p-4 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 hover:border-[#ef4444]/25 transition-colors"
+                className="group p-6 rounded-2xl border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+                style={{
+                  background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+                }}
               >
                 <p className="font-syne font-bold text-3xl text-[#ef4444]">$2M+</p>
                 <p className="text-sm text-white/30">Revenue Generated</p>

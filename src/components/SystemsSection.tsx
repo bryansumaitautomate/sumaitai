@@ -12,25 +12,23 @@ interface SystemCardProps {
 
 const AbstractMockup = ({ icon }: { icon: string }) => {
   return (
-    <div className="group/shimmer relative rounded-2xl overflow-hidden cursor-pointer">
-      {/* Shimmer border container */}
-      <div className="absolute inset-0 rounded-2xl overflow-hidden">
-        <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover/shimmer:border-transparent transition-colors duration-300" />
-        <div className="absolute left-1/2 top-1/2 h-40 w-[200%] -translate-x-1/2 -translate-y-1/2 bg-[linear-gradient(90deg,transparent_0%,#ef4444_40%,#ef4444_60%,transparent_100%)] opacity-0 group-hover/shimmer:opacity-25 group-hover/shimmer:animate-shimmer-rotate transition-opacity duration-500" />
-        <div className="absolute inset-[1px] rounded-2xl bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.02)_100%)] opacity-0 group-hover/shimmer:opacity-100 transition-opacity duration-300" />
-      </div>
-      
-      <div className="relative w-full max-w-md aspect-square bg-[#0a0a0a] p-8 rounded-2xl transition-all duration-300 group-hover/shimmer:bg-white/[0.04] group-hover/shimmer:shadow-[0px_-16px_24px_0px_rgba(239,68,68,0.15)_inset]">
+    <div 
+      className="group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+      style={{
+        background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+      }}
+    >
+      <div className="relative w-full max-w-md aspect-square p-8 rounded-2xl">
         {/* Header bar */}
         <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
-          <div className="w-3 h-3 rounded-full bg-[#ef4444]/35" />
+          <div className="w-3 h-3 rounded-full bg-[#ef4444]/50" />
           <div className="w-3 h-3 rounded-full bg-white/10" />
           <div className="w-3 h-3 rounded-full bg-white/10" />
         </div>
 
         {/* Main Icon */}
         <div className="flex items-center justify-center h-32">
-          <Icon icon={icon} className="w-20 h-20 text-[#ef4444]/50" />
+          <Icon icon={icon} className="w-20 h-20 text-[#ef4444]/60 group-hover:text-[#ef4444] transition-colors" />
         </div>
 
         {/* Abstract Lines */}
@@ -42,9 +40,9 @@ const AbstractMockup = ({ icon }: { icon: string }) => {
 
         {/* Floating Element */}
         <div 
-          className="absolute top-8 right-8 w-12 h-12 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center animate-float"
+          className="absolute top-8 right-8 w-12 h-12 rounded-xl bg-[#ef4444]/10 border border-[#ef4444]/20 flex items-center justify-center animate-float group-hover:border-[#ef4444]/40 transition-colors"
         >
-          <Icon icon="solar:bolt-linear" className="w-6 h-6 text-[#ef4444]" />
+          <Icon icon="solar:bolt-linear" className="w-6 h-6 text-white" />
         </div>
       </div>
     </div>
