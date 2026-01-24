@@ -2,7 +2,6 @@ import FloatingNav from '@/components/FloatingNav';
 import HeroSection from '@/components/HeroSection';
 import ProfileSection from '@/components/ProfileSection';
 import AboutSection from '@/components/AboutSection';
-import ExperienceSection from '@/components/ExperienceSection';
 import SystemsSection from '@/components/SystemsSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import ProcessSection from '@/components/ProcessSection';
@@ -22,8 +21,6 @@ const Index = () => {
       <ProfileSection />
       {/* About - Black */}
       <AboutSection />
-      {/* Experience Timeline - Black */}
-      <ExperienceSection />
       {/* Systems - Alternating Black/White/Black */}
       <SystemsSection />
       {/* Case Studies - White */}
