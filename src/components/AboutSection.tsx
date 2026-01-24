@@ -76,7 +76,12 @@ const AboutSection = () => {
           {/* RIGHT COLUMN - Stats Cards */}
           <div className="lg:col-span-1 flex flex-col gap-4">
             {/* Card 1 - Automation Uptime */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-[#ef4444]/30 hover:shadow-[0_10px_30px_rgba(239,68,68,0.1)]">
+            <div 
+              className="group rounded-2xl border border-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+              style={{
+                background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+              }}
+            >
               <div className="flex items-center justify-between mb-3">
                 <div className="relative w-12 h-12">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
@@ -108,7 +113,12 @@ const AboutSection = () => {
             </div>
 
             {/* Card 2 - Years Building */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-[#ef4444]/30 hover:shadow-[0_10px_30px_rgba(239,68,68,0.1)]">
+            <div 
+              className="group rounded-2xl border border-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+              style={{
+                background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+              }}
+            >
               <div className="flex items-center justify-between mb-3">
                 <div className="w-10 h-10 rounded-xl bg-[#ef4444]/10 flex items-center justify-center">
                   <Icon icon="solar:calendar-bold" className="w-5 h-5 text-[#ef4444]" />
@@ -120,7 +130,12 @@ const AboutSection = () => {
             </div>
 
             {/* Card 3 - Revenue Generated */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-[#ef4444]/30 hover:shadow-[0_10px_30px_rgba(239,68,68,0.1)]">
+            <div 
+              className="group rounded-2xl border border-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+              style={{
+                background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+              }}
+            >
               <div className="flex items-center justify-between mb-3">
                 <div className="w-10 h-10 rounded-xl bg-[#ef4444]/10 flex items-center justify-center">
                   <Icon icon="solar:dollar-bold" className="w-5 h-5 text-[#ef4444]" />
