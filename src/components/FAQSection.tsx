@@ -31,7 +31,7 @@ const FAQSection = () => {
     {
       question: 'What if I already have some systems in place?',
       answer:
-        "That's common. I'll audit what you have, keep what's working, and fix or replace what isn't. No need to start from scratch—we'll build on your existing foundation.",
+        "That's common. I'll audit what you have, keep what's working, and fix or replace what isn't. No need to start from scratch, we'll build on your existing foundation.",
     },
     {
       question: "What's included in support after launch?",
