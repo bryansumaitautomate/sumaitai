@@ -165,59 +165,39 @@ const ProfileSection = () => {
               </h3>
             </div>
 
-            {/* Experience Cards Grid */}
-            <div className="flex-1 px-8 lg:px-12 pb-8 lg:pb-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {experienceCards.map((card) => (
-                  <div
-                    key={card.year}
-                    className="group relative w-full rounded-2xl border border-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)] cursor-default"
-                    style={{
-                      background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
-                    }}
-                  >
-                    {/* Card Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        {/* Icon Container */}
-                        <div className="w-10 h-10 rounded-xl bg-[#ef4444]/10 border border-[#ef4444]/20 flex items-center justify-center">
-                          <Icon icon={card.icon} width={20} className="text-white" />
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-medium text-white group-hover:text-[#ef4444] transition-colors">
-                            {card.title}
-                          </h4>
-                          <span className="text-xs text-white/50">Experience</span>
-                        </div>
-                      </div>
-                      
-                      {/* Selection Radio */}
-                      <div className="h-5 w-5 rounded-full border-2 border-white/30 group-hover:border-[#ef4444] transition-colors flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-[#ef4444] opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </div>
-                    </div>
+            {/* Experience Cards - Stacked List */}
+            <div className="flex-1">
+              {experienceCards.map((card, index) => (
+                <div
+                  key={card.year}
+                  className={`group flex items-start gap-6 p-6 lg:p-8 transition-all duration-300 hover:bg-white/5 cursor-default ${
+                    index !== experienceCards.length - 1 ? 'border-b border-white/10' : ''
+                  }`}
+                  style={{
+                    background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+                  }}
+                >
+                  {/* Icon */}
+                  <div className="w-10 h-10 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20 flex items-center justify-center flex-shrink-0">
+                    <Icon icon={card.icon} width={20} className="text-[#ef4444]" />
+                  </div>
 
-                    {/* Year Badge */}
-                    <div className="mb-4">
-                      <span className="text-sm font-mono text-[#ef4444]">{card.year}</span>
-                    </div>
+                  {/* Year */}
+                  <span className="text-sm font-mono text-white/50 w-12 flex-shrink-0 pt-1">
+                    {card.year}
+                  </span>
 
-                    {/* Description */}
-                    <p className="text-sm text-white/70 leading-relaxed mb-4">
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h4 className="text-lg font-syne font-bold text-white mb-2 group-hover:text-[#ef4444] transition-colors">
+                      {card.title}
+                    </h4>
+                    <p className="text-sm text-white/50 leading-relaxed">
                       {card.description}
                     </p>
-
-                    {/* Badge (if applicable) */}
-                    {card.badge && (
-                      <div className="absolute bottom-4 right-4">
-                        <div className="w-8 h-8 rounded-lg bg-[#ef4444]/20 border border-[#ef4444]/30 flex items-center justify-center">
-                          <span className="text-sm font-syne font-bold text-[#ef4444]">{card.badge}</span>
-                        </div>
-                      </div>
-                    )}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
