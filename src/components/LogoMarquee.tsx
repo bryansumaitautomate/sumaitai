@@ -8,6 +8,16 @@ import drblade from '@/assets/logos/drblade.png';
 import holisticvitalis from '@/assets/logos/holisticvitalis.png';
 import evalics from '@/assets/logos/evalics.png';
 import madeea from '@/assets/logos/madeea.png';
+import whiterabbitdata from '@/assets/logos/whiterabbitdata.png';
+import tembusulaw from '@/assets/logos/tembusulaw.png';
+import legactleadpros from '@/assets/logos/legactleadpros.png';
+import supersizemedia from '@/assets/logos/supersizemedia.png';
+import gratefulgestures from '@/assets/logos/gratefulgestures.png';
+import evolvesmarter from '@/assets/logos/evolvesmarter.png';
+import biznomad from '@/assets/logos/biznomad.png';
+import bighammerwines from '@/assets/logos/bighammerwines.png';
+import sadmarketing from '@/assets/logos/sadmarketing.png';
+import adclients from '@/assets/logos/adclients.png';
 
 const logos = [
   { name: 'PropertyBots.AI', src: propertybots },
@@ -17,6 +27,16 @@ const logos = [
   { name: 'Holistic Vitalis', src: holisticvitalis },
   { name: 'Evalics', src: evalics },
   { name: 'MADEEA', src: madeea },
+  { name: 'White Rabbit Data', src: whiterabbitdata },
+  { name: 'Tembusu Law', src: tembusulaw },
+  { name: 'Legact Lead Pros', src: legactleadpros },
+  { name: 'Supersize Media', src: supersizemedia },
+  { name: 'Grateful Gestures', src: gratefulgestures },
+  { name: 'Evolve Smarter', src: evolvesmarter },
+  { name: 'BizNomad', src: biznomad },
+  { name: 'Big Hammer Wines', src: bighammerwines },
+  { name: 'SAD Marketing', src: sadmarketing },
+  { name: 'AD Clients', src: adclients },
 ];
 
 const LogoMarquee = () => {
@@ -27,7 +47,7 @@ const LogoMarquee = () => {
           className="flex gap-16 items-center"
           animate={{ x: ['0%', '-50%'] }}
           transition={{
-            duration: 25,
+            duration: 40,
             repeat: Infinity,
             ease: 'linear',
           }}
