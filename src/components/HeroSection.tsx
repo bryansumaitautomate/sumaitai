@@ -3,6 +3,13 @@ import { motion } from 'framer-motion';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-black overflow-hidden">
+      {/* Background Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+        <span className="font-syne font-bold text-[15vw] text-white opacity-[0.03] mix-blend-overlay whitespace-nowrap">
+          SUMAIT AI
+        </span>
+      </div>
+
       {/* 4-Column Grid Structure */}
       <div className="absolute inset-0 grid grid-cols-4">
         {[0, 1, 2, 3].map((col) => (
@@ -34,9 +41,9 @@ const HeroSection = () => {
         {/* Top Bar */}
         <div className="grid grid-cols-4 border-b border-white/10">
           <div className="p-6 border-r border-white/10">
-            <span className="font-mono text-xs tracking-[0.2em] text-white/60">
-              BRYAN SUMAIT
-            </span>
+            <a href="#" className="font-syne font-bold text-lg tracking-tight text-white">
+              SUMAIT<span className="text-[#EF4444]">.AI</span>
+            </a>
           </div>
           <div className="p-6 border-r border-white/10 hidden md:flex items-center">
             <div className="flex items-center gap-2">
@@ -60,7 +67,8 @@ const HeroSection = () => {
 
         {/* Main Content */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-4">
-          <div className="md:col-span-3 md:border-r border-white/10 p-8 md:p-16 flex flex-col justify-center">
+          {/* First column - Tagline anchored to bottom-left */}
+          <div className="md:col-span-3 md:border-r border-white/10 p-8 md:p-16 flex flex-col justify-end">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -81,18 +89,8 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          <div className="p-8 md:p-12 flex flex-col justify-between">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="space-y-6 hidden md:block"
-            >
-              <p className="text-sm text-white/50 leading-relaxed">
-                Automation systems that convert browsers into buyers on autopilot.
-              </p>
-            </motion.div>
-
+          {/* Fourth column - VIEW WORK anchored to bottom-right */}
+          <div className="p-8 md:p-12 flex flex-col justify-end items-end">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
