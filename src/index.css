@@ -91,6 +91,17 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Hide default cursor on desktop for custom cursor */
+  @media (pointer: fine) {
+    body {
+      cursor: none;
+    }
+    
+    a, button, [role="button"], .cursor-pointer {
+      cursor: none;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
