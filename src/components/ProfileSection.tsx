@@ -36,7 +36,7 @@ const ProfileSection = () => {
     },
     {
       year: '2025',
-      title: 'Disruptor Media Agency',
+      title: 'Project Management Automation',
       description: 'Engineered meeting-to-task automation (AI notes → Slack), scripting automation, and complete CRM pipeline systems.',
       icon: 'solar:atom-linear',
       badge: 'D',
