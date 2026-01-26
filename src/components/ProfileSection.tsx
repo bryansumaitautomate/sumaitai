@@ -84,7 +84,7 @@ const ProfileSection = () => {
                 <img 
                   src={bryanProfile} 
                   alt="Bryan Sumait" 
-                  className="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:opacity-100 transition-all duration-700"
+                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-90"></div>
                 
