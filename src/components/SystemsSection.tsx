@@ -135,7 +135,7 @@ const SystemsSection = () => {
       number: '03',
       title: 'Appointment Booking Flow',
       description:
-        'Turn interested leads into booked calls without the back-and-forth. Qualification, scheduling, and reminders—all automated.',
+        'Turn interested leads into booked calls without the back-and-forth. Qualification, scheduling, and reminders, all automated.',
       features: [
         'Smart qualification questions',
         'Calendar sync across platforms',
