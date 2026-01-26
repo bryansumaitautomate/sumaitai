@@ -46,8 +46,8 @@ const TechStackSection = () => {
     icon: 'solar:videocamera-record-bold',
     color: undefined
   }];
-  return <section className="bg-[#0a0a0a] py-20 md:py-32">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+  return <section className="relative bg-[#0a0a0a]/80 backdrop-blur-sm py-20 md:py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header with 4-column grid */}
         <div className="grid grid-cols-4 border-x border-white/10 mb-16">
           <div className="col-span-4 text-center py-8 px-4">
