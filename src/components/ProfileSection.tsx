@@ -104,25 +104,21 @@ const ProfileSection = () => {
                 </p>
               </div>
 
-              {/* Socials */}
+              {/* Contact Icons */}
               <div className="flex items-center gap-3">
                 <a 
-                  href="#" 
-                  className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-sm hover:bg-[#ef4444] hover:text-white hover:border-[#ef4444] transition-all group text-white/50"
+                  href="https://wa.me/1234567890" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-sm hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all group text-white/50"
                 >
-                  <Icon icon="simple-icons:x" width={16} />
+                  <Icon icon="simple-icons:whatsapp" width={16} />
                 </a>
                 <a 
-                  href="#" 
+                  href="mailto:contact@example.com" 
                   className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-sm hover:bg-[#ef4444] hover:text-white hover:border-[#ef4444] transition-all group text-white/50"
                 >
-                  <Icon icon="simple-icons:linkedin" width={16} />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-sm hover:bg-[#ef4444] hover:text-white hover:border-[#ef4444] transition-all group text-white/50"
-                >
-                  <Icon icon="simple-icons:instagram" width={16} />
+                  <Icon icon="solar:letter-linear" width={16} />
                 </a>
               </div>
             </div>
