@@ -22,8 +22,8 @@ const Footer = () => {
     icon: 'simple-icons:github',
     href: '#'
   }];
-  return <footer className="relative z-10 border-t border-white/10 mt-20 py-12 bg-[#0a0a0a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  return <footer className="relative border-t border-white/10 mt-20 py-12 bg-[#0a0a0a]/80 backdrop-blur-sm">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Inner Glassmorphic Card */}
         <div className="relative overflow-hidden bg-[#0a0a0a]/60 backdrop-blur ring-1 ring-white/10 rounded-3xl p-6 sm:p-10 lg:p-14">
           {/* Gradient Overlay */}

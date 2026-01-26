@@ -50,7 +50,7 @@ const AboutSection = () => {
     ref,
     isVisible
   } = useScrollReveal(0.2);
-  return <section className="bg-[#0a0a0a] py-20 md:py-32 border-t border-b border-white/10 relative overflow-hidden">
+  return <section className="relative bg-[#0a0a0a]/80 backdrop-blur-sm py-20 md:py-32 border-t border-b border-white/10 overflow-hidden">
       {/* Subtle vertical grid lines */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="max-w-7xl mx-auto h-full px-4 md:px-6 lg:px-8">
@@ -60,7 +60,7 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div ref={ref} className={`grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {/* LEFT COLUMN - Section Label */}
           <div className="lg:col-span-1 flex flex-col">

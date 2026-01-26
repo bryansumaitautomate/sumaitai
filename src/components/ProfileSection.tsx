@@ -54,7 +54,7 @@ const ProfileSection = () => {
     <section id="experience" className="relative bg-[#0a0a0a]/80 backdrop-blur-sm text-white w-full border-b border-white/10">
       <div
         ref={ref}
-        className={`transition-all duration-700 ${
+        className={`relative z-10 transition-all duration-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >

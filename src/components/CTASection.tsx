@@ -5,7 +5,7 @@ const CTASection = () => {
     ref,
     isVisible
   } = useScrollReveal(0.2);
-  return <section id="contact" className="bg-[#0a0a0a] py-20 md:py-32 relative overflow-hidden">
+  return <section id="contact" className="relative bg-[#0a0a0a]/80 backdrop-blur-sm py-20 md:py-32 overflow-hidden">
       {/* Radial Gradient - subtle red tint */}
       <div className="absolute inset-0 opacity-40" style={{
       background: 'radial-gradient(ellipse at 50% 100%, rgba(239, 68, 68, 0.15) 0%, transparent 60%)'
