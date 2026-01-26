@@ -13,8 +13,8 @@ const HeroSection = () => {
   };
   return <>
       <section className="relative min-h-screen bg-[#0a0a0a] overflow-visible">
-        {/* Spline 3D Robot - pointer-events-none to allow page scroll */}
-        <div className="spline-container absolute top-0 left-0 w-full h-full z-[5] pointer-events-none">
+        {/* Spline 3D Robot - Fixed to viewport */}
+        <div className="spline-container fixed top-0 left-0 w-full h-screen z-[5] pointer-events-none">
           <iframe src="https://my.spline.design/nexbotrobotcharacterconcept-kLwr8f6hgKgaa5gmU6oB00Si" frameBorder="0" width="100%" height="100%" id="aura-spline" title="3D Robot" style={{
           pointerEvents: 'none'
         }} />
