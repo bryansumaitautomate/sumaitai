@@ -111,7 +111,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a href="mailto:bryan@sumait.ai" className="text-white/50 hover:text-white transition">
-                        bryan@sumait.ai
+                        bryansumait@gmail.com
                       </a>
                     </li>
                     <li>
