@@ -51,7 +51,7 @@ const ProfileSection = () => {
   ];
 
   return (
-    <section id="experience" className="relative z-20 bg-[#0a0a0a] text-white w-full border-b border-white/10">
+    <section id="experience" className="relative bg-[#0a0a0a]/80 backdrop-blur-sm text-white w-full border-b border-white/10">
       <div
         ref={ref}
         className={`transition-all duration-700 ${

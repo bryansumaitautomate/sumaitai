@@ -147,7 +147,7 @@ const CaseStudiesSection = () => {
   ];
 
   return (
-    <section className="bg-[#0a0a0a] py-20 md:py-32">
+    <section className="relative bg-[#0a0a0a]/80 backdrop-blur-sm py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* 4-column grid overlay */}
         <div className="grid grid-cols-4 border-x border-white/10 mb-16">
