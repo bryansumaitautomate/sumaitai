@@ -13,7 +13,7 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-transparent text-white relative z-[2]">
       <FloatingNav />
       {/* Hero - Black */}
       <HeroSection />
