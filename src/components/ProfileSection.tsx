@@ -29,7 +29,7 @@ const ProfileSection = () => {
     },
     {
       year: '2024',
-      title: 'MADEEA',
+      title: 'Operation Systems',
       description: 'Built complete business operations: social media automation, lead generation systems, automation hub, and 100+ custom GPTs for workflow optimization.',
       icon: 'solar:widget-5-linear',
       badge: 'M',
