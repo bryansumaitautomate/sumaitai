@@ -107,14 +107,6 @@ const ProfileSection = () => {
               {/* Contact Icons */}
               <div className="flex items-center gap-3">
                 <a 
-                  href="https://wa.me/639564534263" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-sm hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all group text-white/50"
-                >
-                  <Icon icon="simple-icons:whatsapp" width={16} />
-                </a>
-                <a 
                   href="mailto:contact@example.com" 
                   className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-sm hover:bg-[#ef4444] hover:text-white hover:border-[#ef4444] transition-all group text-white/50"
                 >
