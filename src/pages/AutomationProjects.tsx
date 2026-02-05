@@ -24,6 +24,13 @@
        description="End-to-end workflow automation systems that eliminate manual tasks and streamline operations. Built with n8n, Make, and Zapier."
      >
        <GalleryGrid images={images} aspectRatio="video" />
+       
+       {/* More automations text */}
+       <div className="mt-16 text-center">
+         <p className="font-mono text-lg md:text-xl text-white/50">
+           4,000+ more automations..
+         </p>
+       </div>
      </ProjectPageLayout>
    );
  };
