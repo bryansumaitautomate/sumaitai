@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection';
 import ProfileSection from '@/components/ProfileSection';
 import AboutSection from '@/components/AboutSection';
 import SystemsSection from '@/components/SystemsSection';
+import PastProjectsSection from '@/components/PastProjectsSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import ProcessSection from '@/components/ProcessSection';
 import TechStackSection from '@/components/TechStackSection';
@@ -23,6 +24,8 @@ const Index = () => {
       <AboutSection />
       {/* Systems - Alternating Black/White/Black */}
       <SystemsSection />
+      {/* Past Projects */}
+      <PastProjectsSection />
       {/* Case Studies - White */}
       <CaseStudiesSection />
       {/* Process - Black */}
