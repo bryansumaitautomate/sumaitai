@@ -1,15 +1,22 @@
  import ProjectPageLayout from '@/components/ProjectPageLayout';
- import { Button } from '@/components/ui/button';
  import { ExternalLink } from 'lucide-react';
+ 
+ // Import project images
+ import saasDashboard from '@/assets/vibecoded/saas-dashboard.png';
+ import analyticsPlatform from '@/assets/vibecoded/analytics-platform.png';
+ import ecommerceFrontend from '@/assets/vibecoded/ecommerce-frontend.png';
+ import clientPortal from '@/assets/vibecoded/client-portal.png';
+ import landingPage from '@/assets/vibecoded/landing-page.png';
+ import mobileApp from '@/assets/vibecoded/mobile-app.png';
  
  const VibecodedProjects = () => {
    const projects = [
-     { title: 'SaaS Dashboard', url: '#' },
-     { title: 'Analytics Platform', url: '#' },
-     { title: 'E-Commerce Frontend', url: '#' },
-     { title: 'Client Portal', url: '#' },
-     { title: 'Landing Page Design', url: '#' },
-     { title: 'Mobile-First Web App', url: '#' },
+     { title: 'SaaS Dashboard', url: '#', image: saasDashboard },
+     { title: 'Analytics Platform', url: '#', image: analyticsPlatform },
+     { title: 'E-Commerce Frontend', url: '#', image: ecommerceFrontend },
+     { title: 'Client Portal', url: '#', image: clientPortal },
+     { title: 'Landing Page Design', url: '#', image: landingPage },
+     { title: 'Mobile-First Web App', url: '#', image: mobileApp },
    ];
  
    return (
@@ -27,29 +34,31 @@
              rel="noopener noreferrer"
              className="group"
            >
-             <Button
-               className="relative w-full px-6 py-8 text-lg font-syne font-bold text-white bg-[#0a0a0a]/80 border-0 rounded-2xl overflow-hidden hover:shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] transition-all duration-300"
-               style={{
-                 background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(10, 10, 10, 0.9) 50%)',
-               }}
-             >
-               <span className="relative z-10 flex items-center gap-3">
-                 {project.title}
-                 <ExternalLink className="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
-               </span>
-               <div
-                 className="absolute inset-[-2px] rounded-2xl animate-spin opacity-0 group-hover:opacity-70 transition-opacity"
-                 style={{
-                   background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #ef4444 360deg)',
-                   animationDuration: '4s',
-                 }}
-               />
-               <div className="absolute inset-[2px] rounded-2xl bg-[#0a0a0a]" />
-               <span className="absolute inset-0 flex items-center justify-center font-syne font-bold text-white gap-3">
-                 {project.title}
-                 <ExternalLink className="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
-               </span>
-             </Button>
+             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] transition-all duration-300 group-hover:border-white/20 group-hover:shadow-[0_0_40px_8px_rgba(239,68,68,0.15)]">
+               {/* Image Container */}
+               <div className="relative aspect-[16/10] overflow-hidden">
+                 <img
+                   src={project.image}
+                   alt={project.title}
+                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                 />
+                 {/* Subtle overlay gradient */}
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60" />
+                 
+                 {/* External link icon in corner */}
+                 <div className="absolute top-3 right-3 p-2 rounded-lg bg-black/50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                   <ExternalLink className="w-4 h-4 text-white" />
+                 </div>
+               </div>
+               
+               {/* Title */}
+               <div className="p-4">
+                 <h3 className="font-syne font-bold text-lg text-white flex items-center gap-2">
+                   {project.title}
+                   <ExternalLink className="w-4 h-4 text-[#ef4444] opacity-70 group-hover:opacity-100 transition-opacity" />
+                 </h3>
+               </div>
+             </div>
            </a>
          ))}
        </div>
