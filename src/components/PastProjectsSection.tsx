@@ -1,5 +1,7 @@
- import { Link } from 'react-router-dom';
- import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { Link } from 'react-router-dom';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+import voiceAgentsCard from '@/assets/voice-agents-card.png';
+import chatAgentsCard from '@/assets/chat-agents-card.png';
  
  interface ProjectCardProps {
    title: string;
@@ -74,20 +76,20 @@
      imageUrl: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&q=80',
      href: '/automation-projects',
      },
-     {
-     title: 'Chat Agents',
-     description: 'Intelligent conversational AI agents that handle customer inquiries and automate support.',
-     tags: ['AI', 'NLP', 'Support'],
-     imageUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
-     href: '/chat-agents',
-     },
-     {
-     title: 'Voice Agents',
-     description: 'AI-powered voice assistants for phone automation, bookings, and customer interactions.',
-     tags: ['Voice AI', 'Telephony', 'NLP'],
-     imageUrl: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=800&q=80',
-     href: '/voice-agents',
-     },
+    {
+    title: 'Chat Agents',
+    description: 'Intelligent conversational AI agents that handle customer inquiries and automate support.',
+    tags: ['AI', 'NLP', 'Support'],
+    imageUrl: chatAgentsCard,
+    href: '/chat-agents',
+    },
+    {
+    title: 'Voice Agents',
+    description: 'AI-powered voice assistants for phone automation, bookings, and customer interactions.',
+    tags: ['Voice AI', 'Telephony', 'NLP'],
+    imageUrl: voiceAgentsCard,
+    href: '/voice-agents',
+    },
      {
      title: 'Vibecoded Projects',
      description: 'Custom web applications and tools built with modern frameworks and AI-assisted development.',
