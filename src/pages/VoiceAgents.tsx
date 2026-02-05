@@ -1,14 +1,22 @@
  import ProjectPageLayout from '@/components/ProjectPageLayout';
  import GalleryGrid from '@/components/GalleryGrid';
  
+ // Import voice agent images
+ import voiceflowDiagram1 from '@/assets/voice-agents/voiceflow-diagram-1.png';
+ import voiceflowDiagram2 from '@/assets/voice-agents/voiceflow-diagram-2.png';
+ import retellApiWorkflow from '@/assets/voice-agents/retell-api-workflow.png';
+ import inboundOutboundBooking from '@/assets/voice-agents/inbound-outbound-booking.png';
+ import ghlIntegrationWorkflow from '@/assets/voice-agents/ghl-integration-workflow.png';
+ import callTranscriptAnalysis from '@/assets/voice-agents/call-transcript-analysis.png';
+ 
  const VoiceAgents = () => {
    const images = [
-     { src: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=800&q=80', alt: 'Voice Agent 1', title: 'Voice Call Flow' },
-     { src: 'https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=800&q=80', alt: 'Voice Agent 2', title: 'Telephony Integration' },
-     { src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80', alt: 'Voice Agent 3', title: 'Booking Assistant' },
-     { src: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80', alt: 'Voice Agent 4', title: 'Voice Analytics Dashboard' },
-     { src: 'https://images.unsplash.com/photo-1573165067541-4cd6d9837902?w=800&q=80', alt: 'Voice Agent 5', title: 'Multi-Accent Support' },
-     { src: 'https://images.unsplash.com/photo-1573164574472-797cdf4a583a?w=800&q=80', alt: 'Voice Agent 6', title: 'Real-Time Transcription' },
+     { src: voiceflowDiagram1, alt: 'Voiceflow Diagram 1', title: 'Comprehensive Voice Flow Design' },
+     { src: voiceflowDiagram2, alt: 'Voiceflow Diagram 2', title: 'Advanced Conversation Logic' },
+     { src: retellApiWorkflow, alt: 'Retell API Workflow', title: 'Retell API Integration' },
+     { src: inboundOutboundBooking, alt: 'Inbound Outbound Booking', title: 'Inbound/Outbound Booking System' },
+     { src: ghlIntegrationWorkflow, alt: 'GHL Integration Workflow', title: 'GHL Contact Integration' },
+     { src: callTranscriptAnalysis, alt: 'Call Transcript Analysis', title: 'Call Recording & Transcript Analysis' },
    ];
  
    return (
