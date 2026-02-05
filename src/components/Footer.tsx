@@ -46,23 +46,16 @@ const Footer = () => {
                 </p>
 
                 {/* Newsletter Form */}
-                <div className="mt-6 flex items-center gap-2">
-                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Your email" className="flex-1 rounded-full bg-white/5 text-white placeholder-white/40 px-4 py-3 text-sm ring-1 ring-white/10 focus:ring-2 focus:ring-[#ef4444]/30 outline-none transition" required />
-                  <a 
-                    href="https://sumait-ai-audit.lovable.app" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="bg-[#ef4444] text-white px-4 py-3 rounded-full hover:bg-[#ef4444]/90 transition font-medium text-sm flex items-center gap-1"
-                  >
-                    Ai Audit
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-
-                {/* Subtext */}
-                <p className="mt-2 text-xs text-white/40">
-                  Get a free automation audit to see what's possible for your business.
-                </p>
+                {/* CTA Button */}
+                <a 
+                  href="https://sumait-ai-audit.lovable.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="mt-6 inline-flex items-center gap-2 bg-[#ef4444] text-white px-6 py-3 rounded-full hover:bg-[#ef4444]/90 transition font-medium text-sm"
+                >
+                  Claim your Free Audit
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
 
               {/* Right Side - Link Columns */}
