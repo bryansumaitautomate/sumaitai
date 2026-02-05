@@ -1,14 +1,23 @@
  import ProjectPageLayout from '@/components/ProjectPageLayout';
  import GalleryGrid from '@/components/GalleryGrid';
+ import { Button } from '@/components/ui/button';
+ 
+ // Import chat agent images
+ import holisticVitalisFlow from '@/assets/chat-agents/holistic-vitalis-flow.png';
+ import multiStepWorkflow from '@/assets/chat-agents/multi-step-workflow.png';
+ import socialCommentBuilder from '@/assets/chat-agents/social-comment-builder.png';
+ import receiveProcessDms from '@/assets/chat-agents/receive-process-dms.png';
+ import waitReplyFlow from '@/assets/chat-agents/wait-reply-flow.png';
+ import smsAiAutomation from '@/assets/chat-agents/sms-ai-automation.png';
  
  const ChatAgents = () => {
    const images = [
-     { src: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80', alt: 'Chat Agent 1', title: 'Customer Support Bot' },
-     { src: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=800&q=80', alt: 'Chat Agent 2', title: 'Lead Qualification Agent' },
-     { src: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80', alt: 'Chat Agent 3', title: 'NLP Flow Diagram' },
-     { src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80', alt: 'Chat Agent 4', title: 'Multi-Language Bot' },
-     { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80', alt: 'Chat Agent 5', title: 'Chatbot Logic Flow' },
-     { src: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80', alt: 'Chat Agent 6', title: 'AI Response System' },
+     { src: holisticVitalisFlow, alt: 'Holistic Vitalis Flow', title: 'Holistic Vitalis Customer Support' },
+     { src: multiStepWorkflow, alt: 'Multi-Step Workflow', title: 'Multi-Step Conversation Flow' },
+     { src: socialCommentBuilder, alt: 'Social Comment Builder', title: 'Social Comment Automation' },
+     { src: receiveProcessDms, alt: 'Receive & Process DMs', title: 'DM Processing System' },
+     { src: waitReplyFlow, alt: 'Wait & Reply Flow', title: 'Wait & Reply Automation' },
+     { src: smsAiAutomation, alt: 'SMS AI Automation', title: 'SMS AI Webpage Automation' },
    ];
  
    return (
@@ -34,6 +43,35 @@
        </div>
  
        <GalleryGrid images={images} aspectRatio="video" />
+       
+       {/* Demo Button */}
+       <div className="mt-16 text-center">
+         <a 
+           href="#" 
+           className="inline-block"
+           onClick={(e) => e.preventDefault()}
+         >
+           <Button 
+             className="relative px-8 py-6 text-lg font-syne font-bold text-white bg-[#0a0a0a]/80 border-0 rounded-full overflow-hidden group hover:shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] transition-shadow duration-300"
+             style={{
+               background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(10, 10, 10, 0.9) 50%)',
+             }}
+           >
+             <span className="relative z-10">Click here to Demo</span>
+             <div 
+               className="absolute inset-[-2px] rounded-full animate-spin opacity-70"
+               style={{
+                 background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #ef4444 360deg)',
+                 animationDuration: '4s',
+               }}
+             />
+             <div className="absolute inset-[2px] rounded-full bg-[#0a0a0a]" />
+             <span className="absolute inset-0 flex items-center justify-center font-syne font-bold text-white">
+               Click here to Demo
+             </span>
+           </Button>
+         </a>
+       </div>
      </ProjectPageLayout>
    );
  };
