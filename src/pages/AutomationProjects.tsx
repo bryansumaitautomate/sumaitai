@@ -13,8 +13,8 @@
      { src: deepMultilineIcebreaker, alt: 'Deep Multiline Icebreaker', title: 'Deep Multiline Icebreaker' },
      { src: viralContentSystem, alt: 'Viral Content System', title: 'Viral Content System' },
      { src: facelessVideoGenerator, alt: 'Faceless Video Generator', title: 'Faceless Video Generator' },
-     { src: complexWorkflow, alt: 'Complex Workflow', title: 'AI Agent Pipeline' },
-     { src: webhookLlmParser, alt: 'Webhook LLM Parser', title: 'Webhook LLM Parser' },
+     { src: complexWorkflow, alt: 'Chat Agent Backed System', title: 'Chat Agent Backed System' },
+     { src: webhookLlmParser, alt: 'Database Reactivation System', title: 'Database Reactivation System' },
    ];
  
    return (
