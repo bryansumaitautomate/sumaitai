@@ -51,10 +51,24 @@ const Footer = () => {
                   href="https://sumait-ai-audit.lovable.app/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="mt-6 inline-flex items-center gap-2 bg-[#ef4444] text-white px-6 py-3 rounded-full hover:bg-[#ef4444]/90 transition font-medium text-sm"
+                  className="relative mt-6 inline-flex items-center gap-2 font-mono text-xs tracking-[0.15em] text-white px-6 py-3 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_30px_6px_rgba(239,68,68,0.3)] hover:shadow-[0_0_50px_10px_rgba(239,68,68,0.45)]"
                 >
-                  Claim your Free Audit
-                  <ArrowRight className="w-4 h-4" />
+                  {/* Spinning border effect */}
+                  <span className="absolute inset-0 rounded-full">
+                    <span className="absolute inset-0 rounded-full border border-white/10"></span>
+                    <span
+                      className="absolute inset-[-2px] rounded-full animate-spin"
+                      style={{
+                        background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #ef4444 360deg)',
+                        animationDuration: '3s',
+                      }}
+                    ></span>
+                    <span className="absolute inset-[1px] rounded-full bg-[#0a0a0a]/90 backdrop-blur-md"></span>
+                  </span>
+                  <span className="relative z-10 flex items-center gap-2">
+                    CLAIM YOUR FREE AUDIT
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
                 </a>
               </div>
 
