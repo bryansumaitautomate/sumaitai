@@ -1,14 +1,20 @@
  import ProjectPageLayout from '@/components/ProjectPageLayout';
  import GalleryGrid from '@/components/GalleryGrid';
+ import leadGenSystem3 from '@/assets/automation/lead-gen-system-3.png';
+ import deepMultilineIcebreaker from '@/assets/automation/deep-multiline-icebreaker.png';
+ import viralContentSystem from '@/assets/automation/viral-content-system.png';
+ import facelessVideoGenerator from '@/assets/automation/faceless-video-generator.png';
+ import complexWorkflow from '@/assets/automation/complex-workflow.png';
+ import webhookLlmParser from '@/assets/automation/webhook-llm-parser.png';
  
  const AutomationProjects = () => {
    const images = [
-     { src: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&q=80', alt: 'Workflow Automation 1', title: 'n8n Lead Pipeline' },
-     { src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80', alt: 'Workflow Automation 2', title: 'Make.com Integration' },
-     { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80', alt: 'Workflow Automation 3', title: 'Zapier Multi-Step Zap' },
-     { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', alt: 'Workflow Automation 4', title: 'Data Sync Workflow' },
-     { src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80', alt: 'Workflow Automation 5', title: 'CRM Automation' },
-     { src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80', alt: 'Workflow Automation 6', title: 'Email Sequence Builder' },
+     { src: leadGenSystem3, alt: 'Lead Gen System 3', title: 'Automated Outreach System' },
+     { src: deepMultilineIcebreaker, alt: 'Deep Multiline Icebreaker', title: 'Deep Multiline Icebreaker' },
+     { src: viralContentSystem, alt: 'Viral Content System', title: 'Viral Content System' },
+     { src: facelessVideoGenerator, alt: 'Faceless Video Generator', title: 'Faceless Video Generator' },
+     { src: complexWorkflow, alt: 'Complex Workflow', title: 'AI Agent Pipeline' },
+     { src: webhookLlmParser, alt: 'Webhook LLM Parser', title: 'Webhook LLM Parser' },
    ];
  
    return (
