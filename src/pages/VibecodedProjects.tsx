@@ -1,5 +1,6 @@
  import ProjectPageLayout from '@/components/ProjectPageLayout';
- import { ExternalLink } from 'lucide-react';
+ import ImageLightbox from '@/components/ImageLightbox';
+ import { useState } from 'react';
  
  // Import project images
  import saasDashboard from '@/assets/vibecoded/saas-dashboard.png';
@@ -10,14 +11,24 @@
  import mobileApp from '@/assets/vibecoded/mobile-app.png';
  
  const VibecodedProjects = () => {
+   const [lightboxOpen, setLightboxOpen] = useState(false);
+   const [currentIndex, setCurrentIndex] = useState(0);
+ 
    const projects = [
-     { title: 'SaaS Dashboard', url: '#', image: saasDashboard },
-     { title: 'Analytics Platform', url: '#', image: analyticsPlatform },
-     { title: 'E-Commerce Frontend', url: '#', image: ecommerceFrontend },
-     { title: 'Client Portal', url: '#', image: clientPortal },
-     { title: 'Landing Page Design', url: '#', image: landingPage },
-     { title: 'Mobile-First Web App', url: '#', image: mobileApp },
+     { title: 'SaaS Dashboard', image: saasDashboard },
+     { title: 'Analytics Platform', image: analyticsPlatform },
+     { title: 'E-Commerce Frontend', image: ecommerceFrontend },
+     { title: 'Client Portal', image: clientPortal },
+     { title: 'Landing Page Design', image: landingPage },
+     { title: 'Mobile-First Web App', image: mobileApp },
    ];
+ 
+   const lightboxImages = projects.map(p => ({ src: p.image, alt: p.title }));
+ 
+   const openLightbox = (index: number) => {
+     setCurrentIndex(index);
+     setLightboxOpen(true);
+   };
  
    return (
      <ProjectPageLayout
@@ -27,12 +38,10 @@
      >
        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
          {projects.map((project, index) => (
-           <a
+           <div
              key={index}
-             href={project.url}
-             target="_blank"
-             rel="noopener noreferrer"
-             className="group"
+             onClick={() => openLightbox(index)}
+             className="group cursor-pointer"
            >
              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] transition-all duration-300 group-hover:border-white/20 group-hover:shadow-[0_0_40px_8px_rgba(239,68,68,0.15)]">
                {/* Image Container */}
@@ -44,24 +53,27 @@
                  />
                  {/* Subtle overlay gradient */}
                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60" />
-                 
-                 {/* External link icon in corner */}
-                 <div className="absolute top-3 right-3 p-2 rounded-lg bg-black/50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                   <ExternalLink className="w-4 h-4 text-white" />
-                 </div>
                </div>
                
                {/* Title */}
                <div className="p-4">
-                 <h3 className="font-syne font-bold text-lg text-white flex items-center gap-2">
+                 <h3 className="font-syne font-bold text-lg text-white">
                    {project.title}
-                   <ExternalLink className="w-4 h-4 text-[#ef4444] opacity-70 group-hover:opacity-100 transition-opacity" />
                  </h3>
                </div>
              </div>
-           </a>
+           </div>
          ))}
        </div>
+ 
+       {/* Lightbox */}
+       <ImageLightbox
+         images={lightboxImages}
+         currentIndex={currentIndex}
+         isOpen={lightboxOpen}
+         onClose={() => setLightboxOpen(false)}
+         onNavigate={setCurrentIndex}
+       />
      </ProjectPageLayout>
    );
  };
