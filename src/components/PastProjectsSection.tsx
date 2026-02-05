@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import voiceAgentsCard from '@/assets/voice-agents-card.png';
 import chatAgentsCard from '@/assets/chat-agents-card.png';
+import automationCard from '@/assets/automation-card.png';
+import vibecodedCard from '@/assets/vibecoded-card.png';
  
  interface ProjectCardProps {
    title: string;
@@ -69,13 +71,13 @@ import chatAgentsCard from '@/assets/chat-agents-card.png';
    const { ref, isVisible } = useScrollReveal(0.1);
  
    const projects = [
-     {
-     title: 'Automation Projects',
-     description: 'End-to-end workflow automation systems that eliminate manual tasks and streamline operations.',
-     tags: ['n8n', 'Make', 'Zapier'],
-     imageUrl: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&q=80',
-     href: '/automation-projects',
-     },
+      {
+      title: 'Automation Projects',
+      description: 'End-to-end workflow automation systems that eliminate manual tasks and streamline operations.',
+      tags: ['n8n', 'Make', 'Zapier'],
+      imageUrl: automationCard,
+      href: '/automation-projects',
+      },
     {
     title: 'Chat Agents',
     description: 'Intelligent conversational AI agents that handle customer inquiries and automate support.',
@@ -90,13 +92,13 @@ import chatAgentsCard from '@/assets/chat-agents-card.png';
     imageUrl: voiceAgentsCard,
     href: '/voice-agents',
     },
-     {
-     title: 'Vibecoded Projects',
-     description: 'Custom web applications and tools built with modern frameworks and AI-assisted development.',
-     tags: ['React', 'Lovable', 'Full-Stack'],
-     imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
-     href: '/vibecoded-projects',
-     },
+      {
+      title: 'Vibecoded Projects',
+      description: 'Custom web applications and tools built with modern frameworks and AI-assisted development.',
+      tags: ['React', 'Lovable', 'Full-Stack'],
+      imageUrl: vibecodedCard,
+      href: '/vibecoded-projects',
+      },
    ];
  
    return (
