@@ -70,40 +70,28 @@
  
    const projects = [
      {
-       title: 'AI Lead Qualification Bot',
-       description: 'Automated lead scoring and qualification system that increased conversion rates by 45%.',
-       tags: ['AI', 'Automation', 'Sales'],
-       imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80',
+     title: 'Automation Projects',
+     description: 'End-to-end workflow automation systems that eliminate manual tasks and streamline operations.',
+     tags: ['n8n', 'Make', 'Zapier'],
+     imageUrl: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&q=80',
      },
      {
-       title: 'Real Estate CRM Pipeline',
-       description: 'End-to-end property management and client communication automation.',
-       tags: ['CRM', 'Real Estate', 'Workflow'],
-       imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
+     title: 'Chat Agents',
+     description: 'Intelligent conversational AI agents that handle customer inquiries and automate support.',
+     tags: ['AI', 'NLP', 'Support'],
+     imageUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
      },
      {
-       title: 'E-commerce Order System',
-       description: 'Streamlined order processing with automated fulfillment and customer updates.',
-       tags: ['E-commerce', 'Integration', 'Ops'],
-       imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+     title: 'Voice Agents',
+     description: 'AI-powered voice assistants for phone automation, bookings, and customer interactions.',
+     tags: ['Voice AI', 'Telephony', 'NLP'],
+     imageUrl: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=800&q=80',
      },
      {
-       title: 'Legal Document Automation',
-       description: 'Contract generation and approval workflows reducing processing time by 70%.',
-       tags: ['Legal', 'Documents', 'AI'],
-       imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
-     },
-     {
-       title: 'Healthcare Scheduling System',
-       description: 'Patient booking and reminder system with smart appointment optimization.',
-       tags: ['Healthcare', 'Booking', 'SMS'],
-       imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80',
-     },
-     {
-       title: 'Marketing Campaign Engine',
-       description: 'Multi-channel campaign automation with performance tracking and optimization.',
-       tags: ['Marketing', 'Analytics', 'Email'],
-       imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+     title: 'Vibecoded Projects',
+     description: 'Custom web applications and tools built with modern frameworks and AI-assisted development.',
+     tags: ['React', 'Lovable', 'Full-Stack'],
+     imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
      },
    ];
  
