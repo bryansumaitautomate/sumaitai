@@ -1,3 +1,4 @@
+ import { useEffect, useCallback } from 'react';
  import ProjectPageLayout from '@/components/ProjectPageLayout';
  import GalleryGrid from '@/components/GalleryGrid';
  import { Button } from '@/components/ui/button';
@@ -10,7 +11,47 @@
  import waitReplyFlow from '@/assets/chat-agents/wait-reply-flow.png';
  import smsAiAutomation from '@/assets/chat-agents/sms-ai-automation.png';
  
+ // Extend Window interface for Voiceflow
+ declare global {
+   interface Window {
+     voiceflow?: {
+       chat: {
+         load: (config: unknown) => void;
+         open: () => void;
+       };
+     };
+   }
+ }
+ 
  const ChatAgents = () => {
+   const loadVoiceflowWidget = useCallback(() => {
+     // If already loaded, just open the chat
+     if (window.voiceflow?.chat) {
+       window.voiceflow.chat.open();
+       return;
+     }
+ 
+     // Dynamically load the Voiceflow script
+     const script = document.createElement('script');
+     script.type = 'text/javascript';
+     script.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
+     script.onload = () => {
+       window.voiceflow?.chat.load({
+         verify: { projectID: '698425d5d5905339791a422a' },
+         url: 'https://general-runtime.voiceflow.com',
+         versionID: 'production',
+         voice: {
+           url: 'https://runtime-api.voiceflow.com'
+         }
+       });
+       // Open the chat after a short delay to ensure it's loaded
+       setTimeout(() => {
+         window.voiceflow?.chat.open();
+       }, 500);
+     };
+     document.head.appendChild(script);
+   }, []);
+ 
    const images = [
      { src: holisticVitalisFlow, alt: 'Holistic Vitalis Flow', title: 'Holistic Vitalis Customer Support' },
      { src: multiStepWorkflow, alt: 'Multi-Step Workflow', title: 'Multi-Step Conversation Flow' },
@@ -46,10 +87,9 @@
        
        {/* Demo Button */}
        <div className="mt-16 text-center">
-         <a 
-           href="#" 
+         <button 
            className="inline-block"
-           onClick={(e) => e.preventDefault()}
+           onClick={loadVoiceflowWidget}
          >
            <Button 
              className="relative px-8 py-6 text-lg font-syne font-bold text-white bg-[#0a0a0a]/80 border-0 rounded-full overflow-hidden group hover:shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] transition-shadow duration-300"
@@ -70,7 +110,7 @@
                Click here to Demo
              </span>
            </Button>
-         </a>
+         </button>
        </div>
      </ProjectPageLayout>
    );
