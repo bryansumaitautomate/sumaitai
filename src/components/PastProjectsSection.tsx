@@ -13,7 +13,7 @@
    return (
      <Link 
        to={href}
-       className="group relative rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)] block"
+       className="group relative rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/50 hover:shadow-[0_0_30px_rgba(239,68,68,0.4),0_0_60px_rgba(239,68,68,0.2)] block"
        style={{
          background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
        }}
@@ -57,20 +57,6 @@
                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
              </svg>
            </span>
-         </div>
-       </div>
- 
-       {/* Hover Glow Effect */}
-       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-         <div className="absolute inset-[-1px] rounded-2xl">
-           <div 
-             className="absolute inset-0 rounded-2xl animate-spin"
-             style={{
-               background: 'conic-gradient(from 0deg, transparent, transparent 270deg, #ef4444 360deg)',
-               animationDuration: '8s',
-             }}
-           />
-           <div className="absolute inset-[1px] rounded-2xl bg-[#0a0a0a]" />
          </div>
        </div>
      </Link>
