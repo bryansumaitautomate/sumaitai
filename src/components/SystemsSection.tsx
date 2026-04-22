@@ -2,7 +2,6 @@ import { Icon } from '@iconify/react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 interface SystemCardProps {
-  number: string;
   title: string;
   description: string;
   features: string[];
@@ -50,7 +49,6 @@ const AbstractMockup = ({ icon }: { icon: string }) => {
 };
 
 const SystemCard = ({
-  number,
   title,
   description,
   features,
@@ -81,9 +79,6 @@ const SystemCard = ({
             <div
               className={`${reversed ? 'lg:order-2' : ''} flex flex-col justify-center`}
             >
-              <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-6">
-                {number} /// SYSTEMS
-              </p>
               <h3 className="font-syne font-bold text-3xl md:text-4xl text-white mb-6">
                 {title}
               </h3>
@@ -118,12 +113,11 @@ const SystemCard = ({
 const SystemsSection = () => {
   const systems = [
     {
-      number: '03',
       title: 'Lead Capture Engine',
       description:
         'Stop losing leads to broken forms and slow follow-ups. My capture systems grab every prospect and start nurturing instantly.',
       features: [
-        'Multi-channel capture (web, social, ads)',
+        'Multi-channel capture across web, social, and ads',
         'Instant lead scoring and routing',
         'Automated welcome sequences',
         'CRM integration and sync',
@@ -132,37 +126,66 @@ const SystemsSection = () => {
       reversed: false,
     },
     {
-      number: '03',
       title: 'Appointment Booking Flow',
       description:
-        'Turn interested leads into booked calls without the back-and-forth. Qualification, scheduling, and reminders, all automated.',
+        'Turn interested leads into booked calls without the back and forth. Qualification, scheduling, and reminders, all automated.',
       features: [
         'Smart qualification questions',
         'Calendar sync across platforms',
         'Automated confirmation and reminders',
-        'No-show recovery sequences',
+        'No show recovery sequences',
       ],
       icon: 'solar:calendar-linear',
       reversed: true,
     },
     {
-      number: '03',
       title: 'Deal Closing Pipeline',
       description:
         'Keep deals moving with automated follow-ups, proposal delivery, and contract workflows that close faster.',
       features: [
-        'Stage-based automation triggers',
+        'Automated triggers across every deal stage',
         'Proposal and contract templates',
         'Payment integration ready',
-        'Win/loss analysis tracking',
+        'Built-in win and loss tracking',
       ],
       icon: 'solar:chart-linear',
       reversed: false,
+    },
+    {
+      title: 'AI Brain Builds',
+      description:
+        'Make every customer call, doc, and conversation queryable. Founders ask questions, the brain answers in plain English.',
+      features: [
+        'Connects calls, transcripts, and documents into one searchable layer',
+        'Routes data automatically by call type',
+        'Auto-emails action items to your team',
+        'Founder queries the brain in natural language',
+      ],
+      icon: 'solar:cpu-bolt-linear',
+      reversed: true,
     },
   ];
 
   return (
     <div id="systems">
+      {/* Section Header */}
+      <section className="relative bg-[#0a0a0a]/80 backdrop-blur-sm pt-20 md:pt-32 pb-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-4 border-x border-white/10">
+            <div className="border-r border-white/10 py-8">
+              <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] px-4">
+                04 /// SYSTEMS
+              </p>
+            </div>
+            <div className="col-span-3 py-8 px-4">
+              <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-white">
+                What I build
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {systems.map((system, index) => (
         <SystemCard key={index} {...system} />
       ))}
