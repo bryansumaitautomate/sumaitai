@@ -30,24 +30,31 @@ const ProfileSection = () => {
     {
       year: '2024',
       title: 'Operation Systems',
-      description: 'Built complete business operations: social media automation, lead generation systems, automation hub, and 100+ custom GPTs for workflow optimization.',
+      description: 'Built complete business operations across social media automation, lead generation, and CRM systems for 8+ B2B clients.',
       icon: 'solar:widget-5-linear',
       badge: 'M',
     },
     {
       year: '2025',
       title: 'Project Management Automation',
-      description: 'Engineered meeting-to-task automation (AI notes → Slack), scripting automation, and complete CRM pipeline systems.',
+      description: 'Engineered meeting to task automation (AI notes into Slack), scripting automation, and complete CRM pipeline systems.',
       icon: 'solar:atom-linear',
       badge: 'D',
+    },
+    {
+      year: '2026',
+      title: 'Cortex v4.0 Agent Framework',
+      description: 'Designed and shipped an 18-team, 72-agent framework that powers SUMAIT client delivery. Productized in three retainer tiers.',
+      icon: 'solar:cpu-bolt-linear',
+      badge: 'C',
     },
   ];
 
   const skills = [
-    'Revenue Systems',
-    'Sales Automation',
-    'AI Integration',
-    'CRM Architecture',
+    'Voice Agents',
+    'n8n Workflows',
+    'GHL Pipelines',
+    'AI Brain Builds',
   ];
 
   return (
@@ -100,7 +107,7 @@ const ProfileSection = () => {
               <div>
                 <h3 className="text-2xl font-syne font-medium tracking-tight mb-2 text-white">Bryan Sumait</h3>
                 <p className="text-sm text-white/50 leading-relaxed font-normal">
-                  Specializing in high-ticket sales infrastructure and AI automation.
+                  I run SUMAIT, an AI automation team that builds revenue systems for B2B businesses.
                 </p>
               </div>
 
