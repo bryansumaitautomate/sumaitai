@@ -16,27 +16,37 @@ const FAQSection = () => {
     {
       question: 'What types of businesses do you work with?',
       answer:
-        "I work primarily with B2B service providers, SaaS companies, and coaches/consultants who have proven offers but need better systems to scale. If you're doing $20K+/month and losing leads to manual processes, I can probably help.",
+        "I work primarily with B2B service providers, SaaS companies, and coaches or consultants who have proven offers but need better systems to scale. If you're doing $20K per month or more and losing leads to manual processes, I can probably help.",
     },
     {
       question: 'How long does a typical project take?',
       answer:
-        "Most complete system builds take 4-6 weeks from kickoff to launch. Simpler automations or fixes can be done in 1-2 weeks. I'll give you a realistic timeline after our discovery call.",
+        "Most complete system builds take 4 to 6 weeks from kickoff to launch. Simpler automations or fixes can be done in 1 to 2 weeks. I'll give you a realistic timeline after our discovery call.",
     },
     {
       question: 'Do I need to be technical?',
       answer:
-        "Not at all. I handle all the technical implementation. You just need to understand your sales process and be able to answer questions about how you want things to work. I'll translate that into systems.",
+        "Not at all. My team handles the technical implementation. I scope the work, run discovery, and stay close to delivery. You just need to understand your sales process and be able to answer questions about how you want things to work.",
     },
     {
       question: 'What if I already have some systems in place?',
       answer:
-        "That's common. I'll audit what you have, keep what's working, and fix or replace what isn't. No need to start from scratch, we'll build on your existing foundation.",
+        "That's common. We'll audit what you have, keep what's working, and fix or replace what isn't. No need to start from scratch, we'll build on your existing foundation.",
     },
     {
       question: "What's included in support after launch?",
       answer:
-        'Every project includes 30 days of support after launch for bugs and adjustments. For ongoing optimization and new automations, I offer monthly retainer packages.',
+        'Every project includes 30 days of support after launch for bugs and adjustments. For ongoing optimization and new automations, we offer monthly retainer packages.',
+    },
+    {
+      question: 'Do you work with clients outside the Philippines?',
+      answer:
+        "Yes. SUMAIT is Manila-based, GMT+8. We work async-first with clients in the US, EU, and Asia. Most of our retainer clients are not in the Philippines.",
+    },
+    {
+      question: "What's your pricing?",
+      answer:
+        "SUMAIT retainers start at $3,000 per month for the Starter tier. The Growth tier is $8,000 per month. Agency tier (white-label Cortex) starts at $25,000 per month. Project work is quoted per scope.",
     },
   ];
 
