@@ -83,7 +83,7 @@ const HeroSection = () => {
                   01 /// REVENUE SYSTEMS
                 </p>
                 <p className="font-syne text-base text-white/50 leading-relaxed">
-                  I build systems that capture leads, book calls, and close deals—while you sleep.
+                  I build systems that capture leads, book calls, and close deals while you sleep.
                 </p>
               </motion.div>
             </div>

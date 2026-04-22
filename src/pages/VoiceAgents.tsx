@@ -70,7 +70,7 @@
            Experience a realistic sales role-play with an AI buyer who won't make it easy. Bryan challenges your pitch with tough objections, tests your discovery skills, then scores your performance (1-10) and gives you targeted feedback to improve.
          </p>
          <p className="text-white/40 text-sm mb-8">
-           To try the demo – Click the button and click the phone icon and talk.
+           To try the demo, click the button and click the phone icon and talk.
          </p>
          <button 
            className="inline-block"
