@@ -44,7 +44,7 @@ const ProcessSection = () => {
           </div>
           <div className="col-span-3 py-8 px-4">
             <h2 className="font-syne font-bold text-3xl md:text-4xl lg:text-5xl text-white">
-              From chaos to cash flow in 4 weeks.
+              From chaos to cash flow in 30 days.
             </h2>
           </div>
         </div>
