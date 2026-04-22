@@ -1,14 +1,6 @@
-import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { ArrowRight } from 'lucide-react';
 const Footer = () => {
-  const [email, setEmail] = useState('');
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter subscription
-    console.log('Newsletter subscription:', email);
-    setEmail('');
-  };
   const socialLinks = [{
     name: 'LinkedIn',
     icon: 'simple-icons:linkedin',
@@ -37,7 +29,6 @@ const Footer = () => {
                   What if AI could run your follow-ups, qualification calls, and appointment booking while you sleep? 
                 </p>
 
-                {/* Newsletter Form */}
                 {/* CTA Button */}
                 <a 
                   href="https://sumait-ai-audit.lovable.app/" 
