@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useTilt } from '@/hooks/useTilt';
 import { parseMetric } from '@/hooks/useCountUp';
 
 interface CaseStudy {
@@ -73,6 +74,7 @@ const GradientCard = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const { tilt, handleMouseMove: handleTiltMove, handleMouseLeave: handleTiltLeave } = useTilt({ maxTilt: 5 });
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -83,21 +85,33 @@ const GradientCard = ({
     });
   }, []);
 
+  const combinedMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    handleMouseMove(e);
+    handleTiltMove(e);
+  };
+
+  const combinedMouseLeave = () => {
+    setIsHovered(false);
+    handleTiltLeave();
+  };
+
   return (
     <div
       ref={cardRef}
-      onMouseMove={handleMouseMove}
+      onMouseMove={combinedMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseLeave={combinedMouseLeave}
       className={`group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm transition-all duration-300 ease-in-out
         hover:scale-[1.02] hover:border-primary/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]
-        ${isVisible 
-          ? 'opacity-100 translate-y-0' 
+        ${isVisible
+          ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-12'
         }`}
-      style={{ 
+      style={{
         transitionDelay: isVisible ? `${index * 150}ms` : '0ms',
         background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+        transform: `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+        transformStyle: 'preserve-3d',
       }}
     >
       {/* Cursor-following glow effect */}

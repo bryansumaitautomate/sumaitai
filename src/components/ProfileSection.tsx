@@ -2,6 +2,56 @@ import { Icon } from '@iconify/react';
 import bryanProfile from '@/assets/bryan-sumait-profile.png';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useMagnetic } from '@/hooks/useMagnetic';
+import { useTilt } from '@/hooks/useTilt';
+
+interface TiltExperienceCardProps {
+  card: {
+    year: string;
+    title: string;
+    description: string;
+    icon: string;
+    badge: string | null;
+  };
+  isLast: boolean;
+}
+
+const TiltExperienceCard = ({ card, isLast }: TiltExperienceCardProps) => {
+  const { tilt, handleMouseMove, handleMouseLeave } = useTilt({ maxTilt: 4 });
+  return (
+    <div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={`group flex items-start gap-6 p-6 lg:p-8 transition-all duration-300 hover:bg-white/5 cursor-default ${
+        !isLast ? 'border-b border-white/10' : ''
+      }`}
+      style={{
+        background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+        transform: `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+        transformStyle: 'preserve-3d',
+      }}
+    >
+      {/* Icon */}
+      <div className="w-10 h-10 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20 flex items-center justify-center flex-shrink-0">
+        <Icon icon={card.icon} width={20} className="text-[#ef4444]" />
+      </div>
+
+      {/* Year */}
+      <span className="text-sm font-mono text-white/50 w-12 flex-shrink-0 pt-1">
+        {card.year}
+      </span>
+
+      {/* Content */}
+      <div className="flex-1">
+        <h4 className="text-lg font-syne font-bold text-white mb-2 group-hover:text-[#ef4444] transition-colors">
+          {card.title}
+        </h4>
+        <p className="text-sm text-white/50 leading-relaxed">
+          {card.description}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const ProfileSection = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
@@ -167,35 +217,11 @@ const ProfileSection = () => {
             {/* Experience Cards - Stacked List */}
             <div className="flex-1">
               {experienceCards.map((card, index) => (
-                <div
+                <TiltExperienceCard
                   key={card.year}
-                  className={`group flex items-start gap-6 p-6 lg:p-8 transition-all duration-300 hover:bg-white/5 cursor-default ${
-                    index !== experienceCards.length - 1 ? 'border-b border-white/10' : ''
-                  }`}
-                  style={{
-                    background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
-                  }}
-                >
-                  {/* Icon */}
-                  <div className="w-10 h-10 rounded-lg bg-[#ef4444]/10 border border-[#ef4444]/20 flex items-center justify-center flex-shrink-0">
-                    <Icon icon={card.icon} width={20} className="text-[#ef4444]" />
-                  </div>
-
-                  {/* Year */}
-                  <span className="text-sm font-mono text-white/50 w-12 flex-shrink-0 pt-1">
-                    {card.year}
-                  </span>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h4 className="text-lg font-syne font-bold text-white mb-2 group-hover:text-[#ef4444] transition-colors">
-                      {card.title}
-                    </h4>
-                    <p className="text-sm text-white/50 leading-relaxed">
-                      {card.description}
-                    </p>
-                  </div>
-                </div>
+                  card={card}
+                  isLast={index === experienceCards.length - 1}
+                />
               ))}
             </div>
           </div>

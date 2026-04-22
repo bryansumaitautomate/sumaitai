@@ -1,5 +1,51 @@
 import { Icon } from '@iconify/react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useTilt } from '@/hooks/useTilt';
+
+interface TiltPhaseCardProps {
+  phase: {
+    phase: string;
+    title: string;
+    description: string;
+    icon: string;
+  };
+  index: number;
+}
+
+const TiltPhaseCard = ({ phase, index }: TiltPhaseCardProps) => {
+  const { tilt, handleMouseMove, handleMouseLeave } = useTilt({ maxTilt: 5 });
+  return (
+    <div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="group relative rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
+      style={{
+        transitionDelay: `${index * 100}ms`,
+        background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
+        transform: `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+        transformStyle: 'preserve-3d',
+      }}
+    >
+      <div className="relative p-8">
+        {/* Phase Label */}
+        <p className="font-mono text-xs text-[#ef4444] mb-6">{phase.phase}</p>
+
+        {/* Icon */}
+        <div
+          className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-[#ef4444]/10 border border-[#ef4444]/20 group-hover:border-[#ef4444]/40 transition-colors"
+        >
+          <Icon icon={phase.icon} className="w-6 h-6 text-white" />
+        </div>
+
+        {/* Content */}
+        <h3 className="font-syne font-semibold text-xl text-white mb-3 group-hover:text-[#ef4444] transition-colors">
+          {phase.title}
+        </h3>
+        <p className="text-sm text-white/70 leading-relaxed">{phase.description}</p>
+      </div>
+    </div>
+  );
+};
 
 const ProcessSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
@@ -57,32 +103,7 @@ const ProcessSection = () => {
           }`}
         >
           {phases.map((phase, index) => (
-            <div
-              key={index}
-              className="group relative rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef4444]/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]"
-              style={{ 
-                transitionDelay: `${index * 100}ms`,
-                background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
-              }}
-            >
-              <div className="relative p-8">
-                {/* Phase Label */}
-                <p className="font-mono text-xs text-[#ef4444] mb-6">{phase.phase}</p>
-
-                {/* Icon */}
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-[#ef4444]/10 border border-[#ef4444]/20 group-hover:border-[#ef4444]/40 transition-colors"
-                >
-                  <Icon icon={phase.icon} className="w-6 h-6 text-white" />
-                </div>
-
-                {/* Content */}
-                <h3 className="font-syne font-semibold text-xl text-white mb-3 group-hover:text-[#ef4444] transition-colors">
-                  {phase.title}
-                </h3>
-                <p className="text-sm text-white/70 leading-relaxed">{phase.description}</p>
-              </div>
-            </div>
+            <TiltPhaseCard key={index} phase={phase} index={index} />
           ))}
         </div>
       </div>
