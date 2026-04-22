@@ -83,7 +83,7 @@ const AboutSection = () => {
             {/* Headline with pulsing dot */}
             <div className="flex items-start gap-3 mb-8">
               <div className="w-3 h-3 rounded-full bg-primary animate-pulse mt-3 flex-shrink-0" />
-              <h2 className="font-syne font-medium text-3xl md:text-4xl lg:text-5xl text-white leading-tight">I'm Bryan Sumait, I build revenue systems that run while you sleep.</h2>
+              <h2 className="font-syne font-medium text-3xl md:text-4xl lg:text-5xl text-white leading-tight">I'm Bryan Sumait. I run SUMAIT, a team building revenue systems that work while you sleep.</h2>
             </div>
 
             {/* Body Copy */}
