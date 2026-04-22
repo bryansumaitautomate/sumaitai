@@ -12,15 +12,7 @@ const Footer = () => {
   const socialLinks = [{
     name: 'LinkedIn',
     icon: 'simple-icons:linkedin',
-    href: '#'
-  }, {
-    name: 'Twitter',
-    icon: 'simple-icons:x',
-    href: '#'
-  }, {
-    name: 'GitHub',
-    icon: 'simple-icons:github',
-    href: '#'
+    href: 'https://www.linkedin.com/in/bryansumait'
   }];
   return <footer className="relative border-t border-white/10 mt-20 py-12 bg-[#0a0a0a]/80 backdrop-blur-sm">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,7 +119,7 @@ const Footer = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-white/50 hover:text-white transition">
+                      <a href="https://www.linkedin.com/in/bryansumait" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition">
                         LinkedIn
                       </a>
                     </li>
