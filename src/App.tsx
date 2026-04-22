@@ -13,11 +13,13 @@ import Index from "./pages/Index";
  const VoiceAgents = lazy(() => import("./pages/VoiceAgents"));
  const VibecodedProjects = lazy(() => import("./pages/VibecodedProjects"));
 import CustomCursor from "./components/CustomCursor";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <>
+    <ScrollProgressBar />
     <CustomCursor />
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
