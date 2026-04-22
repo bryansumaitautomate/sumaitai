@@ -121,28 +121,28 @@ const CaseStudiesSection = () => {
 
   const caseStudies: CaseStudy[] = [
     {
-      category: 'B2B SAAS',
-      title: 'Demo Booking System',
-      metric: '340%',
-      metricLabel: 'More demos booked',
+      category: 'COACHING · BETTER BODY ACADEMY',
+      title: 'Sales Call AI Brain',
+      metric: '100%',
+      metricLabel: 'Call coverage',
       description:
-        'Replaced manual outreach with automated qualification and scheduling. Demos went from 12/month to 53/month.',
+        'Built a Fathom to n8n to AI agent pipeline that captures, routes, and summarizes every sales and coaching call. Active retainer.',
     },
     {
-      category: 'COACHING',
-      title: 'Client Onboarding Flow',
-      metric: '8hrs',
-      metricLabel: 'Saved weekly',
+      category: 'AGENCY · DISRUPTORS MEDIA',
+      title: 'Client Approval Portal',
+      metric: '6 hrs',
+      metricLabel: 'Saved per client per week',
       description:
-        'Automated the entire journey from lead to first session. Contracts, payments, and scheduling on autopilot.',
+        'Shipped an 8-workflow client portal with editable templates and per-message confirm. Approval cycle dropped from two days to four hours.',
     },
     {
-      category: 'E-COMMERCE',
-      title: 'Cart Recovery Engine',
-      metric: '$127K',
-      metricLabel: 'Revenue recovered',
+      category: 'FINTECH · AI TECH SOLUTIONS',
+      title: 'Voice and Outbound Stack',
+      metric: '14 days',
+      metricLabel: 'Build to launch',
       description:
-        'Multi-touch abandoned cart sequences that recovered 23% of lost sales over 6 months.',
+        'VAPI inbound voice agent, GHL pipeline, and 8-inbox Instantly outbound shipped in two weeks. Mortgage vertical.',
     },
   ];
 
