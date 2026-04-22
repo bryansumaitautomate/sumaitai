@@ -153,7 +153,7 @@ const CaseStudiesSection = () => {
         <div className="grid grid-cols-4 border-x border-white/10 mb-16">
           <div className="border-r border-white/10 py-8">
             <p className="font-mono text-xs tracking-[0.3em] text-primary px-4">
-              04 /// RESULTS
+              06 /// RESULTS
             </p>
           </div>
           <div className="col-span-3 py-8 px-4">

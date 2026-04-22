@@ -146,7 +146,7 @@ const ProfileSection = () => {
             {/* Section Header */}
             <div className="px-8 lg:px-12 pt-8 lg:pt-12 pb-6">
               <span className="text-xs font-mono tracking-widest text-[#ef4444] uppercase mb-3 block">
-                05 /// EXPERIENCE
+                03 /// EXPERIENCE
               </span>
               <h3 className="text-3xl lg:text-4xl font-syne font-bold text-white tracking-tight">
                 Timeline

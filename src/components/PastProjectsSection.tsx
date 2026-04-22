@@ -112,7 +112,7 @@ import vibecodedCard from '@/assets/vibecoded-card.png';
            }`}
          >
            <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-4">
-             04 /// PORTFOLIO
+             05 /// PORTFOLIO
            </p>
            <h2 className="font-syne font-bold text-4xl md:text-5xl text-white mb-4">
              Past Projects

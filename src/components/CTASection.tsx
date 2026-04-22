@@ -22,7 +22,7 @@ const CTASection = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <div ref={ref} className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-6">
-            10 /// LET'S BUILD
+            11 /// LET'S BUILD
           </p>
 
           <h2 className="font-syne font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[0.95] mb-8">

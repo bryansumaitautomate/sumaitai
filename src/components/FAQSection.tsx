@@ -47,7 +47,7 @@ const FAQSection = () => {
           {/* Sidebar */}
           <div className="lg:border-r border-white/10 p-8">
             <p className="font-mono text-xs tracking-[0.3em] text-[#ef4444] mb-4">
-              09 /// FAQ
+              10 /// FAQ
             </p>
             <h2 className="font-syne font-bold text-xl md:text-2xl text-white">
               Common questions, straight answers.
