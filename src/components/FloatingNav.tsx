@@ -83,11 +83,11 @@ const FloatingNav = () => {
           {/* CTA Button - Right inside capsule */}
           <a
             ref={navCtaRef as React.Ref<HTMLAnchorElement>}
-            style={{ transform: `translate(${navCtaOffset.x}px, ${navCtaOffset.y}px)`, transition: "transform 0.15s ease-out" }}
+            style={{ transform: `translate(${navCtaOffset.x}px, ${navCtaOffset.y}px)`, transition: "transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease" }}
             href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative ml-4 items-center gap-2 font-mono text-xs tracking-[0.15em] text-white px-5 py-2.5 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_30px_6px_rgba(239,68,68,0.3)] hover:shadow-[0_0_50px_10px_rgba(239,68,68,0.45)]"
+            className="relative ml-4 items-center gap-2 font-mono text-xs tracking-[0.15em] text-white px-5 py-2.5 rounded-full overflow-hidden transition-all duration-300 shadow-[0_0_30px_6px_rgba(239,68,68,0.3)] hover:shadow-[0_0_50px_10px_rgba(239,68,68,0.45)]"
           >
             {/* Spinning border effect */}
             <span className="absolute inset-0 rounded-full">

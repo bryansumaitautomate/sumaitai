@@ -176,7 +176,7 @@ const ProfileSection = () => {
 
             <a
               ref={connectRef as React.Ref<HTMLAnchorElement>}
-              style={{ transform: `translate(${connectOffset.x}px, ${connectOffset.y}px)`, transition: "transform 0.15s ease-out" }}
+              style={{ transform: `translate(${connectOffset.x}px, ${connectOffset.y}px)`, transition: "transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease" }}
               href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
               target="_blank"
               rel="noopener noreferrer"

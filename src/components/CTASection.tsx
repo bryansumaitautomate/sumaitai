@@ -38,7 +38,7 @@ const CTASection = () => {
           </p>
 
           {/* Shimmer Button with Glow */}
-          <a ref={ctaRef as React.Ref<HTMLAnchorElement>} style={{ transform: `translate(${ctaOffset.x}px, ${ctaOffset.y}px)`, transition: "transform 0.15s ease-out" }} href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro" target="_blank" rel="noopener noreferrer" className="shimmer-button group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]">
+          <a ref={ctaRef as React.Ref<HTMLAnchorElement>} style={{ transform: `translate(${ctaOffset.x}px, ${ctaOffset.y}px)`, transition: "transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease" }} href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro" target="_blank" rel="noopener noreferrer" className="shimmer-button group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]">
             {/* Spinning border effect */}
             <span className="absolute inset-0 rounded-full">
               <span className="absolute inset-0 rounded-full border border-white/10"></span>

@@ -102,7 +102,7 @@ const GradientCard = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={combinedMouseLeave}
       className={`group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 backdrop-blur-sm transition-all duration-300 ease-in-out
-        hover:scale-[1.02] hover:border-primary/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]
+        hover:border-primary/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]
         ${isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-12'

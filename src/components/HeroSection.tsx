@@ -108,11 +108,11 @@ const HeroSection = () => {
                 {/* Primary CTA: BOOK A CALL */}
                 <a
                   ref={bookCallRef as React.Ref<HTMLAnchorElement>}
-                  style={{ transform: `translate(${bookCallOffset.x}px, ${bookCallOffset.y}px)`, transition: "transform 0.15s ease-out" }}
+                  style={{ transform: `translate(${bookCallOffset.x}px, ${bookCallOffset.y}px)`, transition: "transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease" }}
                   href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 pointer-events-auto shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]"
+                  className="group relative inline-flex items-center justify-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 pointer-events-auto shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]"
                 >
                   <span className="absolute inset-0 rounded-full">
                     <span className="absolute inset-0 rounded-full border border-white/10"></span>
