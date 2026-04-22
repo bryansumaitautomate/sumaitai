@@ -65,10 +65,10 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Main Content - 4 Column Grid */}
-          <div className="flex-1 grid grid-cols-4">
-            {/* First Column - Headline anchored to bottom-left */}
-            <div className="border-r border-white/10 p-6 flex flex-col justify-end pb-16">
+          {/* Main Content - 4 Column Grid (desktop) / single column (mobile) */}
+          <div className="flex-1 grid grid-cols-1 lg:grid-cols-4">
+            {/* Headline cluster - spans columns 1-3 at desktop, full width at mobile */}
+            <div className="lg:col-span-3 lg:border-r border-white/10 p-6 lg:p-12 flex flex-col justify-end pb-12 lg:pb-16">
               <motion.div initial={{
               opacity: 0,
               y: 20
@@ -82,20 +82,17 @@ const HeroSection = () => {
                 <p className="font-mono text-[10px] tracking-[0.3em] text-[#ef4444] mb-4">
                   01 /// REVENUE SYSTEMS
                 </p>
-                <p className="font-syne text-base text-white/50 leading-relaxed">
+                <h1 className="font-syne font-bold text-3xl sm:text-4xl lg:text-6xl text-white leading-[1.05] tracking-tight mb-4 max-w-4xl">
                   I build systems that capture leads, book calls, and close deals while you sleep.
+                </h1>
+                <p className="font-syne text-base lg:text-lg text-white/60 leading-relaxed max-w-2xl">
+                  Founder of SUMAIT AI Agents, helping B2B businesses turn calls and chats into booked revenue.
                 </p>
               </motion.div>
             </div>
 
-            {/* Second Column - Empty */}
-            <div className="border-r border-white/10"></div>
-
-            {/* Third Column - Empty */}
-            <div className="border-r border-white/10"></div>
-
-            {/* Fourth Column - Aura Button anchored to bottom-right */}
-            <div className="p-6 flex flex-col justify-end items-end pb-16">
+            {/* CTA cluster - column 4 at desktop, full width at mobile */}
+            <div className="p-6 lg:p-8 flex flex-col justify-end items-stretch lg:items-end pb-12 lg:pb-16 gap-3">
               <motion.div initial={{
               opacity: 0,
               y: 20
@@ -105,9 +102,14 @@ const HeroSection = () => {
             }} transition={{
               duration: 0.6,
               delay: 0.6
-            }}>
-                <a href="#systems" onClick={e => handleSmoothScroll(e, 'systems')} className="group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 pointer-events-auto shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]">
-                  {/* Spinning border effect */}
+            }} className="flex flex-col gap-3 w-full lg:w-auto">
+                {/* Primary CTA: BOOK A CALL */}
+                <a
+                  href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center justify-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 pointer-events-auto shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]"
+                >
                   <span className="absolute inset-0 rounded-full">
                     <span className="absolute inset-0 rounded-full border border-white/10"></span>
                     <span className="absolute inset-[-2px] rounded-full animate-spin" style={{
@@ -117,12 +119,26 @@ const HeroSection = () => {
                     <span className="absolute inset-[1px] rounded-full bg-[#0a0a0a]/80 backdrop-blur-md"></span>
                   </span>
                   <span className="relative z-10 flex items-center gap-3">
-                    VIEW WORK
+                    BOOK A CALL
                     <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
-                      <svg className="w-3 h-3 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </span>
+                  </span>
+                </a>
+
+                {/* Secondary CTA: VIEW WORK */}
+                <a
+                  href="#systems"
+                  onClick={e => handleSmoothScroll(e, 'systems')}
+                  className="group inline-flex items-center justify-center gap-3 font-mono text-xs tracking-[0.15em] text-white/80 hover:text-white px-8 py-4 rounded-full border border-white/20 hover:border-white/40 transition-all duration-300 pointer-events-auto"
+                >
+                  VIEW WORK
+                  <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
+                    <svg className="w-3 h-3 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
                   </span>
                 </a>
               </motion.div>
