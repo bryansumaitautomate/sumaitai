@@ -71,34 +71,34 @@ import vibecodedCard from '@/assets/vibecoded-card.png';
    const { ref, isVisible } = useScrollReveal(0.1);
  
    const projects = [
-      {
+    {
       title: 'Automation Projects',
-      description: 'End-to-end workflow automation systems that eliminate manual tasks and streamline operations.',
+      description: 'End to end workflows for KC Media, Disruptors Media, and Better Body Academy.',
       tags: ['n8n', 'Make', 'Zapier'],
       imageUrl: automationCard,
       href: '/automation-projects',
-      },
-    {
-    title: 'Chat Agents',
-    description: 'Intelligent conversational AI agents that handle customer inquiries and automate support.',
-    tags: ['AI', 'NLP', 'Support'],
-    imageUrl: chatAgentsCard,
-    href: '/chat-agents',
     },
     {
-    title: 'Voice Agents',
-    description: 'AI-powered voice assistants for phone automation, bookings, and customer interactions.',
-    tags: ['Voice AI', 'Telephony', 'NLP'],
-    imageUrl: voiceAgentsCard,
-    href: '/voice-agents',
+      title: 'Chat Agents',
+      description: 'Conversational AI handling client support across 5+ B2B businesses.',
+      tags: ['AI', 'NLP', 'Support'],
+      imageUrl: chatAgentsCard,
+      href: '/chat-agents',
     },
-      {
+    {
+      title: 'Voice Agents',
+      description: 'Live mortgage voice agent for AI Tech Solutions, shipped in 14 days.',
+      tags: ['Voice AI', 'VAPI', 'Telephony'],
+      imageUrl: voiceAgentsCard,
+      href: '/voice-agents',
+    },
+    {
       title: 'Vibecoded Projects',
-      description: 'Custom web applications and tools built with modern frameworks and AI-assisted development.',
-      tags: ['React', 'Lovable', 'Full-Stack'],
+      description: 'Custom client portals and dashboards built with React, Next.js, and Supabase.',
+      tags: ['React', 'Next.js', 'Supabase'],
       imageUrl: vibecodedCard,
       href: '/vibecoded-projects',
-      },
+    },
    ];
  
    return (
