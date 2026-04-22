@@ -26,6 +26,26 @@ const TechStackSection = () => {
     icon: 'solar:server-square-bold',
     color: undefined
   }, {
+    name: 'VAPI',
+    icon: 'solar:phone-calling-bold',
+    color: undefined
+  }, {
+    name: 'Voiceflow',
+    icon: 'solar:dialog-2-bold',
+    color: undefined
+  }, {
+    name: 'Supabase',
+    icon: 'simple-icons:supabase',
+    color: '#3ECF8E'
+  }, {
+    name: 'Vercel',
+    icon: 'simple-icons:vercel',
+    color: undefined
+  }, {
+    name: 'Telegram',
+    icon: 'simple-icons:telegram',
+    color: '#26A5E4'
+  }, {
     name: 'Claude Code',
     icon: 'solar:code-circle-bold',
     color: undefined
