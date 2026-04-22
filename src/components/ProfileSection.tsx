@@ -1,9 +1,11 @@
 import { Icon } from '@iconify/react';
 import bryanProfile from '@/assets/bryan-sumait-profile.png';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useMagnetic } from '@/hooks/useMagnetic';
 
 const ProfileSection = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
+  const { ref: connectRef, offset: connectOffset } = useMagnetic({ range: 120, maxOffset: 8 });
 
   const experienceCards = [
     {
@@ -122,7 +124,9 @@ const ProfileSection = () => {
               </div>
             </div>
 
-            <a 
+            <a
+              ref={connectRef as React.Ref<HTMLAnchorElement>}
+              style={{ transform: `translate(${connectOffset.x}px, ${connectOffset.y}px)`, transition: "transform 0.15s ease-out" }}
               href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
               target="_blank"
               rel="noopener noreferrer"

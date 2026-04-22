@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from '@iconify/react';
+import { useMagnetic } from '@/hooks/useMagnetic';
 
 const FloatingNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { ref: navCtaRef, offset: navCtaOffset } = useMagnetic({ range: 100, maxOffset: 6 });
 
   const navLinks = [
     { label: 'Systems', href: '#systems' },
@@ -80,6 +82,8 @@ const FloatingNav = () => {
 
           {/* CTA Button - Right inside capsule */}
           <a
+            ref={navCtaRef as React.Ref<HTMLAnchorElement>}
+            style={{ transform: `translate(${navCtaOffset.x}px, ${navCtaOffset.y}px)`, transition: "transform 0.15s ease-out" }}
             href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
             target="_blank"
             rel="noopener noreferrer"

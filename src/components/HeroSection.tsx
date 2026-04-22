@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import LogoMarquee from './LogoMarquee';
+import { useMagnetic } from '@/hooks/useMagnetic';
 const HeroSection = () => {
+  const { ref: bookCallRef, offset: bookCallOffset } = useMagnetic({ range: 120, maxOffset: 8 });
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -105,6 +107,8 @@ const HeroSection = () => {
             }} className="flex flex-col gap-3 w-full lg:w-auto">
                 {/* Primary CTA: BOOK A CALL */}
                 <a
+                  ref={bookCallRef as React.Ref<HTMLAnchorElement>}
+                  style={{ transform: `translate(${bookCallOffset.x}px, ${bookCallOffset.y}px)`, transition: "transform 0.15s ease-out" }}
                   href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro"
                   target="_blank"
                   rel="noopener noreferrer"

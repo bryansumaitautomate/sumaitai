@@ -1,10 +1,12 @@
 import { Icon } from '@iconify/react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useMagnetic } from '@/hooks/useMagnetic';
 const CTASection = () => {
   const {
     ref,
     isVisible
   } = useScrollReveal(0.2);
+  const { ref: ctaRef, offset: ctaOffset } = useMagnetic({ range: 120, maxOffset: 8 });
   return <section id="contact" className="relative bg-[#0a0a0a]/80 backdrop-blur-sm py-20 md:py-32 overflow-hidden">
       {/* Radial Gradient - subtle red tint */}
       <div className="absolute inset-0 opacity-40" style={{
@@ -36,7 +38,7 @@ const CTASection = () => {
           </p>
 
           {/* Shimmer Button with Glow */}
-          <a href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro" target="_blank" rel="noopener noreferrer" className="shimmer-button group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]">
+          <a ref={ctaRef as React.Ref<HTMLAnchorElement>} style={{ transform: `translate(${ctaOffset.x}px, ${ctaOffset.y}px)`, transition: "transform 0.15s ease-out" }} href="https://cal.com/bryan-dave-sumait-nzvzba/automation-intro" target="_blank" rel="noopener noreferrer" className="shimmer-button group relative inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] text-white px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_40px_8px_rgba(239,68,68,0.35)] hover:shadow-[0_0_60px_12px_rgba(239,68,68,0.5)]">
             {/* Spinning border effect */}
             <span className="absolute inset-0 rounded-full">
               <span className="absolute inset-0 rounded-full border border-white/10"></span>
