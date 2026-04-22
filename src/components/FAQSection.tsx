@@ -16,12 +16,12 @@ const FAQSection = () => {
     {
       question: 'What types of businesses do you work with?',
       answer:
-        "I work primarily with B2B service providers, SaaS companies, and coaches or consultants who have proven offers but need better systems to scale. If you're doing $20K per month or more and losing leads to manual processes, I can probably help.",
+        "I work primarily with B2B service providers, SaaS companies, and coaches or consultants. The fit is best when you have proven offers but need better systems to scale. If you're doing $20K per month or more and losing leads to manual processes, I can probably help.",
     },
     {
       question: 'How long does a typical project take?',
       answer:
-        "Most complete system builds take 4 to 6 weeks from kickoff to launch. Simpler automations or fixes can be done in 1 to 2 weeks. I'll give you a realistic timeline after our discovery call.",
+        "Most complete system builds ship in 30 days from kickoff. Lighter scopes can be done in 1 to 2 weeks. I'll give you a realistic timeline after our discovery call.",
     },
     {
       question: 'Do I need to be technical?',
