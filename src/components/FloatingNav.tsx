@@ -8,6 +8,7 @@ const FloatingNav = () => {
   const navLinks = [
     { label: 'Systems', href: '#systems' },
     { label: 'Experience', href: '#experience' },
+    { label: 'Work', href: '#projects' },
     { label: 'Process', href: '#process' },
     { label: 'Contact', href: '#contact' },
   ];
