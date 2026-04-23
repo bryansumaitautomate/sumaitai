@@ -1024,7 +1024,7 @@ serve(async (req) => {
   try {
     const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
     const SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const N8N_WEBHOOK_URL = Deno.env.get('N8N_REPORT_WEBHOOK_URL') || 'https://madeeas.app.n8n.cloud/webhook/sumait-ai-audit-report';
+    const N8N_WEBHOOK_URL = Deno.env.get('N8N_REPORT_WEBHOOK_URL') || 'https://<baccarat-n8n-instance>/webhook/sumait-ai-audit-report';
 
     const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
@@ -2458,7 +2458,8 @@ import { AuditReport } from "@/types/report";
 import { Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
-const SHARE_WEBHOOK_URL = "https://madeeas.app.n8n.cloud/webhook/sumait-ai-audit-share";
+// Set via env var during Phase 5 cutover. Points to Baccarat n8n instance.
+const SHARE_WEBHOOK_URL = import.meta.env.VITE_N8N_SHARE_WEBHOOK_URL || "https://<baccarat-n8n-instance>/webhook/sumait-ai-audit-share";
 
 interface Props { report: AuditReport; onClose: () => void; }
 
@@ -2731,35 +2732,58 @@ git commit -m "feat(wizard): submit lead form via generate-report and redirect t
 
 ## Phase 5: Email + n8n configuration (Bryan-side, manual)
 
-These tasks are configuration in the n8n environment. They are not code commits in the audit repo.
+These tasks are configuration in the **Baccarat n8n instance**. They are not code commits in the audit repo. Bryan provides the Baccarat n8n base URL during this phase, then sets the corresponding env vars:
+- Supabase secret `N8N_REPORT_WEBHOOK_URL` (used by `generate-report` edge function)
+- Vercel env var `VITE_N8N_SHARE_WEBHOOK_URL` (used by `ShareTeammateForm`)
 
-### Task 5.1: Update n8n email template
+### Task 5.1: Build the report-ready email workflow on Baccarat n8n
 
-**Repo:** none (n8n config)
+**Repo:** none (Baccarat n8n config)
 
-- [ ] **Step 1: Open the existing n8n workflow that listens to `madeeas.app.n8n.cloud/webhook/sumait-ai-audit`**
+- [ ] **Step 1: Create new webhook trigger on Baccarat n8n at path `/webhook/sumait-ai-audit-report`**
 
-- [ ] **Step 2: Update the email node to use the new template per spec section 7.2**
+- [ ] **Step 2: Wire the email node to use the template per spec section 7.2**
 
-Send from `bryansumaitofficial@gmail.com`. Body uses the template in the spec.
+Send from `bryansumaitofficial@gmail.com`. Reply-to same. Body uses the template in the spec.
 
-- [ ] **Step 3: Test by submitting an audit and verifying email arrives**
+- [ ] **Step 3: Set `N8N_REPORT_WEBHOOK_URL` in Supabase secrets to the new Baccarat URL**
 
-### Task 5.2: Create share-report n8n workflow
+Via Supabase dashboard → Edge Functions → Secrets, set `N8N_REPORT_WEBHOOK_URL=https://<your-baccarat-n8n-host>/webhook/sumait-ai-audit-report`.
 
-**Repo:** none (n8n config)
+- [ ] **Step 4: Test by submitting an audit and verifying email arrives at the lead's email address**
 
-- [ ] **Step 1: Create new webhook trigger in n8n at path `/webhook/sumait-ai-audit-share`**
+### Task 5.2: Build the share-report n8n workflow on Baccarat n8n
 
-- [ ] **Step 2: Wire it to send a forwarded email**
+**Repo:** none (Baccarat n8n config)
 
-- [ ] **Step 3: Test via the report's share form**
+- [ ] **Step 1: Create new webhook trigger on Baccarat n8n at path `/webhook/sumait-ai-audit-share`**
 
-### Task 5.3: Configure re-engagement sequence triggers
+- [ ] **Step 2: Wire it to send a forwarded email from `from_email` (the original viewer) to `to_email` (their teammate) with the `report_link` and optional `note`**
 
-**Repo:** none (n8n config)
+- [ ] **Step 3: Set `VITE_N8N_SHARE_WEBHOOK_URL` in Vercel env vars for the audit project**
 
-Per spec section 7.5. n8n schedules re-engagement emails based on `audit_reports` row age and LeadConnector booking events.
+```bash
+cd c:/Users/User/Downloads/Macbook\ ClaudeClaw/sumait-ai-audit
+vercel env add VITE_N8N_SHARE_WEBHOOK_URL production
+# Enter: https://<your-baccarat-n8n-host>/webhook/sumait-ai-audit-share
+```
+
+Redeploy to pick up the new env var:
+```bash
+vercel --prod --yes
+```
+
+- [ ] **Step 4: Test via the report's share form**
+
+### Task 5.3: Configure re-engagement sequence triggers on Baccarat n8n
+
+**Repo:** none (Baccarat n8n config)
+
+Per spec section 7.5. Baccarat n8n schedules re-engagement emails based on `audit_reports` row age (queried from Supabase) and LeadConnector booking events.
+
+- [ ] **Step 1: Create the day-3, day-7, day-14 trigger workflows on Baccarat n8n**
+- [ ] **Step 2: Wire LeadConnector booking webhook as cancel signal**
+- [ ] **Step 3: Wire share-report webhook as Telegram notification trigger to Bryan**
 
 ---
 
