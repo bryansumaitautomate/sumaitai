@@ -31,7 +31,7 @@ const Footer = () => {
 
                 {/* CTA Button */}
                 <a 
-                  href="https://sumait-ai-audit.lovable.app/" 
+                  href="https://sumait-audit.vercel.app/"
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="relative mt-6 inline-flex items-center gap-2 font-mono text-xs tracking-[0.15em] text-white px-6 py-3 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_0_30px_6px_rgba(239,68,68,0.3)] hover:shadow-[0_0_50px_10px_rgba(239,68,68,0.45)]"
