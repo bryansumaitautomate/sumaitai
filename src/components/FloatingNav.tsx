@@ -7,10 +7,11 @@ const FloatingNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { ref: navCtaRef, offset: navCtaOffset } = useMagnetic({ range: 100, maxOffset: 6 });
 
-  const navLinks = [
+  const navLinks: { label: string; href: string; external?: boolean }[] = [
     { label: 'Systems', href: '#systems' },
     { label: 'Experience', href: '#experience' },
     { label: 'Work', href: '#projects' },
+    { label: 'Audit', href: 'https://sumait-audit.vercel.app/', external: true },
     { label: 'Process', href: '#process' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -72,7 +73,9 @@ const FloatingNav = () => {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={(e) => handleSmoothScroll(e, link.href)}
+                onClick={link.external ? undefined : (e) => handleSmoothScroll(e, link.href)}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
                 className="text-sm text-white/60 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full transition-colors"
               >
                 {link.label}
@@ -127,7 +130,9 @@ const FloatingNav = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={(e) => handleSmoothScroll(e, link.href)}
+                  onClick={link.external ? undefined : (e) => handleSmoothScroll(e, link.href)}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
                   className="text-sm text-white/60 hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-colors"
                 >
                   {link.label}
