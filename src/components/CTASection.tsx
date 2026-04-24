@@ -55,6 +55,14 @@ const CTASection = () => {
               </span>
             </span>
           </a>
+          <a
+            href="https://sumait-audit.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block mt-4 font-mono text-xs tracking-widest text-white/60 hover:text-white transition-colors"
+          >
+            Not ready to chat? Run the AI audit first →
+          </a>
 
           {/* Stats Row with Gradient Cards */}
           <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-3xl mx-auto">
