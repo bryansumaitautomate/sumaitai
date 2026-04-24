@@ -145,6 +145,14 @@ const HeroSection = () => {
                     </svg>
                   </span>
                 </a>
+                <a
+                  href="https://sumait-audit.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs tracking-[0.15em] text-white/60 hover:text-white transition-colors mt-2 self-start lg:self-end pointer-events-auto"
+                >
+                  Or run our free 5-minute AI audit →
+                </a>
               </motion.div>
             </div>
           </div>
