@@ -46,7 +46,7 @@ const FAQSection = () => {
     {
       question: "What's your pricing?",
       answer:
-        "SUMAIT retainers start at $3,000 per month for the Starter tier. The Growth tier is $8,000 per month. Agency tier (white-label Cortex) starts at $25,000 per month. Project work is quoted per scope.",
+        "Pricing is custom to each engagement. We will quote you on the discovery call once we understand your scope and goals.",
     },
   ];
 
