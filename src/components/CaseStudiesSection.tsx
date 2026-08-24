@@ -158,6 +158,14 @@ const CaseStudiesSection = () => {
       description:
         'VAPI inbound voice agent, GHL pipeline, and 8-inbox Instantly outbound shipped in two weeks. Mortgage vertical.',
     },
+    {
+      category: 'BEAUTY · BEAUTY REINA',
+      title: 'AI Instagram-DM Setter',
+      metric: '0',
+      metricLabel: 'Leads left waiting',
+      description:
+        'AI Instagram-DM setter with a GHL pipeline for a lash studio. Every DM gets an instant reply, qualification, and a booking link, day and night.',
+    },
   ];
 
   return (
@@ -177,10 +185,10 @@ const CaseStudiesSection = () => {
           </div>
         </div>
 
-        {/* Case Study Cards - 3 Column Grid */}
+        {/* Case Study Cards - 2 Column Grid */}
         <div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {caseStudies.map((study, index) => (
             <GradientCard key={index} index={index} isVisible={isVisible}>

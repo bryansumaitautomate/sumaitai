@@ -102,23 +102,20 @@ const AboutSection = () => {
 
           {/* RIGHT COLUMN - Stats Cards */}
           <div className="lg:col-span-1 flex flex-col gap-4">
-            {/* Card 1 - Automation Uptime */}
+            {/* Card 1 - Build Speed */}
             <div className="group rounded-2xl border border-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_20px_40px_rgba(239,68,68,0.15)]" style={{
             background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)'
           }}>
               <div className="flex items-center justify-between mb-3">
-                <div className="relative w-12 h-12">
-                  <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="6" />
-                    <circle cx="50" cy="50" r="42" fill="none" stroke="hsl(var(--primary))" strokeWidth="6" strokeDasharray="264" strokeDashoffset="2.64" strokeLinecap="round" />
-                  </svg>
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Icon icon="solar:clock-circle-bold" className="w-5 h-5 text-primary" />
                 </div>
-                <Icon icon="solar:chart-2-bold" className="w-5 h-5 text-white/30" />
+                <Icon icon="solar:bolt-circle-bold" className="w-5 h-5 text-white/30" />
               </div>
               <p className="font-syne font-bold text-4xl md:text-5xl text-primary mb-1">
-                <AnimatedStat metric="99%" isVisible={isVisible} />
+                <AnimatedStat metric="30" isVisible={isVisible} />
               </p>
-              <p className="text-xs text-white/50">Automation Uptime</p>
+              <p className="text-xs text-white/50">Days to a Complete Build</p>
             </div>
 
             {/* Card 2 - Years Building */}
@@ -148,9 +145,9 @@ const AboutSection = () => {
                 <Icon icon="solar:graph-up-bold" className="w-5 h-5 text-white/30" />
               </div>
               <p className="font-syne font-bold text-4xl md:text-5xl text-primary mb-1">
-                <AnimatedStat metric="$2M+" isVisible={isVisible} />
+                <AnimatedStat metric="18+" isVisible={isVisible} />
               </p>
-              <p className="text-xs text-white/50">Revenue Generated for Clients</p>
+              <p className="text-xs text-white/50">Client Systems Shipped</p>
             </div>
           </div>
         </div>
