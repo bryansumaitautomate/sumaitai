@@ -86,7 +86,7 @@ import vibecodedCard from '@/assets/vibecoded-card.png';
     },
     {
       title: 'Chat Agents',
-      description: 'Conversational AI handling client support across 5+ B2B businesses.',
+      description: 'Conversational AI handling client support across 5+ service businesses.',
       tags: ['AI', 'NLP', 'Support'],
       imageUrl: chatAgentsCard,
       href: '/chat-agents',

@@ -16,7 +16,7 @@ const FAQSection = () => {
     {
       question: 'What types of businesses do you work with?',
       answer:
-        "I work primarily with B2B service providers, SaaS companies, and coaches or consultants. The fit is best when you have proven offers but need better systems to scale. If you're doing $20K per month or more and losing leads to manual processes, I can probably help.",
+        "Local service businesses: home services, beauty and wellness, trades, cleaning, real estate, and similar. The fit is best when customers call or message you and a slow reply costs you the job. If you're doing $20K per month or more and losing leads to manual processes, I can probably help.",
     },
     {
       question: 'How long does a typical project take?',
@@ -36,7 +36,7 @@ const FAQSection = () => {
     {
       question: "What's included in support after launch?",
       answer:
-        'Every project includes 30 days of support after launch for bugs and adjustments. For ongoing optimization and new automations, we offer monthly retainer packages.',
+        'Every project includes 30 days of support after launch for bugs and adjustments. Retainer clients get priority response: if something breaks Saturday night, it gets fixed, not queued until Monday. Retainers also cover ongoing optimization and new automations.',
     },
     {
       question: 'Do you work with clients outside the Philippines?',
@@ -46,7 +46,7 @@ const FAQSection = () => {
     {
       question: "What's your pricing?",
       answer:
-        "Pricing is custom to each engagement. We will quote you on the discovery call once we understand your scope and goals.",
+        'Builds start at $1,500. Most clients land at a $2,500 build plus $1,000 per month for monitoring and optimization. Exact scope gets quoted on the discovery call once I understand your goals.',
     },
   ];
 

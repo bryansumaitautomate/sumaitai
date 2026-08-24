@@ -82,7 +82,7 @@ const ProfileSection = () => {
     {
       year: '2024',
       title: 'Operation Systems',
-      description: 'Built complete business operations across social media automation, lead generation, and CRM systems for 8+ B2B clients.',
+      description: 'Built complete business operations across social media automation, lead generation, and CRM systems for 8+ businesses through agency partnerships.',
       icon: 'solar:widget-5-linear',
       badge: 'M',
     },
@@ -95,8 +95,8 @@ const ProfileSection = () => {
     },
     {
       year: '2026',
-      title: 'Cortex v4.0 Agent Framework',
-      description: 'Designed and shipped an 18-team, 72-agent framework that powers SUMAIT client delivery. Productized in three retainer tiers.',
+      title: 'Agent-Powered Delivery',
+      description: 'Built an internal agent framework that powers every SUMAIT build, so clients get agency-grade systems shipped in days instead of months. Packaged as a simple build plus monthly retainer.',
       icon: 'solar:cpu-bolt-linear',
       badge: 'C',
     },
@@ -159,7 +159,7 @@ const ProfileSection = () => {
               <div>
                 <h3 className="text-2xl font-syne font-medium tracking-tight mb-2 text-white">Bryan Sumait</h3>
                 <p className="text-sm text-white/50 leading-relaxed font-normal">
-                  I run SUMAIT, an AI automation team that builds revenue systems for B2B businesses.
+                  I run SUMAIT, an AI automation team that builds revenue systems for local service businesses.
                 </p>
               </div>
 
@@ -182,7 +182,7 @@ const ProfileSection = () => {
               rel="noopener noreferrer"
               className="group mt-12 w-full py-4 px-6 bg-[#ef4444] text-white font-syne font-bold text-sm tracking-wide rounded-sm flex items-center justify-between hover:shadow-[0_0_30px_rgba(239,68,68,0.35)] transition-all"
             >
-              Connect
+              Book a Call
               <Icon icon="solar:arrow-right-up-linear" width={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
           </div>

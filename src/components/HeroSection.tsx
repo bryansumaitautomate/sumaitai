@@ -88,7 +88,7 @@ const HeroSection = () => {
                   I build systems that capture leads, book calls, and close deals while you sleep.
                 </h1>
                 <p className="font-syne text-base lg:text-lg text-white/60 leading-relaxed max-w-2xl">
-                  Founder of SUMAIT AI Agents, helping B2B businesses turn calls and chats into booked revenue.
+                  Founder of SUMAIT AI Agents, helping local service businesses turn missed calls and DMs into booked revenue.
                 </p>
               </motion.div>
             </div>

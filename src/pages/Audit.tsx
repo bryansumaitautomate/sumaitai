@@ -19,7 +19,7 @@ export default function Audit() {
             {[
               { title: 'What it covers', body: "Your departments, processes, hours, cost drivers, AI readiness." },
               { title: 'What you get back', body: "A personalized hosted report with industry benchmarks, 30-60-90 roadmap, and your custom Cortex configuration." },
-              { title: 'Who it is for', body: "B2B service businesses doing $20K/month or more, losing leads to manual processes." },
+              { title: 'Who it is for', body: "Service businesses doing $20K/month or more, losing leads to manual processes." },
             ].map((card) => (
               <div
                 key={card.title}
