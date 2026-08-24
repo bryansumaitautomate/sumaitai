@@ -10,33 +10,51 @@ import vibecodedCard from '@/assets/vibecoded-card.png';
    title: string;
    description: string;
    tags: string[];
-   imageUrl: string;
+   imageUrl?: string;
    href: string;
+   featured?: boolean;
  }
 
- const ProjectCard = ({ title, description, tags, imageUrl, href }: ProjectCardProps) => {
+ const ProjectCard = ({ title, description, tags, imageUrl, href, featured }: ProjectCardProps) => {
    const { tilt, handleMouseMove, handleMouseLeave } = useTilt({ maxTilt: 5 });
    return (
      <Link
        to={href}
        onMouseMove={handleMouseMove}
        onMouseLeave={handleMouseLeave}
-       className="group relative rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm transition-all duration-300 hover:border-[#ef4444]/50 hover:shadow-[0_0_30px_rgba(239,68,68,0.4),0_0_60px_rgba(239,68,68,0.2)] block"
+       className={`group relative rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm transition-all duration-300 hover:border-[#ef4444]/50 hover:shadow-[0_0_30px_rgba(239,68,68,0.4),0_0_60px_rgba(239,68,68,0.2)] block ${featured ? 'sm:col-span-2' : ''}`}
        style={{
          background: 'linear-gradient(to bottom, #0a0a0a 0%, rgba(239, 68, 68, 0.2) 100%)',
          transform: `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
          transformStyle: 'preserve-3d',
        }}
      >
-       {/* Project Screenshot */}
+       {/* Project Screenshot or Typographic Panel */}
+       {imageUrl ? (
        <div className="relative aspect-video overflow-hidden">
-         <img 
-           src={imageUrl} 
+         <img
+           src={imageUrl}
            alt={title}
            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
          />
          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
        </div>
+       ) : (
+       <div className="relative aspect-video overflow-hidden flex items-center justify-center">
+         <span className="font-syne font-bold text-[18vw] sm:text-[10vw] text-white opacity-[0.05] select-none">
+           2026
+         </span>
+         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+           <span className="px-3 py-1 text-xs font-mono tracking-[0.3em] text-[#ef4444] bg-[#ef4444]/10 border border-[#ef4444]/30 rounded-full">
+             NEW · BUILD LOG
+           </span>
+           <p className="font-syne font-medium text-xl md:text-2xl text-white/80 text-center px-6">
+             Shipped this year, under my own brand.
+           </p>
+         </div>
+         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+       </div>
+       )}
  
        {/* Content */}
        <div className="p-6">
@@ -104,6 +122,13 @@ import vibecodedCard from '@/assets/vibecoded-card.png';
       tags: ['React', 'Next.js', 'Supabase'],
       imageUrl: vibecodedCard,
       href: '/vibecoded-projects',
+    },
+    {
+      title: 'Client Builds 2026',
+      description: "This year's self-branded builds: AI Instagram-DM setter, M365 tracker automation, local SEO engine, Shopify chatbot, and white-label partner work.",
+      tags: ['AI Setter', 'M365', 'Local SEO', 'Shopify'],
+      href: '/client-builds',
+      featured: true,
     },
    ];
  

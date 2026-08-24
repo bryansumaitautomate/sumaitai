@@ -12,6 +12,7 @@ import Index from "./pages/Index";
  const ChatAgents = lazy(() => import("./pages/ChatAgents"));
  const VoiceAgents = lazy(() => import("./pages/VoiceAgents"));
  const VibecodedProjects = lazy(() => import("./pages/VibecodedProjects"));
+ const ClientBuilds = lazy(() => import("./pages/ClientBuilds"));
  const Audit = lazy(() => import("./pages/Audit"));
 import CustomCursor from "./components/CustomCursor";
 import ScrollProgressBar from "./components/ScrollProgressBar";
@@ -34,6 +35,7 @@ const App = () => (
            <Route path="/chat-agents" element={<ChatAgents />} />
            <Route path="/voice-agents" element={<VoiceAgents />} />
            <Route path="/vibecoded-projects" element={<VibecodedProjects />} />
+           <Route path="/client-builds" element={<ClientBuilds />} />
            <Route path="/audit" element={<Audit />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
