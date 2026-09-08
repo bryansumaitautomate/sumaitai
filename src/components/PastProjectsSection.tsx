@@ -125,8 +125,8 @@ import vibecodedCard from '@/assets/vibecoded-card.png';
     },
     {
       title: 'Client Builds 2026',
-      description: "This year's self-branded builds: AI Instagram-DM setter, M365 tracker automation, local SEO engine, Shopify chatbot, and white-label partner work.",
-      tags: ['AI Setter', 'M365', 'Local SEO', 'Shopify'],
+      description: "This year's self-branded builds: full-stack apps — an AI meal plan generator, an HR console, a Three.js barbershop site — plus automation and SEO builds for service businesses.",
+      tags: ['Next.js', 'Three.js', 'OpenAI', 'Automation'],
       href: '/client-builds',
       featured: true,
     },
