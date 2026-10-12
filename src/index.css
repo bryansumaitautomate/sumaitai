@@ -83,6 +83,38 @@
     scroll-behavior: smooth;
   }
 
+  /* Anchor landings stop below the fixed header. --header-h is set at
+     runtime by FloatingNav from the measured header band; 88px is the
+     mobile fallback measured at 390px. */
+  section[id],
+  div[id] {
+    scroll-margin-top: calc(var(--header-h, 88px) + 16px);
+  }
+
+  /* Visible keyboard focus ring (brand red, matches link accents). */
+  :focus-visible {
+    outline: 2px solid #ef4444;
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion: show everything instantly. JS-driven reveals are
+     short-circuited in useScrollReveal; framer loops are gated at source;
+     this rule flattens every CSS animation and transition. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   body {
     background-color: #0a0a0a;
     color: #ffffff;

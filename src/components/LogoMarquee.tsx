@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 // Import client logos
 import propertybots from '@/assets/logos/propertybots.png';
@@ -40,12 +40,16 @@ const logos = [
 ];
 
 const LogoMarquee = () => {
+  // Infinite JS-driven loop is invisible to the reduced-motion CSS kill
+  // switch, so it has to be stopped here at the source.
+  const reduceMotion = useReducedMotion();
+
   return (
     <section className="relative bg-[#0a0a0a] border-y border-white/10 overflow-hidden py-6">
       <div className="flex">
         <motion.div
           className="flex gap-16 items-center"
-          animate={{ x: ['0%', '-50%'] }}
+          animate={reduceMotion ? undefined : { x: ['0%', '-50%'] }}
           transition={{
             duration: 40,
             repeat: Infinity,

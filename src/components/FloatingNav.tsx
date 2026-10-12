@@ -1,11 +1,43 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import { useMagnetic } from '@/hooks/useMagnetic';
 
 const FloatingNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const bandRef = useRef<HTMLDivElement>(null);
   const { ref: navCtaRef, offset: navCtaOffset } = useMagnetic({ range: 100, maxOffset: 6 });
+
+  // Publish the MEASURED header height (not a hardcoded value) as a CSS
+  // custom property. Anchored sections consume it via scroll-margin-top in
+  // index.css so anchor landings stop beneath the fixed header.
+  useEffect(() => {
+    const band = bandRef.current;
+    if (!band) return;
+
+    const setHeaderHeight = () => {
+      // offsetHeight/computed padding are transform-independent, so the
+      // nav's entrance animation can't produce a mid-flight measurement.
+      // Rows-only band + the nav's own bottom padding = full band height,
+      // and the open mobile menu (a sibling below the band) never counts.
+      const nav = band.parentElement;
+      const paddingBottom = nav ? parseFloat(getComputedStyle(nav).paddingBottom) || 0 : 0;
+      const height = band.offsetTop + band.offsetHeight + paddingBottom;
+      if (height > 0) {
+        document.documentElement.style.setProperty('--header-h', `${Math.ceil(height)}px`);
+      }
+    };
+
+    setHeaderHeight();
+    // Re-measure once fonts/layout have settled.
+    const settle = window.setTimeout(setHeaderHeight, 1000);
+    window.addEventListener('resize', setHeaderHeight);
+    return () => {
+      window.clearTimeout(settle);
+      window.removeEventListener('resize', setHeaderHeight);
+    };
+  }, []);
 
   const navLinks: { label: string; href: string; external?: boolean }[] = [
     { label: 'Systems', href: '#systems' },
@@ -30,28 +62,31 @@ const FloatingNav = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-      className="fixed top-0 left-0 right-0 z-50 p-6"
+      transition={reduceMotion ? { duration: 0 } : { duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+      className="fixed top-0 left-0 right-0 z-50 p-6 bg-[#0a0a0a]/95 md:bg-transparent border-b border-white/10 md:border-b-0"
     >
-      {/* Mobile Menu Button - Outside capsule on mobile */}
-      <div className="md:hidden flex justify-between items-center max-w-6xl mx-auto">
-        <a href="#" className="font-syne font-bold text-lg tracking-tight text-white/90">
-          SUMAIT<span className="text-primary">.AI</span>
-        </a>
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white/60 hover:text-white hover:bg-white/5 transition-colors"
-          aria-label="Toggle menu"
-        >
-          <Icon
-            icon={mobileMenuOpen ? 'solar:close-circle-linear' : 'solar:hamburger-menu-linear'}
-            className="w-5 h-5"
-          />
-        </button>
-      </div>
+      {/* Measured header band: exactly one of these rows is visible per breakpoint. */}
+      <div ref={bandRef}>
+        {/* Mobile Menu Button - Outside capsule on mobile */}
+        <div className="md:hidden flex justify-between items-center max-w-6xl mx-auto">
+          <a href="#" className="font-syne font-bold text-lg tracking-tight text-white/90">
+            SUMAIT<span className="text-primary">.AI</span>
+          </a>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white/60 hover:text-white hover:bg-white/5 transition-colors"
+            aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <Icon
+              icon={mobileMenuOpen ? 'solar:close-circle-linear' : 'solar:hamburger-menu-linear'}
+              className="w-5 h-5"
+            />
+          </button>
+        </div>
 
-      {/* Desktop: Single Unified Capsule */}
-      <div className="hidden md:flex justify-center">
+        {/* Desktop: Single Unified Capsule */}
+        <div className="hidden md:flex justify-center">
         <div
           className="flex items-center gap-2 rounded-full py-2 px-3"
           style={{
@@ -106,6 +141,7 @@ const FloatingNav = () => {
             </span>
             <span className="relative z-10">LET'S TALK →</span>
           </a>
+        </div>
         </div>
       </div>
 

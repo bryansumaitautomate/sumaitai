@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import LogoMarquee from './LogoMarquee';
 import { useMagnetic } from '@/hooks/useMagnetic';
 const HeroSection = () => {
+  const reduceMotion = useReducedMotion();
   const { ref: bookCallRef, offset: bookCallOffset } = useMagnetic({ range: 120, maxOffset: 8 });
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -37,14 +38,14 @@ const HeroSection = () => {
           {[0, 1, 2, 3].map(col => <div key={col} className={`relative ${col < 3 ? 'border-r border-white/10' : ''}`}>
               {/* Beam Animation on first 3 columns */}
               {col < 3 && <div className="absolute top-0 right-0 w-px h-full overflow-hidden">
-                  <motion.div className="w-full h-40 bg-gradient-to-b from-transparent via-[#ef4444] to-transparent" animate={{
+                  {!reduceMotion && <motion.div className="w-full h-40 bg-gradient-to-b from-transparent via-[#ef4444] to-transparent" animate={{
               y: ['-100%', '500%']
             }} transition={{
               duration: 5,
               repeat: Infinity,
               ease: 'linear',
               delay: col * 1.2
-            }} />
+            }} />}
                 </div>}
             </div>)}
         </div>
@@ -71,7 +72,7 @@ const HeroSection = () => {
           <div className="flex-1 grid grid-cols-1 lg:grid-cols-4">
             {/* Headline cluster - spans columns 1-3 at desktop, full width at mobile */}
             <div className="lg:col-span-3 lg:border-r border-white/10 p-6 lg:p-12 flex flex-col justify-end pb-12 lg:pb-16">
-              <motion.div initial={{
+              <motion.div initial={reduceMotion ? false : {
               opacity: 0,
               y: 20
             }} animate={{
@@ -95,7 +96,7 @@ const HeroSection = () => {
 
             {/* CTA cluster - column 4 at desktop, full width at mobile */}
             <div className="p-6 lg:p-8 flex flex-col justify-end items-stretch lg:items-end pb-12 lg:pb-16 gap-3">
-              <motion.div initial={{
+              <motion.div initial={reduceMotion ? false : {
               opacity: 0,
               y: 20
             }} animate={{

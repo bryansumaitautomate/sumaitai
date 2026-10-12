@@ -27,13 +27,31 @@
     
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        if (window.UnicornStudio) {
-          window.UnicornStudio.init();
-        }
-      });
+      // WebGL background: only LOAD unicornstudio on capable, desktop-class
+      // devices that haven't asked for reduced motion. Gated devices never
+      // fetch the script at all — they keep the static dark base (#0a0a0a
+      // body) + the DOM grid texture, which render on their own. Once
+      // loaded, unicornstudio pauses itself on visibilitychange (it cancels
+      // its rAF loop when the tab is hidden) and skips rendering when its
+      // scene is out of view.
+      (function () {
+        var shouldLoadWebGL =
+          !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+          window.innerWidth >= 768 &&
+          ((navigator.hardwareConcurrency || 8) > 4);
+
+        if (!shouldLoadWebGL) return;
+
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js';
+        script.onload = function () {
+          if (window.UnicornStudio && document.getElementById('unicorn-bg')) {
+            window.UnicornStudio.init();
+          }
+        };
+        document.head.appendChild(script);
+      })();
     </script>
     
     <!-- Sequence animation on scroll -->

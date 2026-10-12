@@ -6,7 +6,10 @@ const Footer = () => {
     icon: 'simple-icons:linkedin',
     href: 'https://www.linkedin.com/in/bryansumait'
   }];
-  return <footer className="relative border-t border-white/10 mt-20 py-12 bg-[#0a0a0a]/80 backdrop-blur-sm">
+  // Opaque band: the fixed Spline robot (hero, z-0) sits behind every
+  // translucent section and would otherwise bleed through the footer.
+  // The former mt-20 gap is folded into pt-32 so visual spacing is unchanged.
+  return <footer className="relative border-t border-white/10 pt-32 pb-12 bg-[#0a0a0a]">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Inner Glassmorphic Card */}
         <div className="relative overflow-hidden bg-[#0a0a0a]/60 backdrop-blur ring-1 ring-white/10 rounded-3xl p-6 sm:p-10 lg:p-14">

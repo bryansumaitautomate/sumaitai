@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 interface FAQItem {
@@ -10,6 +10,7 @@ interface FAQItem {
 
 const FAQSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
+  const reduceMotion = useReducedMotion();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs: FAQItem[] = [
@@ -80,6 +81,9 @@ const FAQSection = () => {
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                     className="w-full flex items-center justify-between text-left group"
+                    aria-expanded={openIndex === index}
+                    aria-controls={`faq-panel-${index}`}
+                    id={`faq-button-${index}`}
                   >
                     <span className="font-syne font-semibold text-lg text-white group-hover:text-[#ef4444] transition-colors pr-4">
                       {faq.question}
@@ -98,10 +102,13 @@ const FAQSection = () => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: reduceMotion ? 0 : 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div 
+                        <div
+                          id={`faq-panel-${index}`}
+                          role="region"
+                          aria-labelledby={`faq-button-${index}`}
                           className="mt-4 p-4 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10"
                         >
                           <p className="text-base text-white/50 leading-relaxed">
