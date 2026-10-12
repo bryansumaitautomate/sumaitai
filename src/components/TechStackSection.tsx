@@ -65,6 +65,66 @@ const TechStackSection = () => {
     name: 'CapCut',
     icon: 'solar:videocamera-record-bold',
     color: undefined
+  }, {
+    name: 'Zapier',
+    icon: 'simple-icons:zapier',
+    color: '#FF4F00'
+  }, {
+    name: 'Airtable',
+    icon: 'simple-icons:airtable',
+    color: '#18BFFF'
+  }, {
+    name: 'Google Sheets',
+    icon: 'simple-icons:googlesheets',
+    color: '#34A853'
+  }, {
+    name: 'Twilio',
+    icon: 'simple-icons:twilio',
+    color: '#F22F46'
+  }, {
+    name: 'WhatsApp',
+    icon: 'simple-icons:whatsapp',
+    color: '#25D366'
+  }, {
+    name: 'Cal.com',
+    icon: 'simple-icons:caldotcom',
+    color: undefined
+  }, {
+    name: 'Retell AI',
+    icon: 'solar:microphone-bold',
+    color: undefined
+  }, {
+    name: 'ElevenLabs',
+    icon: 'simple-icons:elevenlabs',
+    color: undefined
+  }, {
+    name: 'Instantly',
+    icon: 'solar:letter-bold',
+    color: undefined
+  }, {
+    name: 'NeverBounce',
+    icon: 'solar:shield-check-bold',
+    color: undefined
+  }, {
+    name: 'PhantomBuster',
+    icon: 'solar:scanner-bold',
+    color: undefined
+  }, {
+    name: 'LeadByte',
+    icon: 'solar:transfer-horizontal-bold',
+    color: undefined
+  }, {
+    name: 'RedTrack',
+    icon: 'solar:graph-new-up-bold',
+    color: undefined
+  }, {
+    name: 'Fathom',
+    icon: 'solar:video-library-bold',
+    color: undefined
+  }, {
+    name: 'Shopify',
+    icon: 'simple-icons:shopify',
+    color: '#95BF47'
   }];
   return <section className="relative bg-[#0a0a0a]/80 backdrop-blur-sm py-20 md:py-32">
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
